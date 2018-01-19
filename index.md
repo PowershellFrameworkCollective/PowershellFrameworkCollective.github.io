@@ -53,7 +53,7 @@ Prominent features:
 
  - Keybindings for frequently needed functionalities
  - Simple directory navigation to often needed folders
- - String manipulation on the pipeline (`trim`|`replace`|`split`|`join`|`format`|...)
+ - String manipulation on the pipeline (`trim`\|`replace`\|`split`\|`join`\|`format`\|...)
  - Short aliases for commonly used commands (`grep` --> `Select-String`)
  - Lots of other utilities ...
 
