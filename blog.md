@@ -5,4 +5,4 @@ title: Blog Posts
 
 # Blog
 
-Some day there will be blog posts listed here
+Here there be dragons! Or rather: Here you'll find the unfiltered stream of posts about all things PSFramework.
