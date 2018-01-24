@@ -1,3 +1,7 @@
 theme: jekyll-theme-slate
 title: Welcome to the PowerShell Framework
 description: The project dedicated to empowering your PowerShell scripting.
+name: PSFramework
+
+url: http://psframework.org
+baseurl: ""
