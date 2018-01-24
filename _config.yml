@@ -3,9 +3,5 @@ title: Welcome to the PowerShell Framework
 name: PSFramework
 description: The project dedicated to empowering your PowerShell scripting.
 
-auto: true
-markdown: rdiscount
-permalink: /:year/:month/:day/:title
-rdiscount extensions: [smart]
 #url: http://psframework.org
 #baseurl: ""
