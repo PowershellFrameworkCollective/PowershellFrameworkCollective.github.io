@@ -12,7 +12,7 @@ PSUtil already offered two ways to easily convert objects on the pipeline:
  - Expand-PSUObject (`exp`) allows you to 'convert' objects by expanding one of their properties. The custom expansion system would theoretically allow you to pre-register type-conversion by object type.
  - Set-PSUObjectType (`cast`) allows you to convert objects by using PowerShell type coercion. This is a powerful tool to easily fit an object to a different type on the pipeline.
 
-Both tools however are limited in that they are type-bound. This left a big whole for to occasional need to provide for logical content conversion, which is where the latest addition to the PSUtil family comes in:
+Both tools however are limited in that they are type-bound. This left a big hole for the occasional need to provide for logical content conversion, which is where the latest addition to the PSUtil family comes in:
 
 ```powershell
 Convert-PSUObject
