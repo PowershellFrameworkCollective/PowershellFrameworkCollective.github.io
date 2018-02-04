@@ -51,6 +51,7 @@ Register-PSFTeppArgumentCompleter -Command Get-Alcohol -Parameter Type -Name alc
 Try it out:
 ```powershell
 Get-Alcohol -Type <TAB>
+```
 
 # Additional Information
 
