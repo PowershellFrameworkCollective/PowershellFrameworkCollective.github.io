@@ -17,6 +17,8 @@ Write-PSFMessage
 
 This is all that it takes, your scripts are now creating logfiles.
 
+Note: Replacing custom functions such as the often used `Write-Log` works just the same - just send it the message and `Write-PSFMessage` will handle the rest.
+
 # Additional information
 
  - The logs are written to `Get-PSFConfigValue -FullName psframework.logging.filesystem.logpath | Invoke-Item`
