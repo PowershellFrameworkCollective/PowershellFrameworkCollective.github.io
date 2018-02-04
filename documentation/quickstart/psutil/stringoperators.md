@@ -48,6 +48,7 @@ PSUtil includes a large suite of functions that replace the regular string opera
 1..5 | wrap '"' '"'
 
 # returns '"1"', '"2"', '"3"', '"4"', '"5"'
+```
 
 # Additional Information
 
