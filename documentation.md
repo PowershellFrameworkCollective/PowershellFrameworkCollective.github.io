@@ -6,10 +6,6 @@ Well, at least that's what it soon(tm) will be.
 
 ## Quick Start Guides
 
-```
-Not implemented yet!
-```
-
 In this section, there shall be guides to swiftly getting started with a given component of the PowerShell Framework.
 
  - [PSFramework Quick Start Guides](http://psframework.org/documentation/quickstart/psframework.html)
