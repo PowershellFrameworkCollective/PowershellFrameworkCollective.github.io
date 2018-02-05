@@ -1,6 +1,6 @@
 # Getting started with Tab Completion
 
-Tab Completion is what happens in PowerShell when you hit the <TAB> key:
+Tab Completion is what happens in PowerShell when you hit the `TAB` key:
 
  - If you are typing a command name, it will be completed
  - If you are writing a parameter name, it will be completed
