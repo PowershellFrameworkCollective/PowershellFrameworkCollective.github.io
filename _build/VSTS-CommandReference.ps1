@@ -27,14 +27,14 @@ $null = New-Item "$($commandReferenceBasePath)\$($moduleName)" -ItemType Directo
 $null = New-MarkdownHelp -Command $commands -OutputFolder "$($commandReferenceBasePath)\$($moduleName)"
 
 Write-PSFMessage -Level Host -Message "  Creating index file"
-Set-Content -Path "$($commandReferenceBasePath)\$($moduleName).html" -Value @"
+Set-Content -Path "$($commandReferenceBasePath)\$($moduleName).md" -Value @"
 # $moduleName Command Reference
 
 "@ -Encoding UTF8
 
 foreach ($command in $commands)
 {
-	Add-Content -Path "$($commandReferenceBasePath)\$($moduleName).html" -Value " - [$command]($($moduleName)/$command.html)"
+	Add-Content -Path "$($commandReferenceBasePath)\$($moduleName).md" -Value " - [$command]($($moduleName)/$command.html)"
 }
 Write-PSFMessage -Level Host -Message "Finished processing $moduleName"
 #endregion PSFramework
@@ -53,14 +53,14 @@ $null = New-Item "$($commandReferenceBasePath)\$($moduleName)" -ItemType Directo
 $null = New-MarkdownHelp -Command $commands -OutputFolder "$($commandReferenceBasePath)\$($moduleName)"
 
 Write-PSFMessage -Level Host -Message "  Creating index file"
-Set-Content -Path "$($commandReferenceBasePath)\$($moduleName).html" -Value @"
+Set-Content -Path "$($commandReferenceBasePath)\$($moduleName).md" -Value @"
 # $moduleName Command Reference
 
 "@ -Encoding UTF8
 
 foreach ($command in $commands)
 {
-	Add-Content -Path "$($commandReferenceBasePath)\$($moduleName).html" -Value " - [$command]($($moduleName)/$command.html)"
+	Add-Content -Path "$($commandReferenceBasePath)\$($moduleName).md" -Value " - [$command]($($moduleName)/$command.html)"
 }
 Write-PSFMessage -Level Host -Message "Finished processing $moduleName"
 #endregion PSModuleDevelopment
@@ -79,14 +79,14 @@ $null = New-Item "$($commandReferenceBasePath)\$($moduleName)" -ItemType Directo
 $null = New-MarkdownHelp -Command $commands -OutputFolder "$($commandReferenceBasePath)\$($moduleName)"
 
 Write-PSFMessage -Level Host -Message "  Creating index file"
-Set-Content -Path "$($commandReferenceBasePath)\$($moduleName).html" -Value @"
+Set-Content -Path "$($commandReferenceBasePath)\$($moduleName).md" -Value @"
 # $moduleName Command Reference
 
 "@ -Encoding UTF8
 
 foreach ($command in $commands)
 {
-	Add-Content -Path "$($commandReferenceBasePath)\$($moduleName).html" -Value " - [$command]($($moduleName)/$command.html)"
+	Add-Content -Path "$($commandReferenceBasePath)\$($moduleName).md" -Value " - [$command]($($moduleName)/$command.html)"
 }
 Write-PSFMessage -Level Host -Message "Finished processing $moduleName"
 #endregion PSUtil
