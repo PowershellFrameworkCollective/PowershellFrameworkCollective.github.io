@@ -25,7 +25,7 @@ The update is performed by this very function.
 
 ## EXAMPLES
 
-### BEISPIEL 1
+### EXAMPLE 1
 ```
 Set-PSFDynamicContentObject -Name Test -Value $Value
 ```

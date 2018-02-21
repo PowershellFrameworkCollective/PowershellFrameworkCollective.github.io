@@ -21,7 +21,7 @@ Removes a registered license from the license store
 
 ## EXAMPLES
 
-### BEISPIEL 1
+### EXAMPLE 1
 ```
 Get-PSFLicense "FooBar" | Remove-PSFLicense
 ```

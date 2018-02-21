@@ -27,14 +27,14 @@ This grants the ability to ...
 
 ## EXAMPLES
 
-### BEISPIEL 1
+### EXAMPLE 1
 ```
 Set-PSFLoggingProvider -Name filesystem -Enabled $false
 ```
 
 Disables the filesystem provider.
 
-### BEISPIEL 2
+### EXAMPLE 2
 ```
 Set-PSFLoggingProvider -Name filesystem -ExcludeModules "PSFramework"
 ```

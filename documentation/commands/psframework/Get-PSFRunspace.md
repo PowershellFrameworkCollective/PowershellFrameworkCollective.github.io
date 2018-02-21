@@ -21,14 +21,14 @@ Returns a list of runspaces that have been registered with the PSFramework
 
 ## EXAMPLES
 
-### BEISPIEL 1
+### EXAMPLE 1
 ```
 Get-PSFRunspace
 ```
 
 Returns all registered runspaces
 
-### BEISPIEL 2
+### EXAMPLE 2
 ```
 Get-PSFRunspace -Name 'mymodule.maintenance'
 ```

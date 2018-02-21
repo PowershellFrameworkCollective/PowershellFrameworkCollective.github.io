@@ -23,14 +23,14 @@ This forgives the user for forgetting to store the output in a variable and is e
 
 ## EXAMPLES
 
-### BEISPIEL 1
+### EXAMPLE 1
 ```
 Get-PSFResultCache
 ```
 
 Returns the latest cached result.
 
-### BEISPIEL 2
+### EXAMPLE 2
 ```
 Get-PSFResultCache -Type 'All'
 ```

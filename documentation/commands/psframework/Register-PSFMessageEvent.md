@@ -34,7 +34,7 @@ The TaskEngine component may prove to be just what is needed to accomplish this.
 
 ## EXAMPLES
 
-### BEISPIEL 1
+### EXAMPLE 1
 ```
 Register-PSFMessageEvent -Name 'Mymodule.OffloadTrigger' -ScriptBlock $ScriptBlock -Tag 'engine' -Module 'MyModule' -Level Warning
 ```

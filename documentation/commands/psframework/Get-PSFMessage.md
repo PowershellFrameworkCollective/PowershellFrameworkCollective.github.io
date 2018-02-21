@@ -24,21 +24,21 @@ Handy when debugging or developing a script using it.
 
 ## EXAMPLES
 
-### BEISPIEL 1
+### EXAMPLE 1
 ```
 Get-PSFMessage
 ```
 
 Returns all log entries currently in memory.
 
-### BEISPIEL 2
+### EXAMPLE 2
 ```
 Get-PSFMessage -Target "a" -Last 1 -Skip 1
 ```
 
 Returns all log entries that targeted the object "a" in the second last execution sent.
 
-### BEISPIEL 3
+### EXAMPLE 3
 ```
 Get-PSFMessage -Tag "fail" -Last 5
 ```

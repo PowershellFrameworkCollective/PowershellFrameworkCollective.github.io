@@ -23,7 +23,7 @@ When building a module, consider shipping that xml type extension in a dedicated
 
 ## EXAMPLES
 
-### BEISPIEL 1
+### EXAMPLE 1
 ```
 Get-PSFTypeSerializationData -InputObject 'My.Custom.Type' | Register-PSFTypeSerializationData
 ```

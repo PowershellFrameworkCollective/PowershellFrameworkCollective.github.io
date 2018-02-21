@@ -21,7 +21,7 @@ Tests, whether the specified task engine cache-entry has been written.
 
 ## EXAMPLES
 
-### BEISPIEL 1
+### EXAMPLE 1
 ```
 Test-PSFTaskEngineCache -Module 'mymodule' -Name 'maintenancetask'
 ```

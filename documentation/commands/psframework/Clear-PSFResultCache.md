@@ -21,7 +21,7 @@ Clears the result cache, which can come in handy if you have a huge amount of da
 
 ## EXAMPLES
 
-### BEISPIEL 1
+### EXAMPLE 1
 ```
 Clear-PSFResultCache
 ```

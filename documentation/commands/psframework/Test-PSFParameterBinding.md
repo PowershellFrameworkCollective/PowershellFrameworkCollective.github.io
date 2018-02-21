@@ -22,7 +22,7 @@ Helper function that tests, whether a parameter was bound.
 
 ## EXAMPLES
 
-### BEISPIEL 1
+### EXAMPLE 1
 ```
 if (Test-PSFParameterBinding "Day")
 ```
@@ -35,14 +35,14 @@ Snippet as part of a function.
 Will check whether the parameter "Day" was bound.
 If yes, whatever logic is in the conditional will be executed.
 
-### BEISPIEL 2
+### EXAMPLE 2
 ```
 Test-PSFParameterBinding -Not 'Login', 'Spid', 'ExcludeSpid', 'Host', 'Program', 'Database'
 ```
 
 Returns whether none of the parameters above were specified.
 
-### BEISPIEL 3
+### EXAMPLE 3
 ```
 Test-PSFParameterBinding -And 'Login', 'Spid', 'ExcludeSpid', 'Host', 'Program', 'Database'
 ```

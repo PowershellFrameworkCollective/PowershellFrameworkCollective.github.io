@@ -22,14 +22,14 @@ Returns all matching licenses from the PSFramework internal license cache.
 
 ## EXAMPLES
 
-### BEISPIEL 1
+### EXAMPLE 1
 ```
 Get-PSFLicense *Microsoft*
 ```
 
 Returns all registered licenses for products with the string "Microsoft" in their name
 
-### BEISPIEL 2
+### EXAMPLE 2
 ```
 Get-PSFLicense -LicenseType Commercial -PoductType Library
 ```

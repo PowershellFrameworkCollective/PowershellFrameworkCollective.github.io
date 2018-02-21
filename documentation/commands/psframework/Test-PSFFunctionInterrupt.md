@@ -32,7 +32,7 @@ Get-Help about_psf_flowcontrol
 
 ## EXAMPLES
 
-### BEISPIEL 1
+### EXAMPLE 1
 ```
 if (Test-PSFFunctionInterrupt) { return }
 ```

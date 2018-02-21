@@ -23,7 +23,7 @@ This function allows easily registering a function's parameter for Tepp in the f
 
 ## EXAMPLES
 
-### BEISPIEL 1
+### EXAMPLE 1
 ```
 Register-PSFTeppArgumentCompleter -Command Get-Test -Parameter Example -Name MyModule.Example
 ```

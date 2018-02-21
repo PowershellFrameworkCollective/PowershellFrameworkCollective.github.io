@@ -25,14 +25,14 @@ Custom logging destinations can be created by implementing your own, custom prov
 
 ## EXAMPLES
 
-### BEISPIEL 1
+### EXAMPLE 1
 ```
 Get-PSFLoggingProvider
 ```
 
 Returns all logging provider
 
-### BEISPIEL 2
+### EXAMPLE 2
 ```
 Get-PSFLoggingProvider -Name filesystem
 ```

@@ -22,7 +22,7 @@ Returns false, if the task doesn't exist.
 
 ## EXAMPLES
 
-### BEISPIEL 1
+### EXAMPLE 1
 ```
 Test-PSFTaskEngineTask -Name 'mymodule.maintenance'
 ```

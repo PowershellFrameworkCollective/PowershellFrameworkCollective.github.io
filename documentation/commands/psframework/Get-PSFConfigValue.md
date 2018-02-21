@@ -22,14 +22,14 @@ It requires the full name (\<Module\>.\<Name\>) and is usually only called by fu
 
 ## EXAMPLES
 
-### BEISPIEL 1
+### EXAMPLE 1
 ```
 Get-PSFConfigValue -FullName 'System.MailServer'
 ```
 
 Returns the configured value that was assigned to the key 'System.MailServer'
 
-### BEISPIEL 2
+### EXAMPLE 2
 ```
 Get-PSFConfigValue -FullName 'Default.CoffeeMilk' -Fallback 0
 ```

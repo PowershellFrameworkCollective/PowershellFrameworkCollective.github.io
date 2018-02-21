@@ -32,7 +32,7 @@ If this function is called multiple times, targeting the same name, it will upda
 
 ## EXAMPLES
 
-### BEISPIEL 1
+### EXAMPLE 1
 ```
 Register-PSFRunspace -ScriptBlock $scriptBlock -Name 'mymodule.maintenance'
 ```
@@ -41,7 +41,7 @@ Registers the script defined in $scriptBlock under the name 'mymodule.maintenanc
 It does not start the runspace yet.
 If it already exists, it will overwrite the scriptblock without affecting the running script.
 
-### BEISPIEL 2
+### EXAMPLE 2
 ```
 Register-PSFRunspace -ScriptBlock $scriptBlock -Name 'mymodule.maintenance'
 ```

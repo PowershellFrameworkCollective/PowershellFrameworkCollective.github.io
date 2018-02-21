@@ -24,7 +24,7 @@ The license is automatically registered in the current process' license store.
 
 ## EXAMPLES
 
-### BEISPIEL 1
+### EXAMPLE 1
 ```
 New-PSFLicense -Product 'Awesome Test Product' -Manufacturer 'Awesome Inc.' -ProductVersion '1.0.1.0' -ProductType Application -Name FreeBSD -Version "3.0.0.0" -Date (Get-Date -Year 2016 -Month 11 -Day 28 -Hour 0 -Minute 0 -Second 0) -Text @"
 ```

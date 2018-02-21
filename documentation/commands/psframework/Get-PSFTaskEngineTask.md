@@ -21,14 +21,14 @@ Returns tasks registered for the task engine
 
 ## EXAMPLES
 
-### BEISPIEL 1
+### EXAMPLE 1
 ```
 Get-PSFTaskEngineTask
 ```
 
 Returns all tasks registered to the task engine
 
-### BEISPIEL 2
+### EXAMPLE 2
 ```
 Get-PSFTaskEngineTask -Name 'mymodule.*'
 ```

@@ -56,14 +56,14 @@ Complex scriptblocks may delay execution times when a matching object is passed.
 
 ## EXAMPLES
 
-### BEISPIEL 1
+### EXAMPLE 1
 ```
 Register-PSFMessageTransform -TargetType 'mymodule.category.classname' -ScriptBlock $ScriptBlock
 ```
 
 Whenever a target object of type 'mymodule.category.classname' is specified, invoke $ScriptBlock (with the object as sole argument) and store the result as target instead.
 
-### BEISPIEL 2
+### EXAMPLE 2
 ```
 Register-PSFMessageTransform -ExceptionType 'mymodule.category.exceptionname' -ScriptBlock $ScriptBlock
 ```
@@ -71,7 +71,7 @@ Register-PSFMessageTransform -ExceptionType 'mymodule.category.exceptionname' -S
 Whenever an exception or error record of type 'mymodule.category.classname' is specified, invoke $ScriptBlock (with the object as sole argument) and store the result as exception instead.
 If the full error record is specified, only the updated exception will be inserted
 
-### BEISPIEL 3
+### EXAMPLE 3
 ```
 Register-PSFMessageTransform -TargetTypeFilter 'mymodule.category.*' -ScriptBlock $ScriptBlock
 ```

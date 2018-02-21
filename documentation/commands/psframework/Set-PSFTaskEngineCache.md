@@ -24,7 +24,7 @@ This function should only be called tasks scheduled to execute within the task e
 
 ## EXAMPLES
 
-### BEISPIEL 1
+### EXAMPLE 1
 ```
 Set-PSFTaskEngineCache -Module 'mymodule' -Name 'maintenancetask' -Value $results
 ```

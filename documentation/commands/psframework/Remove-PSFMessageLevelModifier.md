@@ -25,14 +25,14 @@ They are used to emphasize or deemphasize messages, in order to help with debugg
 
 ## EXAMPLES
 
-### BEISPIEL 1
+### EXAMPLE 1
 ```
 Get-PSFMessageLevelModifier | Remove-PSFMessageLevelModifier
 ```
 
 Removes all message level modifiers, restoring everything to their default levels.
 
-### BEISPIEL 2
+### EXAMPLE 2
 ```
 Remove-PSFMessageLevelModifier -Name "mymodule.foo"
 ```

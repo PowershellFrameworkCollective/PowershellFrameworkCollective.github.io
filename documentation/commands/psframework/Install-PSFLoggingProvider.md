@@ -37,7 +37,7 @@ This module does not contain help/guidance on how to generate dynamic parameters
 
 ## EXAMPLES
 
-### BEISPIEL 1
+### EXAMPLE 1
 ```
 Install-PSFLoggingProvider -Name Eventlog
 ```

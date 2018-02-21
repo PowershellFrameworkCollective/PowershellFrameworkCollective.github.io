@@ -31,7 +31,7 @@ It also can be used to generate a registry template, which can then be used to c
 
 ## EXAMPLES
 
-### BEISPIEL 1
+### EXAMPLE 1
 ```
 Get-PSFConfig psframework.message.* | Register-PSFConfig
 ```
@@ -39,14 +39,14 @@ Get-PSFConfig psframework.message.* | Register-PSFConfig
 Retrieves all configuration items that that start with psframework.message.
 and registers them in registry for the current user.
 
-### BEISPIEL 2
+### EXAMPLE 2
 ```
 Register-PSFConfig -FullName "psframework.developer.mode.enable" -Scope SystemDefault
 ```
 
 Retrieves the configuration item "psframework.developer.mode.enable" and registers it in registry as the default setting for all users on this machine.
 
-### BEISPIEL 3
+### EXAMPLE 3
 ```
 Register-PSFConfig -Module MyModule -Scope SystemMandatory
 ```

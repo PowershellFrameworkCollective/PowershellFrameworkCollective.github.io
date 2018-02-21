@@ -13,7 +13,8 @@ Function that recognizes html-style tags to insert color into printed text.
 ## SYNTAX
 
 ```
-Write-PSFHostColor [[-String] <String[]>] [[-DefaultColor] <ConsoleColor>] [<CommonParameters>]
+Write-PSFHostColor [[-String] <String[]>] [[-DefaultColor] <ConsoleColor>] [-NoNewLine]
+ [[-Level] <MessageLevel>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -30,14 +31,14 @@ Bad colors will be ignored in favor of the default color.
 
 ## EXAMPLES
 
-### BEISPIEL 1
+### EXAMPLE 1
 ```
 bloody red</c> text! And this is <c="green">green stuff</c> for extra color'
 ```
 
 Will print the specified line in multiple colors
 
-### BEISPIEL 2
+### EXAMPLE 2
 ```
 bloody red</c> text! And this is <c="green">green stuff</c> for extra color'
 ```
@@ -50,7 +51,7 @@ $string1, $string2, $string3 | Write-HostColor -DefaultColor "Magenta"
 
 Will print all three lines, respecting the color-codes, but use the color "Magenta" as default color.
 
-### BEISPIEL 3
+### EXAMPLE 3
 ```
 $stringLong = @"
 ```
@@ -99,7 +100,43 @@ Accepted values: Black, DarkBlue, DarkGreen, DarkCyan, DarkRed, DarkMagenta, Dar
 
 Required: False
 Position: 2
-Default value: (Get-PSFConfigValue -Name "psframework.message.info.color")
+Default value: (Get-PSFConfigValue -FullName "psframework.message.info.color")
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -NoNewLine
+Specifies that the content displayed in the console does not end with a newline character.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Level
+By default, all messages to Write-PSFHostColor will be printed to host.
+By specifying a level, it will only print the text if that level is within the range visible to the user.
+
+Visibility is controlled by the following two configuration settings:
+  psframework.message.info.maximum
+  psframework.message.info.minimum
+
+```yaml
+Type: MessageLevel
+Parameter Sets: (All)
+Aliases:
+Accepted values: Critical, Important, Output, Host, Significant, VeryVerbose, Verbose, SomewhatVerbose, System, Debug, InternalComment, Warning
+
+Required: False
+Position: 3
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

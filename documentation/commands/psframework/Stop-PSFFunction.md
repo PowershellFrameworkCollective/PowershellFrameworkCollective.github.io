@@ -43,7 +43,7 @@ Get-Help about_psf_flowcontrol
 
 ## EXAMPLES
 
-### BEISPIEL 1
+### EXAMPLE 1
 ```
 Stop-PSFFunction -Message "Foo failed bar!" -EnableException $EnableException -ErrorRecord $_
 ```
@@ -56,7 +56,7 @@ Game over.
 - Write a nice warning about how Foo failed bar, then terminate the function.
 The return on the next line will then end the calling function.
 
-### BEISPIEL 2
+### EXAMPLE 2
 ```
 Stop-PSFFunction -Message "Foo failed bar!" -EnableException $EnableException -Category InvalidOperation -Target $foo -Continue
 ```

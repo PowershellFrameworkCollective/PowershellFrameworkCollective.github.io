@@ -23,7 +23,7 @@ Using Set-PSFTaskEngineCache, they can store the information somewhere where the
 
 ## EXAMPLES
 
-### BEISPIEL 1
+### EXAMPLE 1
 ```
 Get-PSFTaskEngineCache -Module 'mymodule' -Name 'maintenancetask'
 ```

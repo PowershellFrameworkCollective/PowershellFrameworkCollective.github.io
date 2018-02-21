@@ -35,7 +35,7 @@ Get-Help about_psf_message
 
 ## EXAMPLES
 
-### BEISPIEL 1
+### EXAMPLE 1
 ```
 Write-PSFMessage -Level Verbose -Message "Connecting to $computer"
 ```
@@ -43,7 +43,7 @@ Write-PSFMessage -Level Verbose -Message "Connecting to $computer"
 Writes the message "Connecting to $computer" to verbose.
 Will also log the message.
 
-### BEISPIEL 2
+### EXAMPLE 2
 ```
 Write-PSFMessage -Level Warning -Message "Failed to retrieve additional network adapter information from $computer"
 ```
@@ -51,7 +51,7 @@ Write-PSFMessage -Level Warning -Message "Failed to retrieve additional network 
 Writes the message "Failed to retrieve additional network adapter information from $computer" as a warning.
 Will also log the message.
 
-### BEISPIEL 3
+### EXAMPLE 3
 ```
 Write-PSFMessage -Level Verbose -Message "Connecting to $computer" -Target $computer
 ```
@@ -61,7 +61,7 @@ Includes the variable $computer in the message.
 This has no effect on the text shown but will be available for debugging purposes.
 Will also log the message.
 
-### BEISPIEL 4
+### EXAMPLE 4
 ```
 Write-PSFMessage -Level Host -Message "This command has been deprecated, use 'Get-NewExample' instead" -Once 'Get-Example'
 ```
@@ -70,7 +70,7 @@ Writes the message "This command has been deprecated, use 'Get-NewExample' inste
 This message will only be shown once per powershell process.
 Will also log the message.
 
-### BEISPIEL 5
+### EXAMPLE 5
 ```
 Write-PSFMessage -Level Warning -Message "Failed to retrieve additional network adapter information from $computer" -Target $computer -ErrorRecord $_
 ```

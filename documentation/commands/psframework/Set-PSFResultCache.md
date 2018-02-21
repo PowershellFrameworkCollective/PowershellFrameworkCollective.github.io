@@ -23,14 +23,14 @@ This function is designed for use in other functions, a user should never have c
 
 ## EXAMPLES
 
-### BEISPIEL 1
+### EXAMPLE 1
 ```
 Set-PSFResultCache -InputObject $Results -DisableCache $NoRes
 ```
 
 Stores the contents of $Results in the result cache, but does nothing if $NoRes is $true (the default Switch-name for disabling the result cache)
 
-### BEISPIEL 2
+### EXAMPLE 2
 ```
 Get-ChildItem $path | Get-Acl | Set-PSFResultCache -DisableCache $NoRes -PassThru
 ```

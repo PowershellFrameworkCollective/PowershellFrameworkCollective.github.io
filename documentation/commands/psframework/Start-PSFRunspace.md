@@ -24,7 +24,7 @@ Only by executing this function will it take effect.
 
 ## EXAMPLES
 
-### BEISPIEL 1
+### EXAMPLE 1
 ```
 Start-PSFRunspace -Name 'mymodule.maintenance'
 ```

@@ -23,14 +23,14 @@ Message level modifiers are created using New-PSFMessageLevelModifier and allow 
 
 ## EXAMPLES
 
-### BEISPIEL 1
+### EXAMPLE 1
 ```
 Get-PSFMessageLevelModifier
 ```
 
 Returns all message level filters
 
-### BEISPIEL 2
+### EXAMPLE 2
 ```
 Get-PSFmessageLevelModifier -Name "mymodule.*"
 ```

@@ -32,14 +32,14 @@ These can be used to provide dynamic configuration information outside the Power
 
 ## EXAMPLES
 
-### BEISPIEL 1
+### EXAMPLE 1
 ```
 Set-PSFConfig -FullName 'MyModule.User' -Value "Friedrich" -Description "The user under which the show must go on."
 ```
 
 Creates a configuration entry under the module "MyModule" named "User" with the value "Friedrich"
 
-### BEISPIEL 2
+### EXAMPLE 2
 ```
 Set-PSFConfig -Name 'mymodule.User' -Value "Friedrich" -Description "The user under which the show must go on." -Handler $scriptBlock -Initialize -Validation String
 ```
@@ -57,7 +57,7 @@ This is the default example for modules using the configuration system.
 Note: While the -Handler parameter is optional, it is important to add it at the initial initialize call, if you are planning to add it.
 Only then will the system validate previous settings (such as what a user might have placed in his user profile)
 
-### BEISPIEL 3
+### EXAMPLE 3
 ```
 Set-PSFConfig 'Company' 'ConfigLink' 'https://www.example.com/config.xml' -Hidden
 ```
@@ -65,7 +65,7 @@ Set-PSFConfig 'Company' 'ConfigLink' 'https://www.example.com/config.xml' -Hidde
 Creates a configuration entry named "ConfigLink" in the "Company" module with the value 'https://www.example.com/config.xml'.
 This entry is hidden from casual discovery using Get-PSFConfig.
 
-### BEISPIEL 4
+### EXAMPLE 4
 ```
 Set-PSFConfig 'Network.Firewall' '10.0.0.2' -Default
 ```

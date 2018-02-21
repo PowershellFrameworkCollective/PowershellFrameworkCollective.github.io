@@ -30,7 +30,7 @@ When planning to use such an object, keep in mind that it can easily change its 
 
 ## EXAMPLES
 
-### BEISPIEL 1
+### EXAMPLE 1
 ```
 Get-PSFDynamicContentObject -Name "Test"
 ```

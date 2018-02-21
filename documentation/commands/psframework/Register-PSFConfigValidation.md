@@ -30,7 +30,7 @@ The message contains a string that will be passed along to an exception in case 
 
 ## EXAMPLES
 
-### BEISPIEL 1
+### EXAMPLE 1
 ```
 Register-PSFConfigValidation -Name IntPositive -ScriptBlock $scriptblock
 ```

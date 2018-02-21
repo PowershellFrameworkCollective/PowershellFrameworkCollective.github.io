@@ -28,14 +28,14 @@ Can be used to search the existing configuration list.
 
 ## EXAMPLES
 
-### BEISPIEL 1
+### EXAMPLE 1
 ```
 Get-PSFConfig 'Mail.To'
 ```
 
 Retrieves the configuration element for the key "Mail.To"
 
-### BEISPIEL 2
+### EXAMPLE 2
 ```
 Get-PSFConfig -Force
 ```

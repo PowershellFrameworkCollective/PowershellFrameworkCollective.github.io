@@ -30,7 +30,7 @@ Set-PSFConfig -FullName PSFramework.Runspace.StopTimeout -Value 60
 
 ## EXAMPLES
 
-### BEISPIEL 1
+### EXAMPLE 1
 ```
 Stop-PSFRunspace -Name 'mymodule.maintenance'
 ```

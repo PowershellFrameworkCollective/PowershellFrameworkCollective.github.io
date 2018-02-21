@@ -25,7 +25,7 @@ Use this function to re-enable a task disabled by Disable-PSFTaskEngineTask.
 
 ## EXAMPLES
 
-### BEISPIEL 1
+### EXAMPLE 1
 ```
 Get-PSFTaskEngineTask -Name 'mymodule.maintenance' | Enable-PSFTaskEngineTask
 ```

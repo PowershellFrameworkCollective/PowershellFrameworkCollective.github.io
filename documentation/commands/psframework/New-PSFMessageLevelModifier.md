@@ -32,7 +32,7 @@ Adding too many level modifiers may impact performance, use with discretion.
 
 ## EXAMPLES
 
-### BEISPIEL 1
+### EXAMPLE 1
 ```
 New-PSFMessageLevelModifier -Name 'MyModule-Include' -Modifier -9 -IncludeModuleName MyModule
 ```

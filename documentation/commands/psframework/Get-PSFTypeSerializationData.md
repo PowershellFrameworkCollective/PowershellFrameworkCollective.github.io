@@ -13,8 +13,8 @@ Creates a type extension XML for serializing an object
 ## SYNTAX
 
 ```
-Get-PSFTypeSerializationData [[-InputObject] <Object[]>] [[-Mode] <String>] [[-Serializer] <String>]
- [[-Method] <String>] [<CommonParameters>]
+Get-PSFTypeSerializationData [[-InputObject] <Object[]>] [[-Mode] <String>] [-Fragment]
+ [[-Serializer] <String>] [[-Method] <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -33,7 +33,7 @@ In the default serializer, all types registered must:
 
 ## EXAMPLES
 
-### BEISPIEL 1
+### EXAMPLE 1
 ```
 Get-PSFTypeSerializationData -InputObject 'My.Custom.Type'
 ```
@@ -72,6 +72,22 @@ Aliases:
 Required: False
 Position: 2
 Default value: Grouped
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Fragment
+By setting this, the type XML is emitted without the outer XML shell, containing only the \<Type\> node(s).
+Use this if you want to add the output to existing type extension xml.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
