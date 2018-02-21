@@ -22,7 +22,7 @@ $commands = Get-Command -Module $moduleName -CommandType Function | Select-Objec
 Write-PSFMessage -Level Host -Message "  $($commands.Count) commands found"
 
 Write-PSFMessage -Level Host -Message "  Creating markdown help files"
-Remove-Item "$($commandReferenceBasePath)\$($moduleName)" -Recurse
+Remove-Item "$($commandReferenceBasePath)\$($moduleName)" -Recurse -ErrorAction Ignore
 $null = New-Item "$($commandReferenceBasePath)\$($moduleName)" -ItemType Directory
 $null = New-MarkdownHelp -Command $commands -OutputFolder "$($commandReferenceBasePath)\$($moduleName)"
 
@@ -48,7 +48,7 @@ $commands = Get-Command -Module $moduleName -CommandType Function | Select-Objec
 Write-PSFMessage -Level Host -Message "  $($commands.Count) commands found"
 
 Write-PSFMessage -Level Host -Message "  Creating markdown help files"
-Remove-Item "$($commandReferenceBasePath)\$($moduleName)" -Recurse
+Remove-Item "$($commandReferenceBasePath)\$($moduleName)" -Recurse -ErrorAction Ignore
 $null = New-Item "$($commandReferenceBasePath)\$($moduleName)" -ItemType Directory
 $null = New-MarkdownHelp -Command $commands -OutputFolder "$($commandReferenceBasePath)\$($moduleName)"
 
@@ -74,7 +74,7 @@ $commands = Get-Command -Module $moduleName -CommandType Function | Select-Objec
 Write-PSFMessage -Level Host -Message "  $($commands.Count) commands found"
 
 Write-PSFMessage -Level Host -Message "  Creating markdown help files"
-Remove-Item "$($commandReferenceBasePath)\$($moduleName)" -Recurse
+Remove-Item "$($commandReferenceBasePath)\$($moduleName)" -Recurse -ErrorAction Ignore
 $null = New-Item "$($commandReferenceBasePath)\$($moduleName)" -ItemType Directory
 $null = New-MarkdownHelp -Command $commands -OutputFolder "$($commandReferenceBasePath)\$($moduleName)"
 
@@ -95,36 +95,10 @@ Write-Host " - "
 Write-Host "###############################################################"
 Write-Host " - "
 
-branch = $env:BUILD_SOURCEBRANCHNAME
+$branch = $env:BUILD_SOURCEBRANCHNAME
 Write-PSFMessage -Level Host -Message "Applying documentation to repository"
 
 git add .
 git commit -m "VSTS Library Compile ***NO_CI***"
 #$errorMessage = git push "https://$env:SYSTEM_ACCESSTOKEN@github.com/sqlcollaborative/dbatools.git" head:$branch 2>&1
 #if ($LASTEXITCODE -gt 0) { throw $errorMessage }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Write-PSFMessage -Level Host -Message "Git: Adding changes"
-git add -A .
-Write-PSFMessage -Level Host -Message "Git: Creating Commit"
-git commit -m "VSTS PSFramework Command Reference Update ***NO_CI***"
-Write-PSFMessage -Level Host -Message "Git: Pushing changes"
-#$errorMessage = git push https://github.com/PowershellFrameworkCollective/PowershellFrameworkCollective.github.io.git master 2>&1
-$errorMessage = git push origin master 2>&1
-$errorMessage = $errorMessage -replace ([regex]::Escape("$($env:SYSTEM_ACCESSTOKEN)")), "***"
-Write-PSFMessage -Level Host -Message $errorMessage
-
-if ($LASTEXITCODE -gt 0) { throw $errorMessage }
