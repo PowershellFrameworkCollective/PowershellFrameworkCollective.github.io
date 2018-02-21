@@ -1,4 +1,4 @@
-﻿# PSFramework Command Reference
+# PSFramework Command Reference
 
  - [Clear-PSFResultCache](PSFramework/Clear-PSFResultCache.html)
  - [Disable-PSFTaskEngineTask](PSFramework/Disable-PSFTaskEngineTask.html)

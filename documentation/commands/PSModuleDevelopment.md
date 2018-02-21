@@ -1,4 +1,4 @@
-﻿# PSModuleDevelopment Command Reference
+# PSModuleDevelopment Command Reference
 
  - [Expand-PSMDTypeName](PSModuleDevelopment/Expand-PSMDTypeName.html)
  - [Find-PSMDFileContent](PSModuleDevelopment/Find-PSMDFileContent.html)

@@ -1,4 +1,4 @@
-﻿# PSUtil Command Reference
+# PSUtil Command Reference
 
  - [Add-PSUString](PSUtil/Add-PSUString.html)
  - [Convert-PSUObject](PSUtil/Convert-PSUObject.html)
