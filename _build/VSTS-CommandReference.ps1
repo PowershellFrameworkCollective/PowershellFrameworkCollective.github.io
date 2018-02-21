@@ -98,6 +98,8 @@ Write-Host " - "
 $branch = $env:BUILD_SOURCEBRANCHNAME
 Write-PSFMessage -Level Host -Message "Applying documentation to repository"
 
+git config user.name "FriedrichWeinmann"
+git config user.email "Friedrich.Weinmann@gmx.de"
 git add .
 git commit -m "VSTS Library Compile ***NO_CI***"
 $errorMessage = git push "https://$env:SYSTEM_ACCESSTOKEN@github.com/PowershellFrameworkCollective/PowershellFrameworkCollective.github.io.git" head:$branch 2>&1
