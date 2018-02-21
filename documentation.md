@@ -44,6 +44,6 @@ Not implemented yet!
 
 Finally, sometimes you just need to browser the list of all the technical details yourself. This list is fully available here in this section of the documentation and automatically updated with each release.
 
- - [PSFramework Command Reference](http://psframework.org/documentation/commands/psframework.html)
- - [PSUtil Command Reference](http://psframework.org/documentation/commands/psutil.html)
- - [PSModuleDevelopment Command Reference](http://psframework.org/documentation/commands/psmoduledevelopment.html)
+ - [PSFramework Command Reference](http://psframework.org/documentation/commands/PSFramework.html)
+ - [PSUtil Command Reference](http://psframework.org/documentation/commands/PSUtil.html)
+ - [PSModuleDevelopment Command Reference](http://psframework.org/documentation/commands/PSModuleDevelopment.html)
