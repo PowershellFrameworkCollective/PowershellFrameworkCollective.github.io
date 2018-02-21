@@ -30,7 +30,7 @@ Write-PSFMessage -Level Host -Message "  Creating index file"
 Set-Content -Path "$($commandReferenceBasePath)\$($moduleName).md" -Value @"
 # $moduleName Command Reference
 
-"@ -Encoding UTF8
+"@ -Encoding Ascii
 
 foreach ($command in $commands)
 {
@@ -56,7 +56,7 @@ Write-PSFMessage -Level Host -Message "  Creating index file"
 Set-Content -Path "$($commandReferenceBasePath)\$($moduleName).md" -Value @"
 # $moduleName Command Reference
 
-"@ -Encoding UTF8
+"@ -Encoding Ascii
 
 foreach ($command in $commands)
 {
@@ -82,7 +82,7 @@ Write-PSFMessage -Level Host -Message "  Creating index file"
 Set-Content -Path "$($commandReferenceBasePath)\$($moduleName).md" -Value @"
 # $moduleName Command Reference
 
-"@ -Encoding UTF8
+"@ -Encoding Ascii
 
 foreach ($command in $commands)
 {
