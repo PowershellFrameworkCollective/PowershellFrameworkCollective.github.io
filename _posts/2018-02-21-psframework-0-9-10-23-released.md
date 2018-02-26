@@ -25,9 +25,9 @@ This will purge all registered settings for the module `dbachecks`
 
 This command provides a simple way to wrap up an error report with comprehensive debugging information.
 
-1) The user encounters an issue in his console and support isn't immediately available
-2) The user runs `New-PSFSupportPackage` and sends the zip file that creates to the supporter.
-3) The person doing support can now at his leisure work with a rich set of debugging information, not necessarily needing to look at the life scenario.
+ 1. The user encounters an issue in his console and support isn't immediately available
+ 2. The user runs `New-PSFSupportPackage` and sends the zip file that creates to the supporter.
+ 3. The person doing support can now at his leisure work with a rich set of debugging information, not necessarily needing to look at the life scenario.
 
 A few examples of what is packaged and available to the supporter:
 
