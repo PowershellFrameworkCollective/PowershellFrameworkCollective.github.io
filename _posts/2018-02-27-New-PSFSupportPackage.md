@@ -86,7 +86,7 @@ Information on the computer's CPU
 
 # Integration and supplement
 
-PSFramework tries to support modules that contain their own debugging systems, by detecting their presence and if so will include their debugging data.
+PSFramework tries to support modules that contain their own debugging systems, by detecting their presence and if detected will include their debugging data.
 
 ## dbatools
 
