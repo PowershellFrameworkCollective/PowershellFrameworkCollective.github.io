@@ -5,59 +5,38 @@ online version:
 schema: 2.0.0
 ---
 
-# Format-PSUString
+# Set-PSUDrive
 
 ## SYNOPSIS
-Allows formatting objects into strings.
+Creates a new psdrive, and moves location to it.
 
 ## SYNTAX
 
 ```
-Format-PSUString [-InputObject <Object>] [-Format] <String> [-LotSize <Int32>] [<CommonParameters>]
+Set-PSUDrive [-Name] <Object> [[-Root] <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Allows formatting objects into strings.
-This is equivalent to the '-f' operator, but supports input from pipeline.
+Will create a PSDrive, by default in the current path.
+This allows swiftly reducing path length.
+Then it will immediately change location to the new drive.
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 ```
-1..5 | format "foo {0:D2}"
+set-as pr
 ```
 
-returns "foo 01" through "foo 05"
-
-### EXAMPLE 2
-```
-1..6 | format "foo {0:D3}-{1:D3}" -LotSize 2
-```
-
-returns "foo 001-002","foo 003-004","foo 005-006"
+Sets the current path as drive "pr" and sets it as the current location.
 
 ## PARAMETERS
 
-### -InputObject
-The object to format
+### -Name
+What to name the new PSDrive?
 
 ```yaml
 Type: Object
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Format
-The format to apply to the object
-
-```yaml
-Type: String
 Parameter Sets: (All)
 Aliases:
 
@@ -68,18 +47,18 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -LotSize
-Default: 1
-How many inputo bjects should be packed into the same format string.
+### -Root
+Default: .
+The root of the new drive.
 
 ```yaml
-Type: Int32
+Type: String
 Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: Named
-Default value: 1
+Position: 2
+Default value: .
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -92,8 +71,10 @@ For more information, see about_CommonParameters (http://go.microsoft.com/fwlink
 
 ## OUTPUTS
 
-### System.String
-
 ## NOTES
+Author: Donovan Brown
+Source: http://donovanbrown.com/post/Shorten-your-PowerShell-directory-path
+
+Thank you for sharing and granting permission to use this convenience :)
 
 ## RELATED LINKS

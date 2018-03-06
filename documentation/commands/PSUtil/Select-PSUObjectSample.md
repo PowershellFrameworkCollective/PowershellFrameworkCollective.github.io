@@ -70,6 +70,7 @@ Accept wildcard characters: False
 
 ### -Number
 How many objects to pick
+Use a negative number to pick the last X items instead.
 
 ```yaml
 Type: Int32
