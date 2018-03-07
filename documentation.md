@@ -14,14 +14,10 @@ In this section, there shall be guides to swiftly getting started with a given c
 
 ## Documents
 
-```
-Not implemented yet!
-```
-
 Complex tools need lots of guidance. This is where that guidance comes in, split in sections by module:
 
- - [PSFramework Documents](http://psframework.org/documentation/documents/psframework.html)
- - [PSUtil Documents](http://psframework.org/documentation/documents/psutil.html)
+ - [PSFramework Documents](http://psframework.org/documentation/documents/psframework.html) `Not yet Implemented`
+ - [PSUtil Documents](http://psframework.org/documentation/documents/psutil.html) `Not yet Implemented`
  - [PSModuleDevelopment Documents](http://psframework.org/documentation/documents/psmoduledevelopment.html)
 
 ## Blog Posts
