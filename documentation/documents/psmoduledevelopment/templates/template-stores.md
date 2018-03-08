@@ -23,7 +23,7 @@ By default, two stores exist:
 | default | "$env:APPDATA\WindowsPowerShell\PSModuleDevelopment\Templates" |
 | psmoduledevelopment | "<moduleroot>\internal\templates" |
 
-You can add more. And yes, as this scenario implies, modules can easily include their own stores with their own templates. (more details on that in the [Module included Templates](/module-include-templates.html) article)
+You can add more. And yes, as this scenario implies, modules can easily include their own stores with their own templates. (more details on that in the [Module included Templates](module-include-templates.html) article)
 
 ### How are stores stored
 

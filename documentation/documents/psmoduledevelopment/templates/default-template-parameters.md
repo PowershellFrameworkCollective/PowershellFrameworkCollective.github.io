@@ -12,7 +12,7 @@ When creating a file or project from a template, usually, the user is prompted f
 
 There is however a way to set default input for any parameter. By default, settings for 'author' and 'company' exist.
 
-All configuration settings that start with `psmoduledevelopment.template.parameterdefault.` contain default values. Let#s take a look:
+All configuration settings that start with `psmoduledevelopment.template.parameterdefault.` contain default values. Let's take a look:
 
 ```powershell
 Get-PSFConfig psmoduledevelopment.template.parameterdefault.*

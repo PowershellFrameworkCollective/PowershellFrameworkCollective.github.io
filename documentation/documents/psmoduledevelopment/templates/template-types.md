@@ -8,7 +8,7 @@ There are two kinds of templates: File & Project. BUt what's the difference?
 
 ## Description
 
-There is little technical difference, the main one being that only projects support a [Project Reference File](/project-reference-file.html).
+There is little technical difference, the main one being that only projects support a [Project Reference File](project-reference-file.html).
 
 If you use `New-PSMDTemplate` with the `-FilePath` parameter, you create a file template, if you use the `-ReferencePath` parameter, it will be a project.
 

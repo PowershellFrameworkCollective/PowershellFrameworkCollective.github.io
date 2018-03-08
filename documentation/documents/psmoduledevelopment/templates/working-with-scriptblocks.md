@@ -10,16 +10,16 @@ The templating system supports running scriptblocks at invocation time and inser
 
 There are two kinds of scriptblocks in the templating system:
 
- - Registered Scriptblocks: Those are defined in the [Project Reference File](/project-reference-file.html)
+ - Registered Scriptblocks: Those are defined in the [Project Reference File](project-reference-file.html)
  - Dynamic Scriptblock: Those are defined within the documents to be templated
 
 In the processing stage, both are processed in the same manner, registered scriptblocks however are easier to manage and read within the template.
 
-Since there is no [Project Reference File](/project-reference-file.html) in file templates, those can only utilize dynamic scriptblocks.
+Since there is no [Project Reference File](project-reference-file.html) in file templates, those can only utilize dynamic scriptblocks.
 
 ### Registered Scriptblock
 
-A registered Scriptblock is defined in the [Project Reference File](/project-reference-file.html) and referenced in any template file as desired.
+A registered Scriptblock is defined in the [Project Reference File](project-reference-file.html) and referenced in any template file as desired.
 
 Example Reference File:
 ```powershell

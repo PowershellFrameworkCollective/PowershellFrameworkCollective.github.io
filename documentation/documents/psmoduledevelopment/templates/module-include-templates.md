@@ -12,7 +12,7 @@ When a module requires a new file type, those might be convenient to ship as tem
 
 But those files now are in the module folder, how does the PSModuleDevelopment templating system know where to find them?
 
-This is where [Template Stores](/template-stores.html) come in:
+This is where [Template Stores](template-stores.html) come in:
 
 ```powershell
 Set-PSFConfig -Module 'PSModuleDevelopment' -Name 'Template.Store.MyModule' -Value "$PSModuleRoot\internal\templates" -Initialize -Validation "string" -Description "Path to the MyModule template store"

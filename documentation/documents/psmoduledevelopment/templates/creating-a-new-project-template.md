@@ -10,7 +10,7 @@ Describes the ins and outs of how to create a project template.
 
 ### Notes
 
-This article assumes you have read and understood the [post on creating a new file template](/creating-a-new-file-template.html).
+This article assumes you have read and understood the [post on creating a new file template](creating-a-new-file-template.html).
 
 ### What is a project?
 
@@ -37,7 +37,7 @@ All contents in the targeted reference folder are content, but not the folder it
 
 That sure is possible.
 
-Using a [Project Reference File](/project-reference-file.html) you can predefine all of the meta information and other helpful functionalities.
+Using a [Project Reference File](project-reference-file.html) you can predefine all of the meta information and other helpful functionalities.
 
 Don't worry, the guide should cover it all as needed and it's fairly simple to use.
 

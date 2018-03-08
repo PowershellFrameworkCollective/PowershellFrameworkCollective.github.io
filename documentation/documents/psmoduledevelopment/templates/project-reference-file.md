@@ -63,7 +63,7 @@ As you can see, it has several properties of some interest:
 | Author | The author of this template |
 | Description | Adds a description to the template |
 | Exclusions | List of files - relative to the root - that will be ignored when building the template. |
-| Scripts | List of registered, named scriptblocks. Those will be executed when invoking the template, their results will be available for insertion under their name. For more details on ScriptBlocks, see [The guide to working with scriptblocks](/working-with-scriptblocks.html) |
+| Scripts | List of registered, named scriptblocks. Those will be executed when invoking the template, their results will be available for insertion under their name. For more details on ScriptBlocks, see [The guide to working with scriptblocks](working-with-scriptblocks.html) |
 
 ### Creating a project template that contains a reference file
 

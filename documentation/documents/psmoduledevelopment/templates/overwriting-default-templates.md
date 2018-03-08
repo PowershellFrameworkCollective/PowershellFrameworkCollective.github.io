@@ -14,7 +14,7 @@ You can use `Get-PSMDTemplate` to get a list of all templates on your system. It
 
 Thus you can override an existing template by creating a template of your own, with the same name but with a higher version number.
 
-See the guide on [Template Versions](/template-versions.html) on how to handle versions.
+See the guide on [Template Versions](template-versions.html) on how to handle versions.
 
 ## Notes
 [Back to Templates](http://psframework.org/documentation/documents/psmoduledevelopment/templates.html)

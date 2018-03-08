@@ -39,7 +39,7 @@ Then a quick:
 ```powershell
 New-PSMDTemplate -FilePath ".\þnameþ.ps1" -TemplateName myFunction -Description "My first function template" -Author "<Insert your name here>" -Tags 'function','file'
 ```
-And you've got a template named `myFunction` in your default [template store](/template-store.html).
+And you've got a template named `myFunction` in your default [template store](template-store.html).
 
 Easy enough to use, let's dig into the details:
 
