@@ -1,3 +1,6 @@
+---
+title: PSModuleDevelopment Documentation
+---
 # PSModuleDevelopment Documentation
 
 The module `PSModuleDevelopment` is aimed at developers writing code, whether it is a full module, or individual scripts. It consists of several components - groups of commands and resources dealing with one issue or providing functionality of a given type.

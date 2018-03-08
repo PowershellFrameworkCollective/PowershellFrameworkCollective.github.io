@@ -5,9 +5,9 @@ title: Getting Started with Logging
 
 In order to create logs, all you need to do is update existing scripts and replace all instances of ...
 
- ```
- Write-Verbose
- ```
+```
+Write-Verbose
+```
 
 ... with ...
 
