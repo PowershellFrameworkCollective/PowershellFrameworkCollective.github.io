@@ -17,4 +17,4 @@ The Templates component provides a simple and fast way to generate templates and
 
 It helps the developer set up shop faster and includes mechanics to share templates, allowing consistent templates across the project.
 
-For more details on the templating system, see the [dedicated component page](/psmoduledevelopment/templates.html)
+For more details on the templating system, see the [dedicated component page](documentation/documents/psmoduledevelopment/templates.html)
