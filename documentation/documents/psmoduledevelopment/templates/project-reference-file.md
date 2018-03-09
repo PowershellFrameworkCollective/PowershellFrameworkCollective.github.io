@@ -4,7 +4,7 @@ title: Templates: The Project Reference File
 # Project Reference File
 ## Synopsis
 
-When iterating on a project, it cn be tiring to have to manually set the meta information each time.
+When iterating on a project, it can be tiring to have to manually set the meta information each time.
 
 With the Project Reference File, you can place a file in your working folder for your project template and have it automatically detect settings.
 

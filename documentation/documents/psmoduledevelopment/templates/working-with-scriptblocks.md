@@ -55,13 +55,13 @@ The beginning of a powershell module's psd1 file might thus look like this:
 @{
 	# Script module or binary module file associated with this manifest
 	ModuleToProcess = 'þnameþ.psm1'
-	
+
 	# Version number of this module.
 	ModuleVersion = '1.0.0.0'
-	
+
 	# ID used to uniquely identify this module
 	GUID = 'þ!guid!þ'
-	
+
 	# Author of this module
 	Author = 'þauthorþ'
 ```
@@ -80,18 +80,18 @@ A dynamic scriptblock is embedded as it is into the template files where needed.
 @{
 	# Script module or binary module file associated with this manifest
 	ModuleToProcess = 'þnameþ.psm1'
-	
+
 	# Version number of this module.
 	ModuleVersion = '1.0.0.0'
-	
+
 	# ID used to uniquely identify this module
 	GUID = 'þ{ [System.Guid]::NewGuid().ToString() }þ'
-	
+
 	# Author of this module
 	Author = 'þauthorþ'
 ```
 
-This scriptblock will be parsed out during template creation and replaced with an atuomatic name, the scriptblock assigned to the template file in a similar manner to a registered scriptblock.
+This scriptblock will be parsed out during template creation and replaced with an automatic name, the scriptblock assigned to the template file in a similar manner to a registered scriptblock.
 
 *Important note:*
 

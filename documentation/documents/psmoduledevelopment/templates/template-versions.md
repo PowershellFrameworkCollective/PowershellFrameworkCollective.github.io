@@ -16,19 +16,17 @@ There can only be one copy of a given template at a given version in a given sto
 
 ### Listing all versions of a template
 
-By default, `Get-PSMDTemplate` only shows the latest version found.
+By default, `Get-PSMDTemplate` only shows the latest version found.To instead list all versions of all templates use the -All switch.
 
 ```powershell
 Get-PSMDTEmplate -All
 ```
 
-will instead list all versions of all templates.
-
 ### Selecting by version
 
 Get-PSMDTemplate has two additional parameters that target version:
 
- - `-MinimumVersion` - Only templates with at least that version will be returned (the latest only unless also `-All` was specified)
+ - `-MinimumVersion` - Only templates with at least that version will be returned (the latest only unless `-All` was also specified)
  - `-RequiredVersion` - Only the specified version will be returned.
 
 ### Invoking a specific version of a template
@@ -48,7 +46,7 @@ It has a special parameter dealing with outdated templates: `-Deprecated`
 If this is specified, only templates that _are not_ of the latest version will be removed:
 
 ```powershell
-Remove-PSMDTemplate -TemplateName function -Deprecated`
+Remove-PSMDTemplate -TemplateName function -Deprecated
 ```
 
 ## Notes
