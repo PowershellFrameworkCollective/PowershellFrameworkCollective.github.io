@@ -18,20 +18,20 @@ function þnameþ
 {
 	[CmdletBinding()]
 	Param (
-	
+
 	)
-	
+
 	begin
 	{
-		
+
 	}
 	process
 	{
-	
+
 	}
 	end
 	{
-	
+
 	}
 }
 ```
@@ -57,7 +57,7 @@ Use descriptive names for the parameter, as that's all the info the user gets wh
 
 ### Where shall the template go?
 
-`New-PSMDTemplate` will be default write the new template to the default store on your session.
+`New-PSMDTemplate` will by default write the new template to the default store for your session.
 
 This is the path that is written in the `psmoduledevelopment.template.store.default` configuration setting.
 
@@ -67,7 +67,7 @@ Get-PSFConfig -FullName psmoduledevelopment.template.store.default
 
 You can specify any other store instead by using the `-OutStore` parameter.
 
-Instead of writing to a template store, you can also just pick the path to write to, using `-OutPath` (NOte: Point at folder, do _not_ specify filename in this path).
+Instead of writing to a template store, you can also just pick the path to write to, using `-OutPath` (Note: Point at the folder, do _not_ specify filename in this path).
 
 ```powershell
 # To other store

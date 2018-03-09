@@ -10,9 +10,9 @@ A 'Store' is a path where the templating system looks for templates.
 
 ### What are stores?
 
-Stores allow the templating system to avoid having the user deal with the grizzly details of where information is stored _unless he wants to_ . A store is a pointer at a path that should contain templates.
+Stores allow the templating system to avoid having the user deal with the grizzly details of where information is stored _unless they want to_ . A store is a pointer at a path that should contain templates.
 
-These stores a configured using the configuration system and are basically a name/path pair.
+These stores are configured using the configuration system and are basically a name/path pair.
 
 ### What stores exist by default?
 
