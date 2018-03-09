@@ -32,6 +32,10 @@ There are two quick start guides, covering:
 
 Together the two cover the two basic steps to using the template system.
 
+## Youtube Videos
+
+ - [Tutorial 1 - File Templates](https://youtu.be/8WkHaH20OEE)
+
 ## In depth guides
 
 Since this component has some complexities that need to be dealt with, some in-depth tutorials have been provided:
