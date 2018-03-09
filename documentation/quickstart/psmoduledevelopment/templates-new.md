@@ -42,7 +42,7 @@ This is all that it takes, you now can create files based on this template using
 
 # Additional information
 
- - The identifier (`þ`) can be typed on a keyboard by keeping the left `ALT` key pressed and typing `999` on the numpad, then releasing the button.
+ - The identifier (`þ`) can be typed on a keyboard by keeping the left `ALT` key pressed and typing `0254` on the numpad, then releasing the button.
  - You can use an arbitrary amount of parameters, simply by placing the name between two `þ` characters. Use only letters for names for best results. You will get prompted for each during template invocation.
  - You can use the `-Version` parameter to create a new version of your template, or the `-Force` parameter to overwrite an existing copy.
  - The template is stored in the default location (the default template store). The path can be seen (and changed) in the `psmoduledevelopment.template.store.default` configuration setting.
