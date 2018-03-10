@@ -50,3 +50,4 @@ Since this component has some complexities that need to be dealt with, some in-d
  - [Template Stores](templates/template-stores.html)
  - [Module included templates](templates/module-include-templates.html)
  - [Default template parameters](templates/default-template-parameters.html)
+ - [Configuration Options](templates/configuration-options.html)
