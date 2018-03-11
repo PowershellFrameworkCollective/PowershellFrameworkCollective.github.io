@@ -10,7 +10,7 @@ Describes the configuration options available to Template users
 
 Like many other components of the `PSFramework` project's modules, the template system depends on the configuration system.
 
-To detect all settings, run this.
+To detect all settings, run this:
 
 ```powershell
 Get-PSFConfig PSModuleDevelopment.template.*
@@ -35,18 +35,18 @@ psmoduledevelopment.template.store.psmoduledevelopment C:\Program Files\... Path
 Name:    psmoduledevelopment.template.binaryextensions
 Default: '.dll', '.exe', '.pdf', '.doc', '.docx', '.xls', '.xlsx'
 ```
-Files it knows not to try to parse. When creating templates, these files will be included as raw bytes, no parameter replacements will be performed.
+Files it knows not to try to parse. When creating templates, files with these extensions will be included as raw bytes, no parameter replacements will be performed.
 
-This configuration setting has only effect when _creating_ a template, not when generating files or projects from it (as at that point the decision how to process these files has already been made).
+This configuration setting has only effect when _creating_ a template, not when generating files or projects from it (as at that point the decision on how to process these files has already been made).
 
 ### Identifier
 ```
 Name:    psmoduledevelopment.template.identifier
 Default: þ
 ```
-The identifier is the character/string used by the template system to detect and insert variables / scriptblock.
+The identifier is the character/string used by the template system to detect and insert variables / scriptblocks.
 
-This configuration setting has only effect when _creating_ a template, not when generating files or projects from it (as at that point the decision how to process these files has already been made).
+This configuration setting has only effect when _creating_ a template, not when generating files or projects from it (as at that point the decision on how to process these files has already been made).
 
 The identifier can be a single character or a multi-character string. The identifier sequence may not occur in templated documents except as a way to identify variables and scriptblocks to insert into it.
 
