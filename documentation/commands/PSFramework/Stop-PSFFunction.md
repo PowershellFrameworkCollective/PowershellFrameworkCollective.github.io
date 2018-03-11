@@ -17,7 +17,7 @@ Function that interrupts a function.
 Stop-PSFFunction -Message <String> [-EnableException <Boolean>] [-Category <ErrorCategory>] [-Tag <String[]>]
  [-FunctionName <String>] [-ModuleName <String>] [-File <String>] [-Line <Int32>] [-Exception <Exception>]
  [-OverrideExceptionMessage] [-Target <Object>] [-Continue] [-SilentlyContinue] [-ContinueLabel <String>]
- [<CommonParameters>]
+ [-Depth <Int32>] [<CommonParameters>]
 ```
 
 ### Exception
@@ -25,7 +25,7 @@ Stop-PSFFunction -Message <String> [-EnableException <Boolean>] [-Category <Erro
 Stop-PSFFunction -Message <String> [-EnableException <Boolean>] [-Category <ErrorCategory>]
  [-ErrorRecord <ErrorRecord[]>] [-Tag <String[]>] [-FunctionName <String>] [-ModuleName <String>]
  [-File <String>] [-Line <Int32>] [-Exception <Exception>] [-OverrideExceptionMessage] [-Target <Object>]
- [-Continue] [-SilentlyContinue] [-ContinueLabel <String>] [<CommonParameters>]
+ [-Continue] [-SilentlyContinue] [-ContinueLabel <String>] [-Depth <Int32>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -314,6 +314,21 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Depth
+Internal use only.
+
+```yaml
+Type: Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: 2
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
