@@ -48,6 +48,7 @@ Since this component has some complexities that need to be dealt with, some in-d
  - [Overwriting default templates](templates/overwriting-default-templates.html)
  - [Working with ScriptBlocks](templates/working-with-scriptblocks.html)
  - [Template Stores](templates/template-stores.html)
+ - [Deploying Template Stores per Group Policy](templates/deploying-template-stores-per-gpo.html)
  - [Module included templates](templates/module-include-templates.html)
  - [Default template parameters](templates/default-template-parameters.html)
  - [Configuration Options](templates/configuration-options.html)
