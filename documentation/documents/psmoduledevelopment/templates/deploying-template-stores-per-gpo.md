@@ -8,7 +8,7 @@ It is possible to make templates available via group policy
 
 ## Description
 
-When trying to share templates across a team, it might be convenient, if everybody had automatic access without having to do anything.
+When trying to share templates across a team, it might be convenient, if everybody had automatic access to those templates without having to do anything.
 
 With the PSModuleDevelopment's Template system, this is actually possible to do, using Group Policy (or DSC, or SCCM).
 
