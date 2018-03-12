@@ -40,15 +40,20 @@ Together the two cover the two basic steps to using the template system.
 
 Since this component has some complexities that need to be dealt with, some in-depth tutorials have been provided:
 
+### Working with templates
  - [Template Types](templates/template-types.html)
  - [Creating a new file template](templates/creating-a-new-file-template.html)
  - [Creating a new project template](templates/creating-a-new-project-template.html)
  - The [Project Reference File](templates/project-reference-file.html)
+ - [Working with ScriptBlocks](templates/working-with-scriptblocks.html)
+ 
+### Managing Templates
  - [Template Versions](templates/template-versions.html)
  - [Overwriting default templates](templates/overwriting-default-templates.html)
- - [Working with ScriptBlocks](templates/working-with-scriptblocks.html)
  - [Template Stores](templates/template-stores.html)
  - [Deploying Template Stores per Group Policy](templates/deploying-template-stores-per-gpo.html)
  - [Module included templates](templates/module-include-templates.html)
+
+### Miscellaneous
  - [Default template parameters](templates/default-template-parameters.html)
  - [Configuration Options](templates/configuration-options.html)
