@@ -1,7 +1,7 @@
 ---
 title: Templates: Configuration Options
 ---
-# Creating a new file template
+# Configuration Options for the Template System
 ## Synopsis
 
 Describes the configuration options available to Template users
