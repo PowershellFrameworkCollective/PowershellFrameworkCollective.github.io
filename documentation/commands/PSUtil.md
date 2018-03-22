@@ -18,3 +18,4 @@
  - [Set-PSUShell](PSUtil/Set-PSUShell.html)
  - [Set-PSUString](PSUtil/Set-PSUString.html)
  - [Split-PSUString](PSUtil/Split-PSUString.html)
+ - [Start-PSUTimer](PSUtil/Start-PSUTimer.html)
