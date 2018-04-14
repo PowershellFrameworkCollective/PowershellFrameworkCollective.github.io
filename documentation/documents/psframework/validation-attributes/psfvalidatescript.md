@@ -19,8 +19,8 @@ Note: Validation attributes will be executed _after_ type coercion. So expect to
 [CmdletBinding()]
 param (
     [PSFValidateScript({ Test-Path $_ })]
-	[string]
-	$Path
+    [string]
+    $Path
 )
 ```
 This will validate the input object as an existing path.
@@ -31,8 +31,8 @@ The error message will expect the user to understand the scriptblock.
 [CmdletBinding()]
 param (
     [PSFValidateScript({ Test-Path $_ }, ErrorMessage = "Error procesing {0} - the path must exist")]
-	[string]
-	$Path
+    [string]
+    $Path
 )
 ```
 This will validate the input object as an existing path.

@@ -17,8 +17,8 @@ It supports specifying regex options and custom error messages.
 [CmdletBinding()]
 param (
     [PSFValidatePattern("^\w+$")]
-	[string]
-	$Name
+    [string]
+    $Name
 )
 ```
 This will compare the input text against the pattern `^\w+$` (which is true when the input is solely composed of letters and numbers of any kind, but not whitespace or special characters).
@@ -29,8 +29,8 @@ The error message will expect the user to understand the pattern.
 [CmdletBinding()]
 param (
     [PSFValidatePattern("^\w+$", ErrorMessage = "Error procesing {0} - input must be a single word")]
-	[string]
-	$Name
+    [string]
+    $Name
 )
 ```
 This will compare the input text against the pattern `^\w+$` (which is true when the input is solely composed of letters and numbers of any kind, but not whitespace or special characters).
@@ -41,8 +41,8 @@ The error message will tell the user that it accepts only a single word and repo
 [CmdletBinding()]
 param (
     [PSFValidatePattern("^[A-Z]+$", ErrorMessage = "Error procesing {0} - input must only consist of the default 26 letters (A-Z), uppercase only", Options = "None")]
-	[string]
-	$Name
+    [string]
+    $Name
 )
 ```
 This will compare the input text against the pattern `^[A-Z]+$` with case sensitive matching (which is true when the input is solely composed of the 26 common English alphabet letters, all uppercase).
