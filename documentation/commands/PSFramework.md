@@ -37,6 +37,7 @@
  - [Set-PSFLoggingProvider](PSFramework/Set-PSFLoggingProvider.html)
  - [Set-PSFResultCache](PSFramework/Set-PSFResultCache.html)
  - [Set-PSFTaskEngineCache](PSFramework/Set-PSFTaskEngineCache.html)
+ - [Set-PSFTypeAlias](PSFramework/Set-PSFTypeAlias.html)
  - [Start-PSFRunspace](PSFramework/Start-PSFRunspace.html)
  - [Stop-PSFFunction](PSFramework/Stop-PSFFunction.html)
  - [Stop-PSFRunspace](PSFramework/Stop-PSFRunspace.html)
@@ -46,4 +47,4 @@
  - [Test-PSFTaskEngineTask](PSFramework/Test-PSFTaskEngineTask.html)
  - [Unregister-PSFConfig](PSFramework/Unregister-PSFConfig.html)
  - [Write-PSFHostColor](PSFramework/Write-PSFHostColor.html)
- - [Write-PSFMessage](PSFramework/Write-PSFMessage.html)
+ - [Write-PSFMessageProxy](PSFramework/Write-PSFMessageProxy.html)
