@@ -18,15 +18,15 @@ Export-PSFConfig [-FullName] <String> [-OutPath] <String> [-SkipUnchanged] [-Ena
  [<CommonParameters>]
 ```
 
-### Config
-```
-Export-PSFConfig [-Config] <Config[]> [-OutPath] <String> [-SkipUnchanged] [-EnableException]
- [<CommonParameters>]
-```
-
 ### Module
 ```
 Export-PSFConfig [-Module] <String> [[-Name] <String>] [-OutPath] <String> [-SkipUnchanged] [-EnableException]
+ [<CommonParameters>]
+```
+
+### Config
+```
+Export-PSFConfig [-Config] <Config[]> [-OutPath] <String> [-SkipUnchanged] [-EnableException]
  [<CommonParameters>]
 ```
 
@@ -50,21 +50,6 @@ Export-PSFConfig -Module MyModule -OutPath '~/export.json' -SkipUnchanged
 Exports all settings of the module 'MyModule' that are no longer the original default values to json.
 
 ## PARAMETERS
-
-### -Config
-The configuration object(s) to export.
-
-```yaml
-Type: Config[]
-Parameter Sets: Config
-Aliases:
-
-Required: True
-Position: 1
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
 
 ### -FullName
 Select the configuration objects to export by filtering by their full name.
@@ -108,6 +93,22 @@ Required: False
 Position: 2
 Default value: *
 Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Config
+The configuration object(s) to export.
+Returned by Get-PSFConfig.
+
+```yaml
+Type: Config[]
+Parameter Sets: Config
+Aliases:
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
