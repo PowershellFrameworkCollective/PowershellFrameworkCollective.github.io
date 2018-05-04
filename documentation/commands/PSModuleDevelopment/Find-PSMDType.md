@@ -14,7 +14,7 @@ Searches assemblies for types.
 
 ```
 Find-PSMDType [[-Name] <String>] [[-FullName] <String>] [[-Assembly] <Assembly[]>] [-Public] [-Enum]
- [[-Implements] <String>] [[-InheritsFrom] <String>] [<CommonParameters>]
+ [[-Implements] <String>] [[-InheritsFrom] <String>] [[-Attribute] <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -149,6 +149,22 @@ Aliases:
 
 Required: False
 Position: 5
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Attribute
+The type must have this attribute assigned.
+Accepts wildcards.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 6
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
