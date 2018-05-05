@@ -15,15 +15,17 @@ Generates a format XML for the input type.
 ### default (Default)
 ```
 New-PSMDFormatTableDefinition -InputObject <Object> [-IncludeProperty <String[]>] [-ExcludeProperty <String[]>]
- [-DocumentName <String>] [-SortColumns] [-ColumnOrder <String[]>] [-ColumnOrderHash <Hashtable[]>]
+ [-IncludePropertyAttribute <String>] [-ExcludePropertyAttribute <String>] [-DocumentName <String>]
+ [-SortColumns] [-ColumnOrder <String[]>] [-ColumnOrderHash <Hashtable[]>]
  [-ColumnTransformations <ColumnTransformation[]>] [<CommonParameters>]
 ```
 
 ### fragment
 ```
 New-PSMDFormatTableDefinition -InputObject <Object> [-IncludeProperty <String[]>] [-ExcludeProperty <String[]>]
- [-Fragment] [-SortColumns] [-ColumnOrder <String[]>] [-ColumnOrderHash <Hashtable[]>]
- [-ColumnTransformations <ColumnTransformation[]>] [<CommonParameters>]
+ [-IncludePropertyAttribute <String>] [-ExcludePropertyAttribute <String>] [-Fragment] [-SortColumns]
+ [-ColumnOrder <String[]>] [-ColumnOrderHash <Hashtable[]>] [-ColumnTransformations <ColumnTransformation[]>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -93,6 +95,36 @@ Only properties not in this list will be included.
 
 ```yaml
 Type: String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -IncludePropertyAttribute
+Only properties that have the specified attribute will be included.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ExcludePropertyAttribute
+Only properties that do NOT have the specified attribute will be included.
+
+```yaml
+Type: String
 Parameter Sets: (All)
 Aliases:
 
