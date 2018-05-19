@@ -18,7 +18,7 @@ $moduleName = "PSFramework"
 $excludedCommands = @("New-PSFTeppCompletionResult")
 Write-PSFMessage -Level Host -Message "Processing $moduleName"
 Write-PSFMessage -Level Host -Message "  Creating list of commands to process"
-$commands = Get-Command -Module $moduleName -CommandType Function | Select-Object -ExpandProperty Name | Where-Object { $_ -notin $excludedCommands } | Sort-Object
+$commands = Get-Command -Module $moduleName -CommandType Function, Cmdlet | Select-Object -ExpandProperty Name | Where-Object { $_ -notin $excludedCommands } | Sort-Object
 Write-PSFMessage -Level Host -Message "  $($commands.Count) commands found"
 
 Write-PSFMessage -Level Host -Message "  Creating markdown help files"
@@ -44,7 +44,7 @@ $moduleName = "PSModuleDevelopment"
 $excludedCommands = @()
 Write-PSFMessage -Level Host -Message "Processing $moduleName"
 Write-PSFMessage -Level Host -Message "  Creating list of commands to process"
-$commands = Get-Command -Module $moduleName -CommandType Function | Select-Object -ExpandProperty Name | Where-Object { $_ -notin $excludedCommands } | Sort-Object
+$commands = Get-Command -Module $moduleName -CommandType Function, Cmdlet | Select-Object -ExpandProperty Name | Where-Object { $_ -notin $excludedCommands } | Sort-Object
 Write-PSFMessage -Level Host -Message "  $($commands.Count) commands found"
 
 Write-PSFMessage -Level Host -Message "  Creating markdown help files"
@@ -70,7 +70,7 @@ $moduleName = "PSUtil"
 $excludedCommands = @()
 Write-PSFMessage -Level Host -Message "Processing $moduleName"
 Write-PSFMessage -Level Host -Message "  Creating list of commands to process"
-$commands = Get-Command -Module $moduleName -CommandType Function | Select-Object -ExpandProperty Name | Where-Object { $_ -notin $excludedCommands } | Sort-Object
+$commands = Get-Command -Module $moduleName -CommandType Function, Cmdlet | Select-Object -ExpandProperty Name | Where-Object { $_ -notin $excludedCommands } | Sort-Object
 Write-PSFMessage -Level Host -Message "  $($commands.Count) commands found"
 
 Write-PSFMessage -Level Host -Message "  Creating markdown help files"
