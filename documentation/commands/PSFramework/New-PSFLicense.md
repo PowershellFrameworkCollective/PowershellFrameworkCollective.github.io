@@ -15,7 +15,8 @@ Creates a new license object and registers it
 ```
 New-PSFLicense [-Product] <String> [[-Manufacturer] <String>] [[-ProductVersion] <Version>]
  [-ProductType] <ProductType> [[-Name] <String>] [[-Version] <Version>] [[-Date] <DateTime>]
- [[-Type] <LicenseType>] [-Text] <String> [-WhatIf] [-Confirm] [<CommonParameters>]
+ [[-Type] <LicenseType>] [-Text] <String> [[-Description] <String>] [[-Parent] <License>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -200,6 +201,37 @@ Aliases:
 
 Required: True
 Position: 9
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Description
+A description of the content.
+Useful when describing how some license is used within your own product.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 10
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Parent
+The license of the product within which the product of this license is used.
+
+```yaml
+Type: License
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 11
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

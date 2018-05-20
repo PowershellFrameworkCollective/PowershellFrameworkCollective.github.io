@@ -30,6 +30,12 @@ Export-PSFConfig [-Config] <Config[]> [-OutPath] <String> [-SkipUnchanged] [-Ena
  [<CommonParameters>]
 ```
 
+### ModuleName
+```
+Export-PSFConfig -ModuleName <String> [-ModuleVersion <Int32>] [-Scope <ConfigScope>] [-SkipUnchanged]
+ [-EnableException] [<CommonParameters>]
+```
+
 ## DESCRIPTION
 Exports configuration items to a Json file.
 
@@ -112,17 +118,66 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
+### -ModuleName
+Exports all configuration pertinent to a module to a predefined path.
+Exported configuration items include all settings marked as 'ModuleExport' that have been changed from the default value.
+
+```yaml
+Type: String
+Parameter Sets: ModuleName
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ModuleVersion
+The configuration version of the module-settings to write.
+
+```yaml
+Type: Int32
+Parameter Sets: ModuleName
+Aliases:
+
+Required: False
+Position: Named
+Default value: 1
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Scope
+Which predefined path to write module specific settings to.
+Only file scopes are considered.
+By default it writes to the suer profile.
+
+```yaml
+Type: ConfigScope
+Parameter Sets: ModuleName
+Aliases:
+Accepted values: UserDefault, UserMandatory, SystemDefault, SystemMandatory, FileUserLocal, FileUserShared, FileSystem
+
+Required: False
+Position: Named
+Default value: FileUserShared
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -OutPath
 The path (filename included) to export to.
 Will fail if the folder does not exist, will overwrite the file if it exists.
 
 ```yaml
 Type: String
-Parameter Sets: (All)
+Parameter Sets: FullName, Module, Config
 Aliases:
 
 Required: True
-Position: 3
+Position: 2
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

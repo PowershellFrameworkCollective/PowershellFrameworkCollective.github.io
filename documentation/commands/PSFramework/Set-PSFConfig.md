@@ -1,5 +1,5 @@
 ---
-external help file: PSFramework-help.xml
+external help file: PSFramework.dll-Help.xml
 Module Name: PSFramework
 online version:
 schema: 2.0.0
@@ -14,16 +14,24 @@ Sets configuration entries.
 
 ### FullName (Default)
 ```
-Set-PSFConfig [-FullName] <String> [[-Value] <Object>] [-Description <String>] [-Validation <String>]
- [-Handler <ScriptBlock>] [-Hidden] [-Default] [-Initialize] [-DisableValidation] [-DisableHandler]
- [-EnableException] [<CommonParameters>]
+Set-PSFConfig -FullName <String> [-Value <Object>] [-Description <String>] [-Validation <String>]
+ [-Handler <ScriptBlock>] [-Hidden] [-Default] [-Initialize] [-SimpleExport] [-ModuleExport]
+ [-DisableValidation] [-DisableHandler] [-PassThru] [-EnableException] [<CommonParameters>]
+```
+
+### Persisted
+```
+Set-PSFConfig -FullName <String> -PersistedValue <String> [-PersistedType <ConfigurationValueType>]
+ [-Description <String>] [-Validation <String>] [-Handler <ScriptBlock>] [-Hidden] [-Default] [-Initialize]
+ [-SimpleExport] [-ModuleExport] [-DisableValidation] [-DisableHandler] [-PassThru] [-EnableException]
+ [<CommonParameters>]
 ```
 
 ### Module
 ```
-Set-PSFConfig [-Name] <String> [[-Module] <String>] [[-Value] <Object>] [-Description <String>]
- [-Validation <String>] [-Handler <ScriptBlock>] [-Hidden] [-Default] [-Initialize] [-DisableValidation]
- [-DisableHandler] [-EnableException] [<CommonParameters>]
+Set-PSFConfig [-Module <String>] -Name <String> [-Value <Object>] [-Description <String>]
+ [-Validation <String>] [-Handler <ScriptBlock>] [-Hidden] [-Default] [-Initialize] [-SimpleExport]
+ [-ModuleExport] [-DisableValidation] [-DisableHandler] [-PassThru] [-EnableException] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -32,16 +40,16 @@ These can be used to provide dynamic configuration information outside the Power
 
 ## EXAMPLES
 
-### EXAMPLE 1
+### Example 1: Simple
 ```
-Set-PSFConfig -FullName 'MyModule.User' -Value "Friedrich" -Description "The user under which the show must go on."
+C:\PS> Set-PSFConfig -FullName 'MyModule.User' -Value "Friedrich"
 ```
 
-Creates a configuration entry under the module "MyModule" named "User" with the value "Friedrich"
+Creates or updates a configuration entry under the module "MyModule" named "User" with the value "Friedrich"
 
-### EXAMPLE 2
+### Example 2: Module Definition
 ```
-Set-PSFConfig -Name 'mymodule.User' -Value "Friedrich" -Description "The user under which the show must go on." -Handler $scriptBlock -Initialize -Validation String
+C:\PS> Set-PSFConfig -Name 'mymodule.User' -Value "Friedrich" -Description "The user under which the show must go on." -Handler $scriptBlock -Initialize -Validation String
 ```
 
 Creates a configuration entry ...
@@ -57,17 +65,17 @@ This is the default example for modules using the configuration system.
 Note: While the -Handler parameter is optional, it is important to add it at the initial initialize call, if you are planning to add it.
 Only then will the system validate previous settings (such as what a user might have placed in his user profile)
 
-### EXAMPLE 3
+### Example 3: Hiding things
 ```
-Set-PSFConfig 'Company' 'ConfigLink' 'https://www.example.com/config.xml' -Hidden
+C:\PS> Set-PSFConfig 'Company' 'ConfigLink' 'https://www.example.com/config.xml' -Hidden
 ```
 
 Creates a configuration entry named "ConfigLink" in the "Company" module with the value 'https://www.example.com/config.xml'.
 This entry is hidden from casual discovery using Get-PSFConfig.
 
-### EXAMPLE 4
+### Example 4: Default Settings
 ```
-Set-PSFConfig 'Network.Firewall' '10.0.0.2' -Default
+C:\PS> Set-PSFConfig -FullName 'Network.Firewall' -Value '10.0.0.2' -Default
 ```
 
 Creates a configuration entry named "Firewall" in the "Network" module with the value '10.0.0.2'
@@ -83,11 +91,11 @@ The name can have any number of sub-segments, in order to better group configura
 
 ```yaml
 Type: String
-Parameter Sets: FullName
+Parameter Sets: FullName, Persisted
 Aliases:
 
 Required: True
-Position: 1
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -109,7 +117,7 @@ Parameter Sets: Module
 Aliases:
 
 Required: True
-Position: 2
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -125,7 +133,7 @@ Parameter Sets: Module
 Aliases:
 
 Required: False
-Position: 1
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -136,11 +144,11 @@ The value to assign to the named configuration element.
 
 ```yaml
 Type: Object
-Parameter Sets: (All)
+Parameter Sets: FullName, Module
 Aliases:
 
 Required: False
-Position: 2
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -207,7 +215,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -224,7 +232,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -242,7 +250,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -258,7 +266,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -276,7 +284,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -292,7 +300,86 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: False
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PersistedValue
+In most circumstances an internal parameter.
+Applies the serialized value to a setting.
+Used for restoring data from configuration files that should only be deserialized when the module consuming it is already imported.
+
+```yaml
+Type: String
+Parameter Sets: Persisted
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PersistedType
+In most circumstances an internal parameter.
+Paired with PersistedValue, used to specify the data type of the serialized object set in its serialized state.
+
+```yaml
+Type: ConfigurationValueType
+Parameter Sets: Persisted
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SimpleExport
+Enabling this will cause the module to use friendly json notation on export to file.
+This may result in loss of data precision, but makes it easier to edit settings in file.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ModuleExport
+Using 'Export-PSFConfig -ModuleName \<ModuleName\>' settings flagged with this switch will be exported to a default path if they have been changed from the initial default value.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PassThru
+Return the changed configuration setting object.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -308,3 +395,6 @@ For more information, see about_CommonParameters (http://go.microsoft.com/fwlink
 ## NOTES
 
 ## RELATED LINKS
+
+[Online Documentation]()
+

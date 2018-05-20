@@ -12,9 +12,16 @@ Imports a json configuration file into the configuration system.
 
 ## SYNTAX
 
+### Path (Default)
 ```
-Import-PSFConfig [-Path] <String[]> [[-IncludeFilter] <String[]>] [[-ExcludeFilter] <String[]>] [-Peek]
+Import-PSFConfig -Path <String[]> [-IncludeFilter <String[]>] [-ExcludeFilter <String[]>] [-Peek]
  [-EnableException] [<CommonParameters>]
+```
+
+### ModuleName
+```
+Import-PSFConfig -ModuleName <String> [-ModuleVersion <Int32>] [-Scope <ConfigScope>] [-EnableException]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -29,6 +36,13 @@ Import-PSFConfig -Path '.\config.json'
 
 Imports the configuration stored in '.\config.json'
 
+### EXAMPLE 2
+```
+Import-PSFConfig -ModuleName mymodule
+```
+
+Imports all the module specific settings that have been persisted in any of the default file system paths.
+
 ## PARAMETERS
 
 ### -Path
@@ -36,13 +50,61 @@ The path to the json file to import.
 
 ```yaml
 Type: String[]
-Parameter Sets: (All)
+Parameter Sets: Path
 Aliases:
 
 Required: True
-Position: 1
+Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -ModuleName
+Import configuration items specific to a module from the default configuration paths.
+
+```yaml
+Type: String
+Parameter Sets: ModuleName
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ModuleVersion
+The configuration version of the module-settings to load.
+
+```yaml
+Type: Int32
+Parameter Sets: ModuleName
+Aliases:
+
+Required: False
+Position: Named
+Default value: 1
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Scope
+Where to import the module specific configuration items form.
+Only file-based scopes are supported for this.
+By default, all locations are queried, with user settings beating system settings.
+
+```yaml
+Type: ConfigScope
+Parameter Sets: ModuleName
+Aliases:
+Accepted values: UserDefault, UserMandatory, SystemDefault, SystemMandatory, FileUserLocal, FileUserShared, FileSystem
+
+Required: False
+Position: Named
+Default value: FileUserLocal, FileUserShared, FileSystem
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -51,11 +113,11 @@ If specified, only elements with names that are similar (-like) to names in this
 
 ```yaml
 Type: String[]
-Parameter Sets: (All)
+Parameter Sets: Path
 Aliases:
 
 Required: False
-Position: 2
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -66,11 +128,11 @@ Elements that are similar (-like) to names in this list will not be imported.
 
 ```yaml
 Type: String[]
-Parameter Sets: (All)
+Parameter Sets: Path
 Aliases:
 
 Required: False
-Position: 3
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -81,7 +143,7 @@ Rather than applying the setting, return the configuration items that would have
 
 ```yaml
 Type: SwitchParameter
-Parameter Sets: (All)
+Parameter Sets: Path
 Aliases:
 
 Required: False

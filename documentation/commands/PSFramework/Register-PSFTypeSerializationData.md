@@ -61,7 +61,7 @@ Aliases:
 
 Required: False
 Position: 2
-Default value: (Get-PSFConfigValue -FullName 'PSFramework.Serialization.WorkingDirectory' -Fallback "$env:APPDATA\WindowsPowerShell\PSFramework\TypeData")
+Default value: (Get-PSFConfigValue -FullName 'PSFramework.Serialization.WorkingDirectory' -Fallback $script:path_typedata)
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

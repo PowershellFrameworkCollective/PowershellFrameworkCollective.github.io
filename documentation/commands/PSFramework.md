@@ -16,6 +16,7 @@
  - [Get-PSFTaskEngineCache](PSFramework/Get-PSFTaskEngineCache.html)
  - [Get-PSFTaskEngineTask](PSFramework/Get-PSFTaskEngineTask.html)
  - [Get-PSFTypeSerializationData](PSFramework/Get-PSFTypeSerializationData.html)
+ - [Import-PSFCmdlet](PSFramework/Import-PSFCmdlet.html)
  - [Import-PSFConfig](PSFramework/Import-PSFConfig.html)
  - [Install-PSFLoggingProvider](PSFramework/Install-PSFLoggingProvider.html)
  - [New-PSFLicense](PSFramework/New-PSFLicense.html)
@@ -49,4 +50,5 @@
  - [Test-PSFTaskEngineTask](PSFramework/Test-PSFTaskEngineTask.html)
  - [Unregister-PSFConfig](PSFramework/Unregister-PSFConfig.html)
  - [Write-PSFHostColor](PSFramework/Write-PSFHostColor.html)
+ - [Write-PSFMessage](PSFramework/Write-PSFMessage.html)
  - [Write-PSFMessageProxy](PSFramework/Write-PSFMessageProxy.html)
