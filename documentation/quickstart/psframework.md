@@ -4,4 +4,5 @@ The PSFramework Module is a suite of complex tools that provide the core functio
 
  - Configuration: [Getting Started with Configuration](psframework/configuration.html)
  - Logging: [Getting Started with Logging](psframework/logging.html)
+ - Parameter Classes: [Getting Started with Parameter Classes](psframework/parameter-classes.html)
  - Tab Completion: [Getting Started with Tab Completion](psframework/tabcompletion.html)
