@@ -1,6 +1,9 @@
 # PSFramework Quick Start Guides
 
-The PSFramework Module is a suite of complex tools that provide the core functionality for this project and for its user. Its functionalities are split into many separate groups, here are quick start guides that are supposed to give you an easy entry into each group.
+The PSFramework Module is a framework module that offers tools to modules and scripts.
+In many cases, we build helping infrastructure for our modules in as minimal a way as we can - after all, it's not what gives our module the core benefit.
+The PSFramework fills that gap, whether it is powerful and flexible logging, configuration management, tab completion or runspace management.
+Its functionalities are split into many separate groups, these are quick start guides that are supposed to give you an easy entry into their respective group:
 
  - Configuration: [Getting Started with Configuration](psframework/configuration.html)
  - Logging: [Getting Started with Logging](psframework/logging.html)

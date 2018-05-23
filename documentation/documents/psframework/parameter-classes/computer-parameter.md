@@ -59,6 +59,7 @@ Mandatory:   Yes (will always be present)
 
 ## Supported Input Types
 
+ - string
  - DNS Name
  - SQL Instance names
  - PSSession objects
@@ -92,4 +93,4 @@ Register-PSFParameterClassMapping -ParameterClass Computer -TypeName Foo.Bar -Pr
 
 | Version | 1.0 |
 | Written on: | 2018-04-16 |
-| Updated on: | 2018-04-16 |
+| Updated on: | 2018-05-23 |
