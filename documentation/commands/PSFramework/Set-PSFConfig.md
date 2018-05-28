@@ -1,7 +1,7 @@
 ---
 external help file: PSFramework.dll-Help.xml
 Module Name: PSFramework
-online version:
+online version: http://psframework.org/documentation/commands/PSFramework/Set-PSFConfig.html
 schema: 2.0.0
 ---
 
@@ -392,9 +392,11 @@ For more information, see about_CommonParameters (http://go.microsoft.com/fwlink
 
 ## OUTPUTS
 
+### PSFramework.Configuration.Config
+
 ## NOTES
 
 ## RELATED LINKS
 
-[Online Documentation]()
+[Online Documentation](http://psframework.org/documentation/commands/PSFramework/Set-PSFConfig.html)
 
