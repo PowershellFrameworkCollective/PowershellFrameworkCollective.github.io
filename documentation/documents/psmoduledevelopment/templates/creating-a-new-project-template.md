@@ -1,4 +1,4 @@
----
+﻿---
 title: Templates: Creating a new project template
 ---
 # Creating a new project template
@@ -43,7 +43,7 @@ Don't worry, the guide should cover it all as needed and it's fairly simple to u
 
 
 ## Notes
-[Back to Templates](http://psframework.org/documentation/documents/psmoduledevelopment/templates.html)
+[Back to Templates](https://psframework.org/documentation/documents/psmoduledevelopment/templates.html)
 
 | Version | 1.0 |
 | Written on: | 2018-03-08 |

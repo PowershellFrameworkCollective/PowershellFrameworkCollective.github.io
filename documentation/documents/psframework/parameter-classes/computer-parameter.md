@@ -1,4 +1,4 @@
----
+﻿---
 title: Parameter Classes: Computer Parameter Class
 ---
 # Computer Parameter Class
@@ -89,7 +89,7 @@ Register-PSFParameterClassMapping -ParameterClass Computer -TypeName Foo.Bar -Pr
 ```
 
 ## Notes
-[Back to Parameter Classes](http://psframework.org/documentation/documents/psframework/parameter-classes.html)
+[Back to Parameter Classes](https://psframework.org/documentation/documents/psframework/parameter-classes.html)
 
 | Version | 1.0 |
 | Written on: | 2018-04-16 |

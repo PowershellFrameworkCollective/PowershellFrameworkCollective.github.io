@@ -1,4 +1,4 @@
----
+﻿---
 title: Getting Started with Using Templates
 ---
 # Getting Started with Using Templates
@@ -25,12 +25,12 @@ Do not specify file or project name in the outpath - those are all covered withi
 
 # Further reading
 
- - [Template Types](http://psframework.org/documentation/documents/psmoduledevelopment/templates/template-types.html)
- - [Creating a new file template](http://psframework.org/documentation/documents/psmoduledevelopment/templates/creating-a-new-file-template.html)
- - [Creating a new project template](http://psframework.org/documentation/documents/psmoduledevelopment/templates/creating-a-new-project-template.html)
- - The [Project Reference File](http://psframework.org/documentation/documents/psmoduledevelopment/templates/project-reference-file.html)
- - [Template Versions](http://psframework.org/documentation/documents/psmoduledevelopment/templates/template-versions.html)
- - [Overwriting default templates](http://psframework.org/documentation/documents/psmoduledevelopment/templates/overwriting-default-templates.html)
- - [Working with ScriptBlocks](http://psframework.org/documentation/documents/psmoduledevelopment/templates/working-with-scriptblocks.html)
- - [Template Stores](http://psframework.org/documentation/documents/psmoduledevelopment/templates/template-stores.html)
- - [Default template parameters](http://psframework.org/documentation/documents/psmoduledevelopment/templates/default-template-parameters.html)
+ - [Template Types](https://psframework.org/documentation/documents/psmoduledevelopment/templates/template-types.html)
+ - [Creating a new file template](https://psframework.org/documentation/documents/psmoduledevelopment/templates/creating-a-new-file-template.html)
+ - [Creating a new project template](https://psframework.org/documentation/documents/psmoduledevelopment/templates/creating-a-new-project-template.html)
+ - The [Project Reference File](https://psframework.org/documentation/documents/psmoduledevelopment/templates/project-reference-file.html)
+ - [Template Versions](https://psframework.org/documentation/documents/psmoduledevelopment/templates/template-versions.html)
+ - [Overwriting default templates](https://psframework.org/documentation/documents/psmoduledevelopment/templates/overwriting-default-templates.html)
+ - [Working with ScriptBlocks](https://psframework.org/documentation/documents/psmoduledevelopment/templates/working-with-scriptblocks.html)
+ - [Template Stores](https://psframework.org/documentation/documents/psmoduledevelopment/templates/template-stores.html)
+ - [Default template parameters](https://psframework.org/documentation/documents/psmoduledevelopment/templates/default-template-parameters.html)

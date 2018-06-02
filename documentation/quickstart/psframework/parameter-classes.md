@@ -32,6 +32,6 @@ With this your command will correctly understand dns resolution objects, the out
 
 # Further reading
 
-```
-Content pending
-```
+ - [The Computer Parameter Class](https://psframework.org/documentation/documents/psframework/parameter-classes/computer-parameter.html)
+ - [The DateTime Parameter Class](https://psframework.org/documentation/documents/psframework/parameter-classes/datetime-parameter.html)
+ - [The TimeSpan Parameter Class](https://psframework.org/documentation/documents/psframework/parameter-classes/timespan-parameter.html)

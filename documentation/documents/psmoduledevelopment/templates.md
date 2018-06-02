@@ -1,4 +1,4 @@
----
+﻿---
 title: Templates
 ---
 # Templates
@@ -27,8 +27,8 @@ Even modules can ship their own templates without changing the user's system but
 
 There are two quick start guides, covering:
 
- - [Creating a project from template](http://psframework.org/documentation/quickstart/psmoduledevelopment/templates-use.html)
- - [Creating a simple template](http://psframework.org/documentation/quickstart/psmoduledevelopment/templates-new.html)
+ - [Creating a project from template](https://psframework.org/documentation/quickstart/psmoduledevelopment/templates-use.html)
+ - [Creating a simple template](https://psframework.org/documentation/quickstart/psmoduledevelopment/templates-new.html)
 
 Together the two cover the two basic steps to using the template system.
 

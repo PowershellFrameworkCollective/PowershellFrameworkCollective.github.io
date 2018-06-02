@@ -1,4 +1,4 @@
----
+﻿---
 title: Templates: Working with ScriptBlocks
 ---
 # Templates: Working with ScriptBlocks
@@ -114,7 +114,7 @@ This writes the template to file/folder without performing any inserts and witho
 All scriptblocks - including dynamic ones - will be part of the abstracted Project Reference File (if a project template) or a scriptblock meta-file (if a file template), and can be inspected in a central location.
 
 ## Notes
-[Back to Templates](http://psframework.org/documentation/documents/psmoduledevelopment/templates.html)
+[Back to Templates](https://psframework.org/documentation/documents/psmoduledevelopment/templates.html)
 
 | Version | 1.0 |
 | Written on: | 2018-03-08 |

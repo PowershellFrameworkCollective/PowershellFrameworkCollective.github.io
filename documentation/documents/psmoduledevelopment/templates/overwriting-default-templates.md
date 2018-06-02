@@ -1,4 +1,4 @@
----
+﻿---
 title: Templates: Overwriting default Templates
 ---
 # Overwriting default Templates
@@ -17,7 +17,7 @@ Thus you can override an existing template by creating a template of your own, w
 See the guide on [Template Versions](template-versions.html) on how to handle versions.
 
 ## Notes
-[Back to Templates](http://psframework.org/documentation/documents/psmoduledevelopment/templates.html)
+[Back to Templates](https://psframework.org/documentation/documents/psmoduledevelopment/templates.html)
 
 | Version | 1.0 |
 | Written on: | 2018-03-08 |
