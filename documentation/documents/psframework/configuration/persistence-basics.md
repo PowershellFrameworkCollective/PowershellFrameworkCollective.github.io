@@ -31,7 +31,7 @@ If you want to delete a persisted setting - so that it will revert to the defaul
 ```powershell
 Unregister-PSFConfig -FullName myscript.target
 ```
-This will _not_ change the setting in the current session, but on new session, default values will again apply.
+This will _not_ change the setting in the current session, but on new sessions, default values will again apply.
 (You can of course follow this up by running `Set-PSFConfig` to explicitly apply the default value for the current session)
 
 In order to forget all settings for a module - effectively returning it to factory default - run the command like this:
@@ -44,7 +44,7 @@ Unregister-PSFConfig -Module MyModule
 Automatic persistence can be applied in 7 different locations:
 ```
 FileSystem, FileUserLocal, FileUserShared, SystemDefault, SystemMandatory, UserDefault, UserMandatory
-´´´
+```
 Many configuration commands that deal with persistence have a `-Scope` parameter.
 This parameter exists to target which of these locations to work with.
 For full documentation on the paths used for this, see the [guide on persistence locations](persistence-location.html).

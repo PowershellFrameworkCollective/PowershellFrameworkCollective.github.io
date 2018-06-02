@@ -25,12 +25,13 @@ Send-MailMessage -SmtpServer (Get-PSFConfigValue -FullName 'MyModule.Mail.Server
 # Additional Information
 
  - All settings can be set by registry, both as default or mandatory per user or per machine.
+ - All settings can be set by configuration file, per user or per computer
  - Settings can be persisted by using the function `Register-PSFConfig`, allowing a user to flexibly customize and keep settings.
- - You can add a scriptblock that is executed when the setting is changed (That ScriptBlock is being ignored when using `-Initialize`)
- - You can add your own custom validation rules
+ - You can add a scriptblock [that is executed when the setting is changed](https://psframework.org/documentation/documents/psframework/configuration/handler.html) (That ScriptBlock is being ignored when using `-Initialize`)
+ - You can add your own [custom validation rules](https://psframework.org/documentation/documents/psframework/configuration/validation.html)
 
 # Further reading
 
 ```
-Content pending
+ - [Documentation root for the Configuration System](https://psframework.org/documentation/documents/psframework/configuration.html)
 ```
