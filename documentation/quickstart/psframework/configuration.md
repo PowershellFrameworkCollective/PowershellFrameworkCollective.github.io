@@ -32,6 +32,4 @@ Send-MailMessage -SmtpServer (Get-PSFConfigValue -FullName 'MyModule.Mail.Server
 
 # Further reading
 
-```
  - [Documentation root for the Configuration System](https://psframework.org/documentation/documents/psframework/configuration.html)
-```
