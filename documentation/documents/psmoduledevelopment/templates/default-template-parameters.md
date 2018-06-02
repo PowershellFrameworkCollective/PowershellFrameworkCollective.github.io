@@ -1,4 +1,4 @@
----
+﻿---
 title: Templates: Default Template Parameters
 ---
 # Default Template Parameters
@@ -55,7 +55,7 @@ Register-PSFConfig -FullName psmoduledevelopment.template.parameterdefault.depar
 And that's it! Now all your templates will default `þdepartmentþ` to `Accounting`
 
 ## Notes
-[Back to Templates](http://psframework.org/documentation/documents/psmoduledevelopment/templates.html)
+[Back to Templates](https://psframework.org/documentation/documents/psmoduledevelopment/templates.html)
 
 | Version | 1.0 |
 | Written on: | 2018-03-08 |

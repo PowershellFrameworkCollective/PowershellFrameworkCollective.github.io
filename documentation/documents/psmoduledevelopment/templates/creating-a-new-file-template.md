@@ -1,4 +1,4 @@
----
+﻿---
 title: Templates: Creating a new file template
 ---
 # Creating a new file template
@@ -88,7 +88,7 @@ It _is_ possible to template a word document, but at this time, this module is i
 For some file types, the system _knows_ it cannot do content replacement. These are stored in the `psmoduledevelopment.template.binaryextensions` configuration setting and can be updated & amended as needed.
 
 ## Notes
-[Back to Templates](http://psframework.org/documentation/documents/psmoduledevelopment/templates.html)
+[Back to Templates](https://psframework.org/documentation/documents/psmoduledevelopment/templates.html)
 
 | Version | 1.0 |
 | Written on: | 2018-03-08 |

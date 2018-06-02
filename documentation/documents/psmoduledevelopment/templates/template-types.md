@@ -1,4 +1,4 @@
----
+﻿---
 title: Templates: Template Types
 ---
 # Tempalte Types
@@ -15,7 +15,7 @@ If you use `New-PSMDTemplate` with the `-FilePath` parameter, you create a file 
 The difference is mostly academic right now, but the design goal is to differentiate between them, due to the fundamental difference in purpose. Future features may differentiate more heavily between the two.
 
 ## Notes
-[Back to Templates](http://psframework.org/documentation/documents/psmoduledevelopment/templates.html)
+[Back to Templates](https://psframework.org/documentation/documents/psmoduledevelopment/templates.html)
 
 | Version | 1.0 |
 | Written on: | 2018-03-08 |

@@ -1,4 +1,4 @@
----
+﻿---
 title: Templates: Deploying Template Stores per Group Policy
 ---
 # Deploying Template Stores per Group Policy
@@ -39,7 +39,7 @@ Those have the benefit of requiring elevation for the user to edit directly.
 Either way you choose to go, the templates stored in the registered [Template Store](template-stores.html) are automatically available to all affected users.
 
 ## Notes
-[Back to Templates](http://psframework.org/documentation/documents/psmoduledevelopment/templates.html)
+[Back to Templates](https://psframework.org/documentation/documents/psmoduledevelopment/templates.html)
 
 | Version | 1.0 |
 | Written on: | 2018-03-12 |

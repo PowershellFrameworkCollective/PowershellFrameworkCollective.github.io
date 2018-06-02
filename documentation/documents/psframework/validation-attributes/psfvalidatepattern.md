@@ -1,4 +1,4 @@
----
+﻿---
 title: Validation Attributes: PSFValidatePattern
 ---
 # Validation Attributes: PSFValidatePattern
@@ -75,7 +75,7 @@ The regular expression options to use. All options listed in the `[System.Text.R
 By default, it is set to IgnoreCase, making this attribute ignore all string casing. This can be overridden with `None`, in order to force case sensitivity.
 
 ## Notes
-[Back to Validation Attributes](http://psframework.org/documentation/documents/psframework/validation-attributes.html)
+[Back to Validation Attributes](https://psframework.org/documentation/documents/psframework/validation-attributes.html)
 
 | Version | 1.0 |
 | Written on: | 2018-04-14 |

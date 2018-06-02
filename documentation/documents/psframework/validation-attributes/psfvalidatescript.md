@@ -1,4 +1,4 @@
----
+﻿---
 title: Validation Attributes: PSFValidateScript
 ---
 # Validation Attributes: PSFValidateScript
@@ -55,7 +55,7 @@ Named:      True
 The message to write when the pattern does _not_ match the input. This text will be formatted using the default string formatter, inserting the original input into `{0}` and the pattern into `{1}` if present.
 
 ## Notes
-[Back to Validation Attributes](http://psframework.org/documentation/documents/psframework/validation-attributes.html)
+[Back to Validation Attributes](https://psframework.org/documentation/documents/psframework/validation-attributes.html)
 
 | Version | 1.0 |
 | Written on: | 2018-04-14 |

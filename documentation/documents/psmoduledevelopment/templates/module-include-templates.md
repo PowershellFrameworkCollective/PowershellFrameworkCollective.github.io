@@ -1,4 +1,4 @@
----
+﻿---
 title: Templates: Modules including own templates
 ---
 # Modules including own templates
@@ -30,7 +30,7 @@ It does _not_ enforce a `PSModuleDevelopment` dependency! The templates and this
 This offers an additional convenience without adding an additional burden on users or systems that do not need it.
 
 ## Notes
-[Back to Templates](http://psframework.org/documentation/documents/psmoduledevelopment/templates.html)
+[Back to Templates](https://psframework.org/documentation/documents/psmoduledevelopment/templates.html)
 
 | Version | 1.0 |
 | Written on: | 2018-03-08 |

@@ -1,4 +1,4 @@
----
+﻿---
 title: PSFramework: Parameter Classes
 ---
 # Parameter Classes
@@ -39,7 +39,7 @@ They generally also offer greater flexibility in accepting input and are often c
 
 ## Quick Start Guides
 
- - [Getting started with Parameter Classes](http://psframework.org/documentation/quickstart/psframework/parameter-classes.html)
+ - [Getting started with Parameter Classes](https://psframework.org/documentation/quickstart/psframework/parameter-classes.html)
 
 ## In depth Guides
 
@@ -48,7 +48,7 @@ They generally also offer greater flexibility in accepting input and are often c
  - [TimeSpan Parameter Class](parameter-classes/timespan-parameter.html)
 
 ## Notes
-[Back to PSFramework](http://psframework.org/documentation/documents/psframework.html)
+[Back to PSFramework](https://psframework.org/documentation/documents/psframework.html)
 
 | Version | 1.0 |
 | Written on: | 2018-04-16 |

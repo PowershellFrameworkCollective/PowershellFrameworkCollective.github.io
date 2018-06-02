@@ -1,4 +1,4 @@
----
+﻿---
 title: Templates: The Project Reference File
 ---
 # Project Reference File
@@ -77,7 +77,7 @@ Since all the meta information was specified in the reference file, no further i
 
 
 ## Notes
-[Back to Templates](http://psframework.org/documentation/documents/psmoduledevelopment/templates.html)
+[Back to Templates](https://psframework.org/documentation/documents/psmoduledevelopment/templates.html)
 
 | Version | 1.0 |
 | Written on: | 2018-03-08 |
