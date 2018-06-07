@@ -14,6 +14,21 @@ hidden configuration settings will only be shown when using the `-Force` paramet
 
 In order to hide a setting, use the `-Hidden` switch when defining it with `Set-PSFConfig`.
 
+## Example
+
+```powershell
+Set-PSFConfig MyModule.Setting.Name 42 -Hidden
+```
+With this, the setting `MyModule.Setting.Name` has been marked hidden and will not show up casually:
+```powershell
+#Returns nothing
+Get-PSFConfig MyModule.*
+```
+However, it can still be searched if you are determined:
+```
+Get-PSFConfig MyModule.* -Force`
+```
+
 ## Notes
 [Back to Configuration](https://psframework.org/documentation/documents/psframework/configuration.html)
 
