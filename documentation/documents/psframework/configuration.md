@@ -28,7 +28,7 @@ It allows offering sane default values but still giving the user a voice in how 
 
 Users can then either change these settings per session or more permanently.
 
-In Windos environments, it then becomes simple to apply settings by group policy.
+In Windows environments, it then becomes simple to apply settings by group policy.
 This incidentaly makes it possible to update settings at scale without having to update the module, saving a lot of hassle on company internal modules when the environment changes.
 
 ### Script Control
