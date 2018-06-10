@@ -13,7 +13,7 @@ Tests for conditions in the PowerShell environment.
 ## SYNTAX
 
 ```
-Test-PSFPowerShell [[-PSMinVersion] <Version>] [[-PSMaxVersion] <Version>] [[-PSEdition] <PSEdition>]
+Test-PSFPowerShell [[-PSMinVersion] <Version>] [[-PSMaxVersion] <Version>] [[-Edition] <PSEdition>]
  [[-OperatingSystem] <OperatingSystem>] [-Elevated] [<CommonParameters>]
 ```
 
@@ -37,7 +37,7 @@ Will return $false, unless the executing powershell version is at least 5.0
 
 ### EXAMPLE 2
 ```
-Test-PSFPowerShell -PSEdition Core
+Test-PSFPowerShell -Edition Core
 ```
 
 Will return $true, if the current powershell session is a PowerShell core session.
@@ -89,7 +89,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -PSEdition
+### -Edition
 PowerShell must be running in the specifioed edition (Core or Desktop)
 
 ```yaml
