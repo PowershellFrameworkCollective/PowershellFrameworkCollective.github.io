@@ -13,7 +13,7 @@ Creates a timer that will alarm the user after it has expired.
 ## SYNTAX
 
 ```
-Start-PSUTimer [-Seconds] <Int32> [-Message] <Object> [-NoProgress] [-AlarmInterval <Int32>]
+Start-PSUTimer [-Duration] <DateTimeParameter> [-Message] <Object> [-NoProgress] [-AlarmInterval <Int32>]
  [-AlarmCount <Int32>] [<CommonParameters>]
 ```
 
@@ -29,21 +29,21 @@ Also provides a progress bar with a time remaining display.
 timer 170 Tea
 ```
 
-After 170 seconds give warning that the tea is ready.
+After 170 Duration give warning that the tea is ready.
 
 ## PARAMETERS
 
-### -Seconds
-The seconds to wait.
+### -Duration
+The time to wait.
 
 ```yaml
-Type: Int32
+Type: DateTimeParameter
 Parameter Sets: (All)
-Aliases:
+Aliases: Seconds
 
 Required: True
 Position: 1
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

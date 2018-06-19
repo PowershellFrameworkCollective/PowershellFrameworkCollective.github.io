@@ -13,6 +13,7 @@
  - [Register-PSUObjectConversion](PSUtil/Register-PSUObjectConversion.html)
  - [Remove-PSUString](PSUtil/Remove-PSUString.html)
  - [Select-PSUFunctionCode](PSUtil/Select-PSUFunctionCode.html)
+ - [Select-PSUObject](PSUtil/Select-PSUObject.html)
  - [Select-PSUObjectSample](PSUtil/Select-PSUObjectSample.html)
  - [Set-PSUDrive](PSUtil/Set-PSUDrive.html)
  - [Set-PSUObjectType](PSUtil/Set-PSUObjectType.html)
