@@ -114,6 +114,6 @@ This will import all settings from demo.json, so long as their names ...
 ## Notes
 [Back to Configuration](https://psframework.org/documentation/documents/psframework/configuration.html)
 
-| Version | 1.0 |
+| Version | 1.1 |
 | Written on: | 2018-05-23 |
-| Updated on: | 2018-06-05 |
+| Updated on: | 2018-06-22 |
