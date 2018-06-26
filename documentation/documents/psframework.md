@@ -13,13 +13,23 @@ The configuration system offers the means to ...
  - Implement configuration of CI/CD pipelines
  - Control modules and scripts by group policy or DSC
  - utilize a cache that persists across powershell sessions
- 
- ```powershell
- Get-PSFConfig
- Set-PSFConfig -Module MyModule -Name Path.ExportPath -Value "C:\export"
- ```
- 
- For more details on the configuration system, see the [dedicated component page](psframework/configuration.html).
+
+```powershell
+Get-PSFConfig
+Set-PSFConfig -Module MyModule -Name Path.ExportPath -Value "C:\export"
+```
+
+For more details on the configuration system, see the [dedicated component page](psframework/configuration.html).
+
+## Tab Completion
+Custom Tab Completion allows both developers and users to easily deploy custom tab completion.
+Put an end to Mr. Typo and improve your everyday console experience!
+
+ - Implement fast, reusable tab completion.
+ - Add Tab Completion to own or existing commands.
+ - Significantly improve tab completion.
+
+For more details on the tab completion system, see the [dedicated component page](psframework/tab-completion.html).
 
 ## Parameter Classes
 Parameter classes offer a more flexible way to accept user input.
