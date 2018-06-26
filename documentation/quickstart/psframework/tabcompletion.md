@@ -61,6 +61,4 @@ Get-Alcohol -Type <TAB>
 
 # Further reading
 
-```
-Content pending
-```
+ - [Full Feature documentation](https://psframework.org/documentation/documents/psframework/tab-completion.html)
