@@ -15,7 +15,7 @@ Instead, you _can_ tell PowerShell what to do.
 First of all, we need a command PowerShell can complete for:
 
 ```powershell
-unction Get-Alcohol
+function Get-Alcohol
 {
     [CmdletBinding()]
     Param (
@@ -49,6 +49,7 @@ Register-PSFTeppArgumentCompleter -Command Get-Alcohol -Parameter Type -Name alc
 ```
 
 Try it out:
+
 ```powershell
 Get-Alcohol -Type <TAB>
 ```
