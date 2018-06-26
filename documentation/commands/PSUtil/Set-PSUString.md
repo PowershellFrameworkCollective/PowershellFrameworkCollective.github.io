@@ -14,18 +14,20 @@ Replaces a part of the input string with another.
 
 ### regex (Default)
 ```
-Set-PSUString [-InputString <String[]>] [-What] <String> [-With] <String> [<CommonParameters>]
+Set-PSUString [-InputString <String[]>] [-What] <String> [-With] <Object> [-EnableException]
+ [<CommonParameters>]
 ```
 
 ### Simple
 ```
-Set-PSUString [-InputString <String[]>] [-What] <String> [-With] <String> [-Simple] [<CommonParameters>]
+Set-PSUString [-InputString <String[]>] [-What] <String> [-With] <Object> [-Simple] [-EnableException]
+ [<CommonParameters>]
 ```
 
 ### Regex
 ```
-Set-PSUString [-InputString <String[]>] [-What] <String> [-With] <String> [-Options <RegexOptions>]
- [<CommonParameters>]
+Set-PSUString [-InputString <String[]>] [-What] <String> [-With] <Object> [-Options <RegexOptions>]
+ [-EnableException] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -91,7 +93,7 @@ Accept wildcard characters: False
 With what should it be replaced?
 
 ```yaml
-Type: String
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
@@ -132,6 +134,22 @@ Accepted values: None, IgnoreCase, Multiline, ExplicitCapture, Compiled, Singlel
 Required: False
 Position: Named
 Default value: IgnoreCase
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -EnableException
+Replaces user friendly yellow warnings with bloody red exceptions of doom!
+Use this if you want the function to throw terminating errors you want to catch.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

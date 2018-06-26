@@ -4,11 +4,11 @@ title: configuration: Persistence: Manual Export & Import
 # Persistence: Manual Export & Import
 ## Synopsis
 
-Describes how to handle importing and exporting to a specified path.
+Describes how to handle importing and exporting to a specified path / weblink.
 
 ## Description
 
-The functionality to export to (and import from) an explicitly specified path is designed for two scenarios:
+The functionality to export to an explicitly specified path and importing configuration from that path, a weblink or straight configuration json is designed for two scenarios:
 
  - [Continuous Integration / Continuous Deployment](scenario-ci-cd.html) situations, where configuration is part of your code and does not lend itself well to placement in automatic import locations
  - Transfering configuration settings to machines you cannot remote into.
@@ -61,11 +61,21 @@ The extension chosen - if any - does not matter, the output data stored in it wi
 ## Importing: Import-PSFConfig
 ### Basic import
 
-Importing a configuration file is uncomplicated, as all that is really needed is the paramter `-Path`.
-Again, the extension matters not, but the file must exist for obvious reasons.
+Importing a configuration item (from file, weblink or raw string) is uncomplicated, as all that is really needed is the parameter `-Path`.
+
+ - In files, the extension matters not yet again, but the file must exist for obvious reasons.
+ - A weblink needs to be reachable and provide valid UTF8 Json as sole content.
+ - Raw json string can be piped to the command, but needs to be legal json as a single item, not a collection of strings.
 
 ```powershell
+# Import from path
 Import-PSFConfig -Path C:\temp\demo.json
+
+# Import from site
+Import-PSFConfig -Path "https://website.example/config/prod.json"
+
+# Import raw data
+$configJsonString | Import-PSFConfig
 ```
 
 Imported settings still will be individually validated (if the setting updated contains a validation) and handler events will individually fire.
@@ -104,6 +114,6 @@ This will import all settings from demo.json, so long as their names ...
 ## Notes
 [Back to Configuration](https://psframework.org/documentation/documents/psframework/configuration.html)
 
-| Version | 1.0 |
+| Version | 1.1 |
 | Written on: | 2018-05-23 |
-| Updated on: | 2018-06-05 |
+| Updated on: | 2018-06-22 |
