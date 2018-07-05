@@ -47,7 +47,7 @@ The PSFramework Tab Completion component removes most overhead, makes it easy to
 
 ## Tips & Tricks
 
- - [Cached Tab Completion with Asynchronous Refresh](asynchronous-refresh.html)
+ - [Cached Tab Completion with Asynchronous Refresh](tab-completion/asynchronous-refresh.html)
 
 ## Notes
 
