@@ -45,10 +45,14 @@ The PSFramework Tab Completion component removes most overhead, makes it easy to
  - [Accessing the called command](tab-completion/calling-command.html)
  - [Accessing the Ast](tab-completion/accessing-the-ast.html)
 
+## Tips & Tricks
+
+ - [Cached Tab Completion with Asynchronous Refresh](asynchronous-refresh.html)
+
 ## Notes
 
 [Back to PSFramework](https://psframework.org/documentation/documents/psframework.html)
 
 | Version | 1.0 |
 | Written on: | 2018-06-18 |
-| Updated on: | 2018-06-26 |
+| Updated on: | 2018-07-06 |
