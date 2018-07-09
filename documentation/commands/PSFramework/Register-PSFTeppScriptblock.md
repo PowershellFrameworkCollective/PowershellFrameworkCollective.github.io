@@ -14,7 +14,7 @@ Registers a scriptblock under name, to later be available for TabExpansion.
 
 ```
 Register-PSFTeppScriptblock [-ScriptBlock] <ScriptBlock> [-Name] <String> [[-Mode] <TeppScriptMode>]
- [<CommonParameters>]
+ [[-CacheDuration] <TimeSpanParameter>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -106,6 +106,24 @@ Accepted values: Simple, Full, Auto
 Required: False
 Position: 3
 Default value: Auto
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -CacheDuration
+How long a tab completion result is valid.
+By default, PSFramework tab completion will run the scriptblock on each call.
+This can be used together with a background refresh mechanism to offload the cost of expensive queries into the background.
+See Set-PSFTeppResult for details on how to refresh the cache.
+
+```yaml
+Type: TimeSpanParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 4
+Default value: 0
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

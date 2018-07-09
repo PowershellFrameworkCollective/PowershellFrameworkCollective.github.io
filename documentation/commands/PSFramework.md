@@ -43,6 +43,7 @@
  - [Set-PSFLoggingProvider](PSFramework/Set-PSFLoggingProvider.html)
  - [Set-PSFResultCache](PSFramework/Set-PSFResultCache.html)
  - [Set-PSFTaskEngineCache](PSFramework/Set-PSFTaskEngineCache.html)
+ - [Set-PSFTeppResult](PSFramework/Set-PSFTeppResult.html)
  - [Set-PSFTypeAlias](PSFramework/Set-PSFTypeAlias.html)
  - [Start-PSFRunspace](PSFramework/Start-PSFRunspace.html)
  - [Stop-PSFFunction](PSFramework/Stop-PSFFunction.html)
