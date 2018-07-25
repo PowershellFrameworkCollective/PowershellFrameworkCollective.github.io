@@ -38,6 +38,7 @@
  - [Remove-PSFMessageLevelModifier](PSFramework/Remove-PSFMessageLevelModifier.html)
  - [Remove-PSFNull](PSFramework/Remove-PSFNull.html)
  - [Resolve-PSFDefaultParameterValue](PSFramework/Resolve-PSFDefaultParameterValue.html)
+ - [Select-PSFObject](PSFramework/Select-PSFObject.html)
  - [Set-PSFConfig](PSFramework/Set-PSFConfig.html)
  - [Set-PSFDynamicContentObject](PSFramework/Set-PSFDynamicContentObject.html)
  - [Set-PSFLoggingProvider](PSFramework/Set-PSFLoggingProvider.html)

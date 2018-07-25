@@ -17,7 +17,7 @@ Function that interrupts a function.
 Stop-PSFFunction -Message <String> [-EnableException <Boolean>] [-Category <ErrorCategory>] [-Tag <String[]>]
  [-FunctionName <String>] [-ModuleName <String>] [-File <String>] [-Line <Int32>] [-Exception <Exception>]
  [-OverrideExceptionMessage] [-Target <Object>] [-Continue] [-SilentlyContinue] [-ContinueLabel <String>]
- [<CommonParameters>]
+ [-Cmdlet <PSCmdlet>] [<CommonParameters>]
 ```
 
 ### Exception
@@ -25,7 +25,7 @@ Stop-PSFFunction -Message <String> [-EnableException <Boolean>] [-Category <Erro
 Stop-PSFFunction -Message <String> [-EnableException <Boolean>] [-Category <ErrorCategory>]
  [-ErrorRecord <ErrorRecord[]>] [-Tag <String[]>] [-FunctionName <String>] [-ModuleName <String>]
  [-File <String>] [-Line <Int32>] [-Exception <Exception>] [-OverrideExceptionMessage] [-Target <Object>]
- [-Continue] [-SilentlyContinue] [-ContinueLabel <String>] [<CommonParameters>]
+ [-Continue] [-SilentlyContinue] [-ContinueLabel <String>] [-Cmdlet <PSCmdlet>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -308,6 +308,22 @@ Helpful when trying to continue on an upper level named loop.
 
 ```yaml
 Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Cmdlet
+The $PSCmdlet object of the calling command.
+Used to write exceptions in a more hidden manner, avoiding exposing internal script text in the default message display.
+
+```yaml
+Type: PSCmdlet
 Parameter Sets: (All)
 Aliases:
 
