@@ -276,7 +276,6 @@ For more information, see about_CommonParameters (http://go.microsoft.com/fwlink
 ## OUTPUTS
 
 ### PSFramework.License.License
-
 ## NOTES
 
 ## RELATED LINKS

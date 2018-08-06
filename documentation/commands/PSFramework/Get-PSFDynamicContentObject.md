@@ -64,7 +64,6 @@ For more information, see about_CommonParameters (http://go.microsoft.com/fwlink
 ## OUTPUTS
 
 ### PSFramework.Utility.DynamicContentObject
-
 ## NOTES
 
 ## RELATED LINKS

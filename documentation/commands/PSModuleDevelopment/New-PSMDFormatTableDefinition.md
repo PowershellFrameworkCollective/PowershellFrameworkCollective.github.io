@@ -272,9 +272,7 @@ For more information, see about_CommonParameters (http://go.microsoft.com/fwlink
 ## OUTPUTS
 
 ### PSModuleDevelopment.Format.Document
-
 ### PSModuleDevelopment.Format.TableDefinition
-
 ## NOTES
 
 ## RELATED LINKS
