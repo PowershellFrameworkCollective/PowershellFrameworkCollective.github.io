@@ -19,13 +19,13 @@ When importing the `PSFramework` - not the configuration defining module - it wi
 
 The specific order of precedence in ascending order of precedence:
 
- 1) Configuration File: ProgramData
- 2) Registry: HKLM (Default Value)
- 3) Configuration File: AppData
- 4) Configuration File: LocalAppData
- 5) Registry: HKCU (Default Value)
- 6) Registry: HKCU (Enforced Value)
- 7) Registry: HKLM (Enforced Value)
+ 1. Configuration File: ProgramData
+ 2. Registry: HKLM (Default Value)
+ 3. Configuration File: AppData
+ 4. Configuration File: LocalAppData
+ 5. Registry: HKCU (Default Value)
+ 6. Registry: HKCU (Enforced Value)
+ 7. Registry: HKLM (Enforced Value)
 
 This means a setting defined in the configuration file in LocalAppData will take precedence over a setting
 defined in the configuration file in AppData, but be superceded by a default value specified in HKCU.
