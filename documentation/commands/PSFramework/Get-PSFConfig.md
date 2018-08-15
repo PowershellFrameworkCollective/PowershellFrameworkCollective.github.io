@@ -116,6 +116,7 @@ For more information, see about_CommonParameters (http://go.microsoft.com/fwlink
 
 ## OUTPUTS
 
+### PSFramework.Configuration.Config
 ## NOTES
 
 ## RELATED LINKS

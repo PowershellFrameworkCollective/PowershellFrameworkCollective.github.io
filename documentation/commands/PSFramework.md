@@ -39,6 +39,7 @@
  - [Remove-PSFLicense](PSFramework/Remove-PSFLicense.html)
  - [Remove-PSFMessageLevelModifier](PSFramework/Remove-PSFMessageLevelModifier.html)
  - [Remove-PSFNull](PSFramework/Remove-PSFNull.html)
+ - [Reset-PSFConfig](PSFramework/Reset-PSFConfig.html)
  - [Resolve-PSFDefaultParameterValue](PSFramework/Resolve-PSFDefaultParameterValue.html)
  - [Resolve-PSFPath](PSFramework/Resolve-PSFPath.html)
  - [Select-PSFObject](PSFramework/Select-PSFObject.html)
