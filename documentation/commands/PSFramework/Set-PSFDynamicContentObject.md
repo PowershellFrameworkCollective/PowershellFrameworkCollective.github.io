@@ -12,8 +12,30 @@ Updates a value object that can easily be accessed on another runspace.
 
 ## SYNTAX
 
+### Value
 ```
-Set-PSFDynamicContentObject [[-Name] <String[]>] [[-Object] <DynamicContentObject[]>] [-Value] <Object>
+Set-PSFDynamicContentObject [-Name <String[]>] [-Object <DynamicContentObject[]>] -Value <Object>
+ [<CommonParameters>]
+```
+
+### Queue
+```
+Set-PSFDynamicContentObject [-Name <String[]>] [-Object <DynamicContentObject[]>] [-Queue] [<CommonParameters>]
+```
+
+### Stack
+```
+Set-PSFDynamicContentObject [-Name <String[]>] [-Object <DynamicContentObject[]>] [-Stack] [<CommonParameters>]
+```
+
+### List
+```
+Set-PSFDynamicContentObject [-Name <String[]>] [-Object <DynamicContentObject[]>] [-List] [<CommonParameters>]
+```
+
+### Dictionary
+```
+Set-PSFDynamicContentObject [-Name <String[]>] [-Object <DynamicContentObject[]>] [-Dictionary]
  [<CommonParameters>]
 ```
 
@@ -32,6 +54,14 @@ Set-PSFDynamicContentObject -Name Test -Value $Value
 
 Sets the Dynamic Content Object named "test" to the value $Value.
 
+### EXAMPLE 2
+```
+Set-PSFDynamicContentObject -Name MyModule.Value -Queue
+```
+
+Sets the Dynamic Content Object named "MyModule.Value" to contain a threadsafe queue.
+This queue will be safe to enqueue and dequeue from, no matter the number of runspaces accessing it simultaneously.
+
 ## PARAMETERS
 
 ### -Name
@@ -44,7 +74,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 1
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -59,7 +89,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 2
+Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
@@ -70,12 +100,80 @@ The value to apply
 
 ```yaml
 Type: Object
-Parameter Sets: (All)
+Parameter Sets: Value
 Aliases:
 
 Required: True
-Position: 3
+Position: Named
 Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Queue
+Set the object to be a threadsafe queue.
+Safe to use in multiple runspaces in parallel.
+Will not apply changes if the current value is already such an object.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: Queue
+Aliases:
+
+Required: True
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Stack
+Set the object to be a threadsafe stack.
+Safe to use in multiple runspaces in parallel.
+Will not apply changes if the current value is already such an object.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: Stack
+Aliases:
+
+Required: True
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -List
+Set the object to be a threadsafe list.
+Safe to use in multiple runspaces in parallel.
+Will not apply changes if the current value is already such an object.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: List
+Aliases:
+
+Required: True
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Dictionary
+Set the object to be a threadsafe dictionary.
+Safe to use in multiple runspaces in parallel.
+Will not apply changes if the current value is already such an object.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: Dictionary
+Aliases:
+
+Required: True
+Position: Named
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

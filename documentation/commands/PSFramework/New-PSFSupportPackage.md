@@ -13,8 +13,8 @@ Creates a package of troubleshooting information that can be used by developers 
 ## SYNTAX
 
 ```
-New-PSFSupportPackage [[-Path] <String>] [[-Variables] <String[]>] [-ExcludeError] [-EnableException]
- [<CommonParameters>]
+New-PSFSupportPackage [[-Path] <String>] [[-Include] <SupportData>] [[-Exclude] <SupportData>]
+ [[-Variables] <String[]>] [-ExcludeError] [-EnableException] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -57,6 +57,40 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -Include
+What to include in the export.
+By default, all is included.
+
+```yaml
+Type: SupportData
+Parameter Sets: (All)
+Aliases:
+Accepted values: None, Message, ErrorMessage, Messages, Screenshot, OperatingSystem, CPU, Ram, Environment, PSVersion, History, Module, SnapIns, Assemblies, PSResource, Exceptions, Critical, ExtensionData, All
+
+Required: False
+Position: 2
+Default value: All
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Exclude
+Anything not to include in the export.
+Use this to explicitly exclude content you do not wish to be part of the dump (for example for data protection reasons).
+
+```yaml
+Type: SupportData
+Parameter Sets: (All)
+Aliases:
+Accepted values: None, Message, ErrorMessage, Messages, Screenshot, OperatingSystem, CPU, Ram, Environment, PSVersion, History, Module, SnapIns, Assemblies, PSResource, Exceptions, Critical, ExtensionData, All
+
+Required: False
+Position: 3
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Variables
 Name of additional variables to attach.
 This allows you to add the content of variables to the support package, if you believe them to be relevant to the case.
@@ -67,7 +101,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 2
+Position: 4
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

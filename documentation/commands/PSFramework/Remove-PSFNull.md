@@ -1,7 +1,7 @@
 ---
 external help file: PSFramework.dll-Help.xml
 Module Name: PSFramework
-online version: http://psframework.org/documentation/commands/PSFramework/Remove-PSFNull.html
+online version: https://psframework.org/documentation/commands/PSFramework/Remove-PSFNull.html
 schema: 2.0.0
 ---
 
@@ -106,5 +106,5 @@ For more information, see about_CommonParameters (http://go.microsoft.com/fwlink
 
 ## RELATED LINKS
 
-[Online Documentation:](http://psframework.org/documentation/commands/PSFramework/Remove-PSFNull.html)
+[Online Documentation:](https://psframework.org/documentation/commands/PSFramework/Remove-PSFNull.html)
 
