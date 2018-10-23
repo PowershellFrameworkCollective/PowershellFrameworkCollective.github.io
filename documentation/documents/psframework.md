@@ -46,6 +46,7 @@ param (
 For more details on the parameter classes component, see the [dedicated component page](psframework/parameter-classes.html)
 
 ## Validation Attributes
+
 ```powershell
 [PSFValidateScript()]
 [PSFValidatePattern()]
@@ -54,3 +55,13 @@ For more details on the parameter classes component, see the [dedicated componen
 The validation attributes component offers new validation attributes that make parameter validation more convenient to use, as well as improving the end user experience with custom error messages.
 
 For more details on the validation attributes component, see the [dedicated component page](psframework/validation-attributes.html)
+
+## Utility
+
+```powershell
+Import-Csv .\files.csv | Select-PSFObject Name, 'FullName as Path', 'Length to long'
+```
+
+Utility is the catch-all category for individual commands that do not fit into any more specific category or would be a category ontu themselves.
+
+For more details, see the individual pages on the [dedicated component page](psframework/utility.html)
