@@ -29,7 +29,7 @@ You can opt into Json based serialization when [initializing](initialize.html) t
 Set-PSFConfig -Module MyModule -Name Answer -Value 42 -Initialize -SimpleExport
 ```
 
-> Keep in mind that you may lose some information and utlity using Json.
+> Keep in mind that you may lose some information and utility using Json.
 
 > This only affects file-based exports. For compatibility reasons registry-based persistence will always use the default serialization.
 
