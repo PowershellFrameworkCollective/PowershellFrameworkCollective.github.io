@@ -49,10 +49,16 @@ The PSFramework Tab Completion component removes most overhead, makes it easy to
 
  - [Cached Tab Completion with Asynchronous Refresh](tab-completion/asynchronous-refresh.html)
 
+## Predefined Completions
+
+The PSFramework may include finished tab completion scripts useful to the audience at large:
+
+- [Tab Completion: Input Object Properties](tab-completion/completion-inputobject.html)
+
 ## Notes
 
 [Back to PSFramework](https://psframework.org/documentation/documents/psframework.html)
 
-| Version | 1.0 |
+| Version | 1.2 |
 | Written on: | 2018-06-18 |
-| Updated on: | 2018-07-06 |
+| Updated on: | 2019-01-13 |
