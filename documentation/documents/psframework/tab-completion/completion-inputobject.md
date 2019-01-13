@@ -13,7 +13,7 @@ The custom tab completion `PSFramework-Input-ObjectProperty` provides comprehens
 This completion can be assigned to any arbitrary command & parameter combination using this line:
 
 ```powershell
-Register-PSFTeppArgumentCompleter -Command &lt;commandname&gt; -Parameter &lt;parametername&gt; -Name PSFramework-Input-ObjectProperty
+Register-PSFTeppArgumentCompleter -Command <commandname> -Parameter <parametername> -Name PSFramework-Input-ObjectProperty
 ```
 
 This will add tab completion to the specified parameter, picking up the properties the input object will likely have.
@@ -48,7 +48,7 @@ In order to extend a type, insert a list of properties into the mapping dictiona
 The Typename is *case sensitive* !
 
 ```powershell
-[PSFramework.TabExpansion.TabExpansionHost]::InputCompletionTypeData['&lt;Typename&gt;'] = &lt;array of properties&gt;
+[PSFramework.TabExpansion.TabExpansionHost]::InputCompletionTypeData['<Typename>'] = <array of properties>
 ```
 
 Or a live example:
@@ -75,7 +75,7 @@ In order to extend a command, insert a list of properties into the mapping dicti
 The name of the command is *case sensitive* !
 
 ```powershell
-[PSFramework.TabExpansion.TabExpansionHost]::InputCompletionCommandData['&lt;Command Name&gt;'] = &lt;array of properties&gt;
+[PSFramework.TabExpansion.TabExpansionHost]::InputCompletionCommandData['<Command Name>'] = <array of properties>
 ```
 
 Or in action:
