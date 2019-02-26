@@ -40,5 +40,6 @@ git config user.name "FriedrichWeinmann"
 git config user.email "Friedrich.Weinmann@gmx.de"
 git add .
 git commit -m "VSTS Documentation Update ***NO_CI***"
+[System.Net.ServicePointManager]::SecurityProtocol = "Tls12"
 $errorMessage = git push "https://$env:SYSTEM_ACCESSTOKEN@github.com/PowershellFrameworkCollective/PowershellFrameworkCollective.github.io.git" head:$branch 2>&1
 if ($LASTEXITCODE -gt 0) { throw $errorMessage }
