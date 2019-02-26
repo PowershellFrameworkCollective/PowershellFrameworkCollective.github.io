@@ -1,7 +1,7 @@
 ---
 external help file: PSFramework.dll-Help.xml
 Module Name: PSFramework
-online version: https://psframework.org/documentation/commands/PSFramework/Write-PSFMessage.html
+online version: https://psframework.org/documentation/commands/PSFramework/Select-PSFObject.html
 schema: 2.0.0
 ---
 
@@ -15,16 +15,19 @@ Wrapper around Select-Object, extends property parameter.
 ### DefaultParameter (Default)
 ```
 Select-PSFObject [-InputObject <PSObject>] [-Property <SelectParameter[]>] [-ExcludeProperty <String[]>]
- [-ExpandProperty <String>] [-Unique] [-Last <Int32>] [-First <Int32>] [-Skip <Int32>] [-Wait]
- [-ShowProperty <String[]>] [-ShowExcludeProperty <String[]>] [-TypeName <String>] [-KeepInputObject]
- [<CommonParameters>]
+ [-ExpandProperty <String>] [-Alias <SelectAliasParameter[]>]
+ [-ScriptProperty <SelectScriptPropertyParameter[]>] [-ScriptMethod <SelectScriptMethodParameter[]>] [-Unique]
+ [-Last <Int32>] [-First <Int32>] [-Skip <Int32>] [-Wait] [-ShowProperty <String[]>]
+ [-ShowExcludeProperty <String[]>] [-TypeName <String>] [-KeepInputObject] [<CommonParameters>]
 ```
 
 ### SkipLastParameter
 ```
 Select-PSFObject [-InputObject <PSObject>] [-Property <SelectParameter[]>] [-ExcludeProperty <String[]>]
- [-ExpandProperty <String>] [-Unique] [-SkipLast <Int32>] [-ShowProperty <String[]>]
- [-ShowExcludeProperty <String[]>] [-TypeName <String>] [-KeepInputObject] [<CommonParameters>]
+ [-ExpandProperty <String>] [-Alias <SelectAliasParameter[]>]
+ [-ScriptProperty <SelectScriptPropertyParameter[]>] [-ScriptMethod <SelectScriptMethodParameter[]>] [-Unique]
+ [-SkipLast <Int32>] [-ShowProperty <String[]>] [-ShowExcludeProperty <String[]>] [-TypeName <String>]
+ [-KeepInputObject] [<CommonParameters>]
 ```
 
 ### IndexParameter
@@ -40,6 +43,7 @@ This function allows specifying in-line transformation of the properties specifi
 For example, renaming a property becomes as simple as "Length as Size"
 
 Also supported:
+
 - Specifying a typename
 - Picking the default display properties
 - Adding to an existing object without destroying its type
@@ -97,6 +101,7 @@ Get-ChildItem | Select-PSFObject Name, Length, FullName, Used, LastWriteTime, Mo
 ```
 
 Lists all items in the current path, selects the properties specified (whether they exist or not) , then ...
+
 - Sets the name to "MyType"
 - Hides the properties "Mode" and "Used" from the default display set, causing them to be hidden from default view
 
@@ -120,12 +125,14 @@ Accept wildcard characters: False
 ### -Property
 The properties to select.
 - Supports hashtables, which will be passed through to Select-Object.
+
 - Supports renaming as it is possible in SQL: "Length AS Size" will select the Length property but rename it to size.
 - Supports casting to a specified type: "Address to IPAddress" or "Length to int".
+
 Uses PowerShell type-conversion.
-- Supports parsing numbers to sizes: "Length size GB:2" Converts numeric input (presumed to be bytes) to gigabyte with two decimals.
-  Also supports toggling on Unit descriptors by adding another element: "Length size GB:2:1"
-- Supports selecting properties from objects in other variables: "ComputerName from VarName" (Will insert the property 'ComputerName' from variable $VarName)
+- Supports parsing numbers to sizes: "Length size GB:2" Converts numeric input (presumed to be bytes) to gigabyte with two decimals. 
+Also supports toggling on Unit descriptors by adding another element: "Length size GB:2:1" - Supports selecting properties from objects in other variables: "ComputerName from VarName" (Will insert the property 'ComputerName' from variable $VarName)
+
 - Supports filtering when selecting from outside objects: "ComputerName from VarName where ObjectId = Id" (Will insert the property 'ComputerName' from the object in variable $VarName, whose ObjectId property is equal to the inputs Id property)
 
 ```yaml
@@ -180,7 +187,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -257,7 +264,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -337,6 +344,72 @@ Aliases:
 
 Required: False
 Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Alias
+Create an alias property.
+This can be in simple SQL notation, such as "Length as Size" or a hashtable with the alias name being the key and the referenced property being the value.
+
+```yaml
+Type: SelectAliasParameter[]
+Parameter Sets: DefaultParameter, SkipLastParameter
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ScriptMethod
+Add script methods to the object.
+This can be done using either:
+
+- String syntax 'GetDouble =\> $this.Length * 2'
+- Hashtable defining any number of methods, with the name being the key and the scriptblock being the value.
+
+```yaml
+Type: SelectScriptMethodParameter[]
+Parameter Sets: DefaultParameter, SkipLastParameter
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ScriptProperty
+Add script properties to the object.
+This parameter takes a hashtable that can be either simply Name --\> Scriptblock binding (for readonly properties) or Name --\> Hashtable binding, with the inner hashtable containing two keys: get & set.
+Each pointing at their respective scriptblock.
+
+-ScriptProperty @{
+
+DoubleSize = { $this.Length * 2}
+
+MegaSize = @{
+
+get = { $this.Length * 10 }
+
+set = { $this.Length = $_ / 10 }
+
+}
+
+}
+
+```yaml
+Type: SelectScriptPropertyParameter[]
+Parameter Sets: DefaultParameter, SkipLastParameter
+Aliases:
+
+Required: False
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -354,5 +427,5 @@ For more information, see about_CommonParameters (http://go.microsoft.com/fwlink
 
 ## RELATED LINKS
 
-[Online Documentation](https://psframework.org/documentation/commands/PSFramework/Write-PSFMessage.html)
+[Online Documentation](https://psframework.org/documentation/commands/PSFramework/Select-PSFObject.html)
 

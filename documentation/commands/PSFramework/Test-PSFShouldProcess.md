@@ -12,8 +12,16 @@ Implements the shouldprocess question.
 
 ## SYNTAX
 
+### Message (Default)
 ```
-Test-PSFShouldProcess -PSCmdlet <PSCmdlet> -Target <String> -Action <String> [<CommonParameters>]
+Test-PSFShouldProcess -Target <String> -Action <String> [-PSCmdlet <PSCmdlet>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
+```
+
+### String
+```
+Test-PSFShouldProcess -Target <String> -ActionString <String> [-ActionStringValues <Object[]>]
+ [-PSCmdlet <PSCmdlet>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -42,7 +50,7 @@ Type: PSCmdlet
 Parameter Sets: (All)
 Aliases:
 
-Required: True
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -65,16 +73,80 @@ Accept wildcard characters: False
 ```
 
 ### -Action
-The action that will be performed on the target
+The action that will be performed on the target.
 
 ```yaml
 Type: String
-Parameter Sets: (All)
+Parameter Sets: Message
 Aliases:
 
 Required: True
 Position: Named
 Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ActionString
+Localized string of the action that will be performed on the target.
+Omit the modulename in the string.
+For more details on the PSFramework localization feature, see the help on Import-PSFLocalizedString.
+
+```yaml
+Type: String
+Parameter Sets: String
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ActionStringValues
+Specify values to format into the localization string specified.
+For more details on the PSFramework localization feature, see the help on Import-PSFLocalizedString.
+
+```yaml
+Type: Object[]
+Parameter Sets: String
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Confirm
+Prompts you for confirmation before running the cmdlet.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WhatIf
+Shows what would happen if the cmdlet runs.
+The cmdlet is not run.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

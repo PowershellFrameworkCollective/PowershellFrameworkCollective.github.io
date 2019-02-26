@@ -12,6 +12,7 @@ This function receives messages, then logs and reports them.
 
 ## SYNTAX
 
+### Message (Default)
 ```
 Write-PSFMessage [-Level <MessageLevel>] -Message <String> [-Tag <String[]>] [-FunctionName <String>]
  [-ModuleName <String>] [-File <String>] [-Line <Int32>] [-ErrorRecord <ErrorRecord[]>]
@@ -19,19 +20,30 @@ Write-PSFMessage [-Level <MessageLevel>] -Message <String> [-Tag <String[]>] [-F
  [-EnableException <Boolean>] [-Breakpoint] [<CommonParameters>]
 ```
 
+### String
+```
+Write-PSFMessage [-Level <MessageLevel>] -String <String> [-StringValues <Object[]>] [-Tag <String[]>]
+ [-FunctionName <String>] [-ModuleName <String>] [-File <String>] [-Line <Int32>]
+ [-ErrorRecord <ErrorRecord[]>] [-Exception <Exception>] [-Once <String>] [-OverrideExceptionMessage]
+ [-Target <Object>] [-EnableException <Boolean>] [-Breakpoint] [<CommonParameters>]
+```
+
 ## DESCRIPTION
 This function receives messages, then logs and reports them.
-Other functions hand off all their information output for processing to this function.
+It is designed to fully replace most Write-* commands, such as Write-Verbose or Write-Warning.
+Messages can be retrieved after the fact - whether they were shown on screen or not - using Get-PSFMessage.
+This includes messages written in other runspaces.
+All messages are logged in a runspace-safe manner, preventing write conflicts.
 
-This function will then handle:
+This function will handle:
+
 - Warning output
 - Error management for non-terminating errors (For errors that terminate execution or continue on with the next object use "Stop-PSFFunction")
 - Logging
 - Verbose output
 - Message output to users
 
-For the complex description on how this works and how users and developers can influence it, run:
-Get-Help about_psf_message
+For the complex description on how this works and how users and developers can influence it, run: Get-Help about_psf_message
 
 ## EXAMPLES
 
@@ -86,8 +98,7 @@ Write-PSFMessage -Level Warning -Message "Failed to retrieve additional network 
 This example assumes to be executed within a catch block.
 Writes the message "Failed to retrieve additional network adapter information from $computer" as a warning.
 Will also append the message of the exception to the text.
-Will also add the error record to the error log
-Will also log the message.
+Will also add the error record to the error log Will also log the message.
 
 -
 
@@ -134,7 +145,7 @@ For those instances, you can manually specify the command to display.
 Note: Logging is runspace-safe, so you can use this command parallel in multiple runspaces.
 All messages from all runspaces are visible with Get-PSFMessage.
 
--
+_
 
 ### Example 10: Supporting Debugging
 ```
@@ -150,16 +161,14 @@ By default, Write-PSFMessage will never interrupt execution when -Debug is speci
 This parameter represents the verbosity of the message.
 The lower the number, the more important it is for a human user to read the message.
 By default, the levels are distributed like this:
+
 - 1-3 Direct verbose output to the user (using Write-Host)
 - 4-6 Output only visible when requesting extra verbosity (using Write-Verbose)
 - 1-9 Debugging information, written using Write-Debug
 
-In addition, it is possible to select the level "Warning" which moves the message out of the configurable range:
-The user will always be shown this message, unless he silences the entire verbosity.
+In addition, it is possible to select the level "Warning" which moves the message out of the configurable range: The user will always be shown this message, unless he silences the entire verbosity.
 
-Possible levels:
-Critical (1), Important / Output / Host (2), Significant (3), VeryVerbose (4), Verbose (5), SomewhatVerbose (6), System (7), Debug (8), InternalComment (9), Warning (666)
-Either one of the strings or its respective number will do as input.
+Possible levels: Critical (1), Important / Output / Host (2), Significant (3), VeryVerbose (4), Verbose (5), SomewhatVerbose (6), System (7), Debug (8), InternalComment (9), Warning (666) Either one of the strings or its respective number will do as input.
 
 ```yaml
 Type: MessageLevel
@@ -179,7 +188,7 @@ The function name and timestamp will automatically be prepended.
 
 ```yaml
 Type: String
-Parameter Sets: (All)
+Parameter Sets: Message
 Aliases:
 
 Required: True
@@ -332,7 +341,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -376,6 +385,38 @@ By default, Write-PSFMessage will not interrupt execution if the -Debug paramete
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -String
+The key to the localized message (omitting the module name).
+For more details on the PSFramework localization feature, see the help on Import-PSFLocalizedString.
+
+```yaml
+Type: String
+Parameter Sets: String
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -StringValues
+The values to format into the localized string defined.
+For more details on the PSFramework localization feature, see the help on Import-PSFLocalizedString.
+
+```yaml
+Type: Object[]
+Parameter Sets: String
 Aliases:
 
 Required: False

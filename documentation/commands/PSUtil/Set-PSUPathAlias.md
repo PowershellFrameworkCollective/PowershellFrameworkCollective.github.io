@@ -1,85 +1,76 @@
 ---
-external help file: PSModuleDevelopment-help.xml
-Module Name: PSModuleDevelopment
+external help file: PSUtil-help.xml
+Module Name: PSUtil
 online version:
 schema: 2.0.0
 ---
 
-# Set-PSMDModulePath
+# Set-PSUPathAlias
 
 ## SYNOPSIS
-Sets the path of the module currently being developed.
+Used to create an an alias that sets your location to the path you specify.
 
 ## SYNTAX
 
-### Module
 ```
-Set-PSMDModulePath -Module <PSModuleInfo> [-Register] [-EnableException] [<CommonParameters>]
-```
-
-### Path
-```
-Set-PSMDModulePath -Path <String> [-Register] [-EnableException] [<CommonParameters>]
+Set-PSUPathAlias [-Alias] <String> [-Path] <String> [-Register] [-EnableException] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Sets the path of the module currently being developed.
-This is used by several utility commands in order to not require any path input.
-
-This is a wrapper around the psframework configuration system, the same action can be taken by running this command:
-Set-PSFConfig -Module PSModuleDevelopment -Name "Module.Path" -Value $Path
+A detailed description of the Set-PSUPathAlias function.
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 ```
-Set-PSMDModulePath -Path "C:\github\dbatools"
+Set-PSUPathAlias -Alias 'work' -Path 'C:\work'
 ```
 
-Sets the current module path to "C:\github\dbatools"
+Creates an alias to Set-PSUPath that will set the location to 'c:\work'
 
 ### EXAMPLE 2
 ```
-Set-PSMDModulePath -Path "C:\github\dbatools" -Register
+Set-PSUPathAlias -Alias 'repos' -Path 'C:\repos' -Register
 ```
 
-Sets the current module path to "C:\github\dbatools"
-Then stores the setting in registry, causing it to be persisted acros multiple sessions.
+Creates an alias for repos and registers the setting so that it will persist between sessions.
 
 ## PARAMETERS
 
-### -Module
-The module, the path of which to register.
+### -Alias
+Name of the Alias that will be created for Set-PSUPath.
+Set-PSU Path detects the alias that called it and then finds the corresponding PSFConfig entry for it.
 
 ```yaml
-Type: PSModuleInfo
-Parameter Sets: Module
+Type: String
+Parameter Sets: (All)
 Aliases:
 
 Required: True
-Position: Named
+Position: 1
 Default value: None
-Accept pipeline input: True (ByValue)
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -Path
-The path to set as currently developed module.
+This is the path that you want your location to change to when the alias is called.
 
 ```yaml
 Type: String
-Parameter Sets: Path
+Parameter Sets: (All)
 Aliases:
 
 Required: True
-Position: Named
+Position: 2
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -Register
-Register the specified path, to have it persist across sessions
+Causes PSUtil to remember the alias across sessions.
+For more advanced options, see Register-PSFConfig.
 
 ```yaml
 Type: SwitchParameter

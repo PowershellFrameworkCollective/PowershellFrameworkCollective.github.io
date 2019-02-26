@@ -13,7 +13,7 @@ Searches assemblies for types.
 ## SYNTAX
 
 ```
-Find-PSMDType [[-Name] <String>] [[-FullName] <String>] [[-Assembly] <Assembly[]>] [-Public] [-Enum]
+Find-PSMDType [[-Name] <String>] [[-FullName] <String>] [[-Assembly] <Assembly[]>] [-Public] [-Enum] [-Static]
  [[-Implements] <String>] [[-InheritsFrom] <String>] [[-Attribute] <String>] [<CommonParameters>]
 ```
 
@@ -110,6 +110,21 @@ Accept wildcard characters: False
 
 ### -Enum
 Whether the type to find must be an enumeration.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Static
+Whether the type to find must be static.
 
 ```yaml
 Type: SwitchParameter

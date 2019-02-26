@@ -31,7 +31,7 @@ Returns all registered licenses for products with the string "Microsoft" in thei
 
 ### EXAMPLE 2
 ```
-Get-PSFLicense -LicenseType Commercial -PoductType Library
+Get-PSFLicense -LicenseType Commercial -ProductType Library
 ```
 
 Returns a list of all registered licenses for products that have commercial licenses and are libraries.

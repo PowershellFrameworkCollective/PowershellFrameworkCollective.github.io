@@ -12,20 +12,22 @@ Function that interrupts a function.
 
 ## SYNTAX
 
-### Plain (Default)
-```
-Stop-PSFFunction -Message <String> [-EnableException <Boolean>] [-Category <ErrorCategory>] [-Tag <String[]>]
- [-FunctionName <String>] [-ModuleName <String>] [-File <String>] [-Line <Int32>] [-Exception <Exception>]
- [-OverrideExceptionMessage] [-Target <Object>] [-Continue] [-SilentlyContinue] [-ContinueLabel <String>]
- [-Cmdlet <PSCmdlet>] [<CommonParameters>]
-```
-
-### Exception
+### Message (Default)
 ```
 Stop-PSFFunction -Message <String> [-EnableException <Boolean>] [-Category <ErrorCategory>]
  [-ErrorRecord <ErrorRecord[]>] [-Tag <String[]>] [-FunctionName <String>] [-ModuleName <String>]
  [-File <String>] [-Line <Int32>] [-Exception <Exception>] [-OverrideExceptionMessage] [-Target <Object>]
- [-Continue] [-SilentlyContinue] [-ContinueLabel <String>] [-Cmdlet <PSCmdlet>] [<CommonParameters>]
+ [-Continue] [-SilentlyContinue] [-ContinueLabel <String>] [-Cmdlet <PSCmdlet>] [-StepsUpward <Int32>]
+ [<CommonParameters>]
+```
+
+### String
+```
+Stop-PSFFunction -String <String> [-StringValues <Object[]>] [-EnableException <Boolean>]
+ [-Category <ErrorCategory>] [-ErrorRecord <ErrorRecord[]>] [-Tag <String[]>] [-FunctionName <String>]
+ [-ModuleName <String>] [-File <String>] [-Line <Int32>] [-Exception <Exception>] [-OverrideExceptionMessage]
+ [-Target <Object>] [-Continue] [-SilentlyContinue] [-ContinueLabel <String>] [-Cmdlet <PSCmdlet>]
+ [-StepsUpward <Int32>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -74,10 +76,42 @@ A message to pass along, explaining just what the error was.
 
 ```yaml
 Type: String
-Parameter Sets: (All)
+Parameter Sets: Message
 Aliases:
 
 Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -String
+A stored string to use to write the log.
+Used in combination with the localization component.
+For more details see the help on Import-PSFLocalizedString and Get-PSFLocalizedString.
+
+```yaml
+Type: String
+Parameter Sets: String
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -StringValues
+Values to format into the localized string referred to in the -String parameter.
+
+```yaml
+Type: Object[]
+Parameter Sets: String
+Aliases:
+
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -127,7 +161,7 @@ Pass the full error record, not just the exception.
 
 ```yaml
 Type: ErrorRecord[]
-Parameter Sets: Exception
+Parameter Sets: (All)
 Aliases: InnerErrorRecord
 
 Required: False
@@ -222,7 +256,7 @@ Accept wildcard characters: False
 ### -Exception
 Allows specifying an inner exception as input object.
 This will be passed on to the logging and used for messages.
-         When specifying both ErrorRecord AND Exception, Exception wins, but ErrorRecord is still used for record metadata.
+When specifying both ErrorRecord AND Exception, Exception wins, but ErrorRecord is still used for record metadata.
 
 ```yaml
 Type: Exception
@@ -238,7 +272,7 @@ Accept wildcard characters: False
 
 ### -OverrideExceptionMessage
 Disables automatic appending of exception messages.
-         Use in cases where you already have a speaking message interpretation and do not need the original message.
+Use in cases where you already have a speaking message interpretation and do not need the original message.
 
 ```yaml
 Type: SwitchParameter
@@ -330,6 +364,23 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -StepsUpward
+When not throwing an exception and not calling continue, Stop-PSFFunction signals the calling command to stop.
+In some cases you may want to signal a step or more further up the chain (notably from helper functions within a function).
+This parameter allows you to add additional steps up the callstack that it will notify.
+
+```yaml
+Type: Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: 0
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

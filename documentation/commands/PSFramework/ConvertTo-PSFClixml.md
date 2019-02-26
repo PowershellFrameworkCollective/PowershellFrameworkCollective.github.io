@@ -5,56 +5,32 @@ online version:
 schema: 2.0.0
 ---
 
-# Export-PSFClixml
+# ConvertTo-PSFClixml
 
 ## SYNOPSIS
-Writes objects to the filesystem.
+Converts an input object into a serialized string or byte array.
 
 ## SYNTAX
 
 ```
-Export-PSFClixml [-Path] <String> [-Depth <Int32>] [-InputObject <Object>] [-Style <ClixmlDataStyle>]
- [-NoCompression] [-Encoding <EncodingParameter>] [<CommonParameters>]
+ConvertTo-PSFClixml [[-Depth] <Int32>] [[-InputObject] <Object>] [[-Style] <ClixmlDataStyle>] [-NoCompression]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Writes objects to the filesystem.
-In opposite to the default Export-Clixml cmdlet, this function offers data compression as the default option.
-
-Exporting to regular clixml is still supported though.
+Converts an input object into a serialized string or byte array.
+Works analogous to Export-PSFClixml, only it does not require being written to file.
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 ```
-Get-ChildItem | Export-PSFClixml -Path 'C:\temp\data.byte'
+Get-ChildItem | ConvertTo-PSFClixml
 ```
 
-Exports a list of all items in the current path as compressed binary file to C:\temp\data.byte
-
-### EXAMPLE 2
-```
-Get-ChildItem | Export-PSFClixml -Path C:\temp\data.xml -Style 'String' -NoCompression
-```
-
-Exports a list of all items in the current path as a default clixml readable by Import-Clixml
+Scans all items in the current folder and then converts that into a compressed clixml string.
 
 ## PARAMETERS
-
-### -Path
-The path to write to.
-
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases:
-
-Required: True
-Position: 1
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
 
 ### -Depth
 Specifies how many levels of contained objects are included in the XML representation.
@@ -66,7 +42,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: Named
+Position: 1
 Default value: 0
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -81,7 +57,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: Named
+Position: 2
 Default value: None
 Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
@@ -97,8 +73,8 @@ Aliases:
 Accepted values: String, Byte
 
 Required: False
-Position: Named
-Default value: Byte
+Position: 3
+Default value: String
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -115,22 +91,6 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Encoding
-The encoding to use when using string-style export.
-By default, it exports as UTF8 encoding.
-
-```yaml
-Type: EncodingParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: (Get-PSFConfigValue -FullName 'PSFramework.Text.Encoding.DefaultWrite')
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

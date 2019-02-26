@@ -44,7 +44,7 @@ The parameter class to extend.
 Type: ParameterClasses
 Parameter Sets: (All)
 Aliases:
-Accepted values: Computer, DateTime, TimeSpan
+Accepted values: Computer, DateTime, TimeSpan, Encoding
 
 Required: True
 Position: 1

@@ -15,7 +15,7 @@ Sets configuration entries.
 ### FullName (Default)
 ```
 Set-PSFConfig -FullName <String> [-Value <Object>] [-Description <String>] [-Validation <String>]
- [-Handler <ScriptBlock>] [-Hidden] [-Default] [-Initialize] [-SimpleExport] [-ModuleExport]
+ [-Handler <ScriptBlock>] [-Hidden] [-Default] [-Initialize] [-SimpleExport] [-ModuleExport] [-AllowDelete]
  [-DisableValidation] [-DisableHandler] [-PassThru] [-EnableException] [<CommonParameters>]
 ```
 
@@ -23,15 +23,16 @@ Set-PSFConfig -FullName <String> [-Value <Object>] [-Description <String>] [-Val
 ```
 Set-PSFConfig -FullName <String> -PersistedValue <String> [-PersistedType <ConfigurationValueType>]
  [-Description <String>] [-Validation <String>] [-Handler <ScriptBlock>] [-Hidden] [-Default] [-Initialize]
- [-SimpleExport] [-ModuleExport] [-DisableValidation] [-DisableHandler] [-PassThru] [-EnableException]
- [<CommonParameters>]
+ [-SimpleExport] [-ModuleExport] [-AllowDelete] [-DisableValidation] [-DisableHandler] [-PassThru]
+ [-EnableException] [<CommonParameters>]
 ```
 
 ### Module
 ```
 Set-PSFConfig [-Module <String>] -Name <String> [-Value <Object>] [-Description <String>]
  [-Validation <String>] [-Handler <ScriptBlock>] [-Hidden] [-Default] [-Initialize] [-SimpleExport]
- [-ModuleExport] [-DisableValidation] [-DisableHandler] [-PassThru] [-EnableException] [<CommonParameters>]
+ [-ModuleExport] [-AllowDelete] [-DisableValidation] [-DisableHandler] [-PassThru] [-EnableException]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -47,6 +48,8 @@ C:\PS> Set-PSFConfig -FullName 'MyModule.User' -Value "Friedrich"
 
 Creates or updates a configuration entry under the module "MyModule" named "User" with the value "Friedrich"
 
+_
+
 ### Example 2: Module Definition
 ```
 C:\PS> Set-PSFConfig -Name 'mymodule.User' -Value "Friedrich" -Description "The user under which the show must go on." -Handler $scriptBlock -Initialize -Validation String
@@ -54,16 +57,19 @@ C:\PS> Set-PSFConfig -Name 'mymodule.User' -Value "Friedrich" -Description "The 
 
 Creates a configuration entry ...
 - Named "mymodule.user"
+
 - With the value "Friedrich"
 - It adds a description as noted
 - It registers the scriptblock stored in $scriptBlock as handler
 - It initializes the script.
+
 This block only executes the first time a it is run like this.
 Subsequent calls will be ignored.
-- It registers the basic string input type validator
-This is the default example for modules using the configuration system.
+- It registers the basic string input type validator This is the default example for modules using the configuration system.
 Note: While the -Handler parameter is optional, it is important to add it at the initial initialize call, if you are planning to add it.
 Only then will the system validate previous settings (such as what a user might have placed in his user profile)
+
+_
 
 ### Example 3: Hiding things
 ```
@@ -73,13 +79,14 @@ C:\PS> Set-PSFConfig 'Company' 'ConfigLink' 'https://www.example.com/config.xml'
 Creates a configuration entry named "ConfigLink" in the "Company" module with the value 'https://www.example.com/config.xml'.
 This entry is hidden from casual discovery using Get-PSFConfig.
 
+_
+
 ### Example 4: Default Settings
 ```
 C:\PS> Set-PSFConfig -FullName 'Network.Firewall' -Value '10.0.0.2' -Default
 ```
 
-Creates a configuration entry named "Firewall" in the "Network" module with the value '10.0.0.2'
-This is only set, if the setting does not exist yet.
+Creates a configuration entry named "Firewall" in the "Network" module with the value '10.0.0.2' This is only set, if the setting does not exist yet.
 If it does, this command will apply no changes.
 
 ## PARAMETERS
@@ -106,10 +113,7 @@ Name of the configuration entry.
 If an entry of exactly this non-casesensitive name already exists, its value will be overwritten.
 Duplicate names across different modules are possible and will be treated separately.
 If a name contains namespace notation and no module is set, the first namespace element will be used as module instead of name.
-Example:
--Name "Nordwind.Server"
-Is Equivalent to
--Name "Server" -Module "Nordwind"
+Example: -Name "Nordwind.Server" Is Equivalent to -Name "Server" -Module "Nordwind"
 
 ```yaml
 Type: String
@@ -215,7 +219,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -232,15 +236,14 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -Initialize
 Use this when setting configurations as part of module import.
-When initializing a configuration, it will only do a thing if the configuration hasn't already been initialized (So if you load the module multiple times or in multiple runspaces, it won't make a difference)
-Also, if there already was a non-initialized setting set for a given configuration, it will then try to set the old value again.
+When initializing a configuration, it will only do a thing if the configuration hasn't already been initialized (So if you load the module multiple times or in multiple runspaces, it won't make a difference) Also, if there already was a non-initialized setting set for a given configuration, it will then try to set the old value again.
 This value will be processed by handlers, if any are set.
 
 ```yaml
@@ -250,7 +253,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -266,7 +269,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -284,7 +287,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -300,7 +303,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -349,7 +352,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -364,7 +367,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -379,7 +382,29 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AllowDelete
+By default, settings that have been once defined are considered unremovable.
+Some workflows however require being able to fully dump configuration settings.
+Enable this switch to make a configuration setting deletable.
+
+Note:
+
+- Settings that are initialized, can only be declared deletable during initialization. Later attempts to change this, as well as previous settings will be ignored.
+- Settings that are defined and enforced by policy cannot be deleted no matter what.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

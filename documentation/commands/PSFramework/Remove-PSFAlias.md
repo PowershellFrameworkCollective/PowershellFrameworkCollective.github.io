@@ -5,40 +5,52 @@ online version:
 schema: 2.0.0
 ---
 
-# Import-PSFClixml
+# Remove-PSFAlias
 
 ## SYNOPSIS
-Imports objects serialized using Export-Clixml or Export-PSFClixml.
+Removes an alias from the global scope.
 
 ## SYNTAX
 
 ```
-Import-PSFClixml [-Path] <String[]> [-Encoding <EncodingParameter>] [<CommonParameters>]
+Remove-PSFAlias [-Name] <String[]> [-Force] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Imports objects serialized using Export-Clixml or Export-PSFClixml.
+Removes an alias from the global* scope.
+Please note that this always affects the global scope and should not be used lightly.
+This has the potential to break code that does not comply with PowerShell best practices and relies on the use of aliases.
 
-It can handle compressed and non-compressed exports.
+Refuses to delete constant aliases.
+Requires the '-Force' parameter to delete ReadOnly aliases.
+
+*This includes aliases exported by modules.
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 ```
-Import-PSFClixml -Path '.\object.xml'
+Remove-PSFAlias -Name 'grep'
 ```
 
-Imports the objects serialized to object.xml in the current folder.
+Removes the global alias 'grep'
+
+### EXAMPLE 2
+```
+Remove-PSFAlias -Name 'select' -Force
+```
+
+Removes the default alias 'select'
 
 ## PARAMETERS
 
-### -Path
-Path to the files to import.
+### -Name
+The name of the alias to remove.
 
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: FullName
+Aliases:
 
 Required: True
 Position: 1
@@ -47,18 +59,18 @@ Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
 
-### -Encoding
-Text-based files might be stored with any arbitrary encoding chosen.
-By default, this function assumes UTF8 encoding (the default export encoding for Export-PSFClixml).
+### -Force
+Enforce removal of aliases.
+Required to remove ReadOnly aliases (including default aliases such as "select" or "group").
 
 ```yaml
-Type: EncodingParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
-Default value: (Get-PSFConfigValue -FullName 'psframework.text.encoding.defaultread' -Fallback 'utf-8')
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

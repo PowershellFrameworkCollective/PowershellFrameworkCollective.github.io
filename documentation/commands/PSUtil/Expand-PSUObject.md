@@ -14,17 +14,17 @@ A comfortable replacement for Select-Object -ExpandProperty.
 
 ### Equals (Default)
 ```
-Expand-PSUObject [[-Name] <String>] [-InputObject <Object>] [-RestoreDefaults] [<CommonParameters>]
+Expand-PSUObject [[-Name] <String>] [-InputObject <Object>] [<CommonParameters>]
 ```
 
 ### Match
 ```
-Expand-PSUObject [-Name] <String> [-Match] [-InputObject <Object>] [-RestoreDefaults] [<CommonParameters>]
+Expand-PSUObject [-Name] <String> [-Match] [-InputObject <Object>] [<CommonParameters>]
 ```
 
 ### Like
 ```
-Expand-PSUObject [-Name] <String> [-Like] [-InputObject <Object>] [-RestoreDefaults] [<CommonParameters>]
+Expand-PSUObject [-Name] <String> [-Like] [-InputObject <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -143,21 +143,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -RestoreDefaults
-Restores $DefaultExpandedProperties to the default list of property-names.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 

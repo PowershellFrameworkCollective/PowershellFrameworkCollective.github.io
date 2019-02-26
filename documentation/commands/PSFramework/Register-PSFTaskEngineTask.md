@@ -15,14 +15,14 @@ Allows scheduling PowerShell tasks, that are perfomed in the background.
 ### Once
 ```
 Register-PSFTaskEngineTask -Name <String> [-Description <String>] -ScriptBlock <ScriptBlock> [-Once]
- [-Delay <TimeSpan>] [-Priority <Priority>] [-ResetTask] [-EnableException] [<CommonParameters>]
+ [-Delay <TimeSpanParameter>] [-Priority <Priority>] [-ResetTask] [-EnableException] [<CommonParameters>]
 ```
 
 ### Repeating
 ```
 Register-PSFTaskEngineTask -Name <String> [-Description <String>] -ScriptBlock <ScriptBlock>
- -Interval <TimeSpan> [-Delay <TimeSpan>] [-Priority <Priority>] [-ResetTask] [-EnableException]
- [<CommonParameters>]
+ -Interval <TimeSpanParameter> [-Delay <TimeSpanParameter>] [-Priority <Priority>] [-ResetTask]
+ [-EnableException] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -125,7 +125,7 @@ Accept wildcard characters: False
 The interval at which the task should be repeated.
 
 ```yaml
-Type: TimeSpan
+Type: TimeSpanParameter
 Parameter Sets: Repeating
 Aliases:
 
@@ -141,7 +141,7 @@ How far after the initial registration should the task script wait before proces
 This can be used to delay background stuff that should not content with items that would be good to have as part of the module import.
 
 ```yaml
-Type: TimeSpan
+Type: TimeSpanParameter
 Parameter Sets: (All)
 Aliases:
 

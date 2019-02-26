@@ -34,7 +34,7 @@ Returns a hashtable containing all default parameter values in the global scope 
 ## PARAMETERS
 
 ### -Reference
-The hashtable to pick default parameter valeus from.
+The hashtable to pick default parameter values from.
 
 ```yaml
 Type: Hashtable

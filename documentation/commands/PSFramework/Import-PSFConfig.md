@@ -14,8 +14,8 @@ Imports a json configuration file into the configuration system.
 
 ### Path (Default)
 ```
-Import-PSFConfig -Path <String[]> [-IncludeFilter <String[]>] [-ExcludeFilter <String[]>] [-Peek]
- [-EnableException] [<CommonParameters>]
+Import-PSFConfig -Path <String[]> [-Schema <String>] [-IncludeFilter <String[]>] [-ExcludeFilter <String[]>]
+ [-Peek] [-AllowDelete] [-EnableException] [<CommonParameters>]
 ```
 
 ### ModuleName
@@ -108,6 +108,22 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -Schema
+The configuration schema to use for import.
+Use Register-PSFConfigSchema to extend the way input content can be laid out.
+
+```yaml
+Type: String
+Parameter Sets: Path
+Aliases:
+
+Required: False
+Position: Named
+Default value: Default
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -IncludeFilter
 If specified, only elements with names that are similar (-like) to names in this list will be imported.
 
@@ -140,6 +156,22 @@ Accept wildcard characters: False
 
 ### -Peek
 Rather than applying the setting, return the configuration items that would have been applied.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: Path
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AllowDelete
+Configurations that have been imported will be flagged as deletable.
+This allows to purge them at a later time using Remove-PSFConfig.
 
 ```yaml
 Type: SwitchParameter

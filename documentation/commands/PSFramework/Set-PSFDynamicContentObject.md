@@ -14,29 +14,32 @@ Updates a value object that can easily be accessed on another runspace.
 
 ### Value
 ```
-Set-PSFDynamicContentObject [-Name <String[]>] [-Object <DynamicContentObject[]>] -Value <Object>
- [<CommonParameters>]
+Set-PSFDynamicContentObject [-Name <String[]>] [-Object <DynamicContentObject[]>] -Value <Object> [-PassThru]
+ [-Reset] [<CommonParameters>]
 ```
 
 ### Queue
 ```
-Set-PSFDynamicContentObject [-Name <String[]>] [-Object <DynamicContentObject[]>] [-Queue] [<CommonParameters>]
+Set-PSFDynamicContentObject [-Name <String[]>] [-Object <DynamicContentObject[]>] [-Queue] [-PassThru] [-Reset]
+ [<CommonParameters>]
 ```
 
 ### Stack
 ```
-Set-PSFDynamicContentObject [-Name <String[]>] [-Object <DynamicContentObject[]>] [-Stack] [<CommonParameters>]
+Set-PSFDynamicContentObject [-Name <String[]>] [-Object <DynamicContentObject[]>] [-Stack] [-PassThru] [-Reset]
+ [<CommonParameters>]
 ```
 
 ### List
 ```
-Set-PSFDynamicContentObject [-Name <String[]>] [-Object <DynamicContentObject[]>] [-List] [<CommonParameters>]
+Set-PSFDynamicContentObject [-Name <String[]>] [-Object <DynamicContentObject[]>] [-List] [-PassThru] [-Reset]
+ [<CommonParameters>]
 ```
 
 ### Dictionary
 ```
-Set-PSFDynamicContentObject [-Name <String[]>] [-Object <DynamicContentObject[]>] [-Dictionary]
- [<CommonParameters>]
+Set-PSFDynamicContentObject [-Name <String[]>] [-Object <DynamicContentObject[]>] [-Dictionary] [-PassThru]
+ [-Reset] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -178,6 +181,38 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -PassThru
+Has the command returning the object just set.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Reset
+Clears the dynamic content object's collection objects.
+Use this to ensure the collection is actually empty.
+Only used in combination of either -Queue, -Stack, -List or -Dictionary.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
 For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
@@ -186,6 +221,7 @@ For more information, see about_CommonParameters (http://go.microsoft.com/fwlink
 
 ## OUTPUTS
 
+### PSFramework.Utility.DynamicContentObject
 ## NOTES
 
 ## RELATED LINKS
