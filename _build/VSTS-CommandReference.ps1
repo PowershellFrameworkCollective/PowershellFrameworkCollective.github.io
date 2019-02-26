@@ -32,7 +32,7 @@ foreach ($moduleName in $modules)
 Write-Host " - "
 Write-Host "###############################################################"
 Write-Host " - "
-
+<#
 $branch = $env:BUILD_SOURCEBRANCHNAME
 Write-PSFMessage -Level Host -Message "Applying documentation to repository"
 Write-PSFMessage -Level Host -Message "  Working folder: $(Get-Location)"
@@ -44,3 +44,4 @@ git commit -m "VSTS Documentation Update ***NO_CI***"
 [System.Net.ServicePointManager]::SecurityProtocol = "Tls12"
 $errorMessage = git push "https://$env:SYSTEM_ACCESSTOKEN@github.com/PowershellFrameworkCollective/PowershellFrameworkCollective.github.io.git" head:$branch 2>&1
 if ($LASTEXITCODE -gt 0) { throw $errorMessage }
+#>
