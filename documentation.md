@@ -36,7 +36,7 @@ This project may be the font of all code developed by it, but it is not the font
  - [PSFramework Blog Posts](https://psframework.org/documentation/blog/psframework.html)
  - [PSUtil Blog Posts](https://psframework.org/documentation/blog/psutil.html)
  - [PSModuleDevelopment Blog Posts](https://psframework.org/documentation/blog/psmoduledevelopment.html)
- - [MailDaemon Documents](documentation/documents/maildaemon.html)
+ - [MailDaemon Blog Posts](documentation/blog/maildaemon.html)
 
 ## Command Reference
 
