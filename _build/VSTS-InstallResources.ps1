@@ -1,23 +1,29 @@
 Write-Host " - "
 Write-Host "###############################################################"
 Write-Host " - "
-Write-Host "Installing PSFramework master"
-Invoke-WebRequest "https://raw.githubusercontent.com/PowershellFrameworkCollective/psframework/master/install.ps1" -UseBasicParsing | Invoke-Expression
+Write-Host "Installing PSFramework"
+Install-Module PSFramework -ErrorAction Stop -Force
 
 Write-Host " - "
 Write-Host "###############################################################"
 Write-Host " - "
-Write-Host "Installing PSModuleDevelopment master"
-Invoke-WebRequest "https://raw.githubusercontent.com/PowershellFrameworkCollective/PSModuleDevelopment/master/install.ps1" -UseBasicParsing | Invoke-Expression
+Write-Host "Installing PSModuleDevelopment"
+Install-Module PSModuleDevelopment -ErrorAction Stop -Force
 
 Write-Host " - "
 Write-Host "###############################################################"
 Write-Host " - "
-Write-Host "Installing PSUtil master"
-Invoke-WebRequest "https://raw.githubusercontent.com/PowershellFrameworkCollective/PSUtil/master/install.ps1" -UseBasicParsing | Invoke-Expression
+Write-Host "Installing PSUtil"
+Install-Module PSUtil -ErrorAction Stop -Force
 
 Write-Host " - "
 Write-Host "###############################################################"
 Write-Host " - "
-Write-Host "Installing platyPS from gallery"
+Write-Host "Installing MailDaemon"
+Install-Module MailDaemon -ErrorAction Stop -Force
+
+Write-Host " - "
+Write-Host "###############################################################"
+Write-Host " - "
+Write-Host "Installing platyPS"
 Install-Module platyPS -ErrorAction Stop -Force
