@@ -14,6 +14,7 @@ In this section, there shall be guides to swiftly getting started with a given c
  - [PSFramework Quick Start Guides](https://psframework.org/documentation/quickstart/psframework.html)
  - [PSUtil Quick Start Guides](https://psframework.org/documentation/quickstart/psutil.html)
  - [PSModuleDevelopment Quick Start Guides](https://psframework.org/documentation/quickstart/psmoduledevelopment.html)
+ - [MailDaemon Quick Start Guides](documentation/quickstart/maildaemon.html) `Not yet Implemented`
 
 ## Documents
 
@@ -22,6 +23,7 @@ Complex tools need lots of guidance. This is where that guidance comes in, split
  - [PSFramework Documents](https://psframework.org/documentation/documents/psframework.html)
  - [PSUtil Documents](https://psframework.org/documentation/documents/psutil.html) `Not yet Implemented`
  - [PSModuleDevelopment Documents](https://psframework.org/documentation/documents/psmoduledevelopment.html)
+ - [MailDaemon Documents](documentation/documents/maildaemon.html) `Not yet Implemented`
 
 ## Blog Posts
 
@@ -34,6 +36,7 @@ This project may be the font of all code developed by it, but it is not the font
  - [PSFramework Blog Posts](https://psframework.org/documentation/blog/psframework.html)
  - [PSUtil Blog Posts](https://psframework.org/documentation/blog/psutil.html)
  - [PSModuleDevelopment Blog Posts](https://psframework.org/documentation/blog/psmoduledevelopment.html)
+ - [MailDaemon Documents](documentation/documents/maildaemon.html)
 
 ## Command Reference
 
@@ -42,3 +45,4 @@ Finally, sometimes you just need to browser the list of all the technical detail
  - [PSFramework Command Reference](https://psframework.org/documentation/commands/PSFramework.html)
  - [PSUtil Command Reference](https://psframework.org/documentation/commands/PSUtil.html)
  - [PSModuleDevelopment Command Reference](https://psframework.org/documentation/commands/PSModuleDevelopment.html)
+ - [MailDaemon Command Reference](documentation/commands/PSModuleDevelopment.html)

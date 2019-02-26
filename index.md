@@ -57,9 +57,23 @@ Prominent features:
  - Short aliases for commonly used commands (`grep` --> `Select-String`)
  - Lots of other utilities ...
 
-## PSDemo (upcoming)
+## MailDaemon
 
-True expertise lies in teaching others. When it's ready, PSDemo will help you present PowerShell to other people.
-Specifically, it will allow recording a PowerShell console and allows presenting simulated (or real) PowerShell execution using a regular presenter tool, without having to stay behind a keyboard during presentation.
+```powershell
+Install-Module MailDaemon
+```
 
-No ETA yet, sorry :(
+Sending Emails is a fairly common task. Send a status report, send an alert, send a ... whatever, really.
+Many scenarios, many emails and most platforms, services and - especially - people can handle mail.
+But what starts with a simple `Send-MailMessage` can have some rather nasty consequences.
+Configuring email settings in each script means system changes need to be rolled out to each script.
+Scripts are transitive, short-lived.
+A simple, short mail service outage can easily result in a critical mail going unsent!
+
+Enter MailDaemon, the module to reliably handle all your email needs.
+
+Prominent Features:
+
+ - Never lose an email to service interruption again
+ - Centrally manage your mail settings using the Group Policy, SCCM or another management platform of your choice.
+ - Authenticated SMTP without having to handle credentials in the individual tasks sending emails
