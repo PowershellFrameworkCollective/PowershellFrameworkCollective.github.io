@@ -35,6 +35,7 @@ Write-Host " - "
 
 $branch = $env:BUILD_SOURCEBRANCHNAME
 Write-PSFMessage -Level Host -Message "Applying documentation to repository"
+Write-PSFMessage -Level Host -Message "  Working folder: $(Get-Location)"
 
 git config user.name "FriedrichWeinmann"
 git config user.email "Friedrich.Weinmann@gmx.de"

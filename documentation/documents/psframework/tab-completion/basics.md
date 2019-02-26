@@ -69,7 +69,7 @@ Register-PSFTeppArgumentCompleter -Command Get-Alcohol -Parameter Type -Name "my
 ### Module Design Advice
 
 When implementing this in your module, there are three main ways to distribute your code.
-No matter which you choose in the end, you should pick one modell and stick with it for your entire project.
+No matter which you choose in the end, you should pick one mode and stick with it for your entire project.
 
 > Function Driven
 
@@ -87,7 +87,7 @@ Maintain both scriptblock definition & assignment in the same file the function 
 
 This is the easiest way to maintain the added complexity within your module.
 However it makes it a lot harder to reuse scriptblocks and thus is not recommended if you make extensive use of this feature.
-Use with care on lower scale implementations.
+Use with care and on lower scale implementations only.
 
 > Structure Driven
 
