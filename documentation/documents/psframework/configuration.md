@@ -75,6 +75,10 @@ The configuration system can also be used as a data cache that persists across s
  - [Purging persisted data](configuration/persistence-purge.html)
  - [Persistence and Serialization](configuration/persistence-serialization.html)
 
+### Other
+
+ - [Deleting Settings](configuration/deleting-settings.html)
+
 ## Notes
 [Back to PSFramework](https://psframework.org/documentation/documents/psframework.html)
 
