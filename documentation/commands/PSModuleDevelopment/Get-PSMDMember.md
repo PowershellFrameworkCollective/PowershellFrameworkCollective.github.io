@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-PSMDMember
 
 ## SYNOPSIS
-{{Fill in the Synopsis}}
+{{ Fill in the Synopsis }}
 
 ## SYNTAX
 
@@ -19,13 +19,13 @@ Get-PSMDMember [-InputObject <PSObject>] [[-Name] <String[]>] [-MemberType <PSMe
 ```
 
 ## DESCRIPTION
-{{Fill in the Description}}
+{{ Fill in the Description }}
 
 ## EXAMPLES
 
 ### Example 1
 ```powershell
-PS C:\> {{ Add example code here }}
+PS C:> {{ Add example code here }}
 ```
 
 {{ Add example description here }}
@@ -33,7 +33,7 @@ PS C:\> {{ Add example code here }}
 ## PARAMETERS
 
 ### -Force
-{{Fill Force Description}}
+{{ Fill Force Description }}
 
 ```yaml
 Type: SwitchParameter
@@ -48,7 +48,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
-{{Fill InputObject Description}}
+{{ Fill InputObject Description }}
 
 ```yaml
 Type: PSObject
@@ -63,7 +63,7 @@ Accept wildcard characters: False
 ```
 
 ### -MemberType
-{{Fill MemberType Description}}
+{{ Fill MemberType Description }}
 
 ```yaml
 Type: PSMemberTypes
@@ -79,7 +79,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-{{Fill Name Description}}
+{{ Fill Name Description }}
 
 ```yaml
 Type: String[]
@@ -94,7 +94,7 @@ Accept wildcard characters: False
 ```
 
 ### -Static
-{{Fill Static Description}}
+{{ Fill Static Description }}
 
 ```yaml
 Type: SwitchParameter
@@ -109,7 +109,7 @@ Accept wildcard characters: False
 ```
 
 ### -View
-{{Fill View Description}}
+{{ Fill View Description }}
 
 ```yaml
 Type: PSMemberViewTypes
@@ -125,7 +125,7 @@ Accept wildcard characters: False
 ```
 
 ### -ArgumentType
-{{Fill ArgumentType Description}}
+{{ Fill ArgumentType Description }}
 
 ```yaml
 Type: String
@@ -140,7 +140,7 @@ Accept wildcard characters: False
 ```
 
 ### -ReturnType
-{{Fill ReturnType Description}}
+{{ Fill ReturnType Description }}
 
 ```yaml
 Type: String
@@ -155,8 +155,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
