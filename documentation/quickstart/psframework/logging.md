@@ -29,6 +29,4 @@ Note: Replacing custom functions such as the often used `Write-Log` works just t
 
 # Further reading
 
-```
-Content pending
-```
+ - [Presentation: Logging in a DevOps World (PSConfAsia 2018)](https://livestream.com/gaelcolas/PSConfAsia/videos/182706619)
