@@ -13,7 +13,8 @@ Converts an object into a hashtable.
 ## SYNTAX
 
 ```
-ConvertTo-PSFHashtable [[-Exclude] <String[]>] [[-InputObject] <Object>] [<CommonParameters>]
+ConvertTo-PSFHashtable [[-Exclude] <String[]>] [[-Include] <String[]>] [-IncludeEmpty]
+ [[-InputObject] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -47,6 +48,39 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -Include
+The propertynames to include.
+Must be full property-names, no wildcard/regex matching.
+
+```yaml
+Type: String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 2
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -IncludeEmpty
+By default, only properties on the input object are included.
+In order to force all properties defiend in -Include to be included, specify this switch.
+Keys added through this have an empty ($null) value.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -InputObject
 The object(s) to convert
 
@@ -56,7 +90,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 2
+Position: 3
 Default value: None
 Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
