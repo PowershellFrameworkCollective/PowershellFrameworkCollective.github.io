@@ -13,7 +13,7 @@ Helper function that tests, whether a parameter was bound.
 ## SYNTAX
 
 ```
-Test-PSFParameterBinding [-ParameterName] <String[]> [-Not] [-And] [-BoundParameters <Object>]
+Test-PSFParameterBinding [-ParameterName] <String[]> [-Not] [-And] [-Mode <String>] [-BoundParameters <Object>]
  [<CommonParameters>]
 ```
 
@@ -94,6 +94,25 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Mode
+Parameters can be explicitly bound or as scriptblocks to be invoked for each item piped to the command.
+The mode determines, which will be tested for.
+Supported Modes: Any, Explicit, PipeScript.
+By default, any will do.
+Whether a parameter was bound as PipeScript is only detectable during the begin block.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: Any
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

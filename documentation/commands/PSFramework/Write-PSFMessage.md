@@ -14,10 +14,10 @@ This function receives messages, then logs and reports them.
 
 ### Message (Default)
 ```
-Write-PSFMessage [-Level <MessageLevel>] -Message <String> [-Tag <String[]>] [-FunctionName <String>]
- [-ModuleName <String>] [-File <String>] [-Line <Int32>] [-ErrorRecord <ErrorRecord[]>]
- [-Exception <Exception>] [-Once <String>] [-OverrideExceptionMessage] [-Target <Object>]
- [-EnableException <Boolean>] [-Breakpoint] [<CommonParameters>]
+Write-PSFMessage [-Level <MessageLevel>] -Message <String> [-StringValues <Object[]>] [-Tag <String[]>]
+ [-FunctionName <String>] [-ModuleName <String>] [-File <String>] [-Line <Int32>]
+ [-ErrorRecord <ErrorRecord[]>] [-Exception <Exception>] [-Once <String>] [-OverrideExceptionMessage]
+ [-Target <Object>] [-EnableException <Boolean>] [-Breakpoint] [<CommonParameters>]
 ```
 
 ### String
@@ -416,8 +416,8 @@ For more details on the PSFramework localization feature, see the help on Import
 
 ```yaml
 Type: Object[]
-Parameter Sets: String
-Aliases:
+Parameter Sets: (All)
+Aliases: Format
 
 Required: False
 Position: Named
