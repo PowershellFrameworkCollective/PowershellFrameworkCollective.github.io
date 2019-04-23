@@ -17,7 +17,7 @@ There are basically two elements of the configuration system that use managed pa
  - [Module Cache](scenario-cache.html)
 
 ## Automatic Import
-### Registry: Per User, default
+### Registry: Per User, default (Scope: UserDefault)
 
 The "per user, default" location is the default location on Windows for `Register-PSFConfig`.
 
@@ -26,7 +26,7 @@ The "per user, default" location is the default location on Windows for `Registe
 
 > Note: Registry locations are only available on Windows Computers.
 
-### Registry: Per User, enforced
+### Registry: Per User, enforced (Scope: UserMandatory)
 
 The "per user, enforced" location is similar to the "per user, default" location, except that after enforcing a setting, further attempts to change it will be ignored.
 This allows a user to resist undesired configuration changes brought upon by other code and offers a way for administrators to enforce settings.
@@ -36,7 +36,7 @@ This allows a user to resist undesired configuration changes brought upon by oth
 
 > Note: Registry locations are only available on Windows Computers.
 
-### Registry: Local Computer, default
+### Registry: Local Computer, default (Scope: SystemDefault)
 
 The "local computer, default" location is the ideal location to apply sane default values by group policy.
 It is superseeded by most other locations and does not enforce settings in any way.
@@ -46,7 +46,7 @@ It is superseeded by most other locations and does not enforce settings in any w
 
 > Note: Registry locations are only available on Windows Computers.
 
-### Registry: Local Computer, enforced
+### Registry: Local Computer, enforced (Scope: SystemMandatory)
 
 The "local computer, enforced" location is the big hammer in an admin's arsenal.
 Using this location - which takes precedence over all other locations - it becomes possible to enforce settings for all users on a machine.
@@ -57,7 +57,7 @@ Later attempts to change a setting thus enforced will fail.
 
 > Note: Registry locations are only available on Windows Computers.
 
-### File: Per User, local computer
+### File: Per User, local computer (Scope: FileUserLocal)
 
 The "File: per user, local computer" location is specific to the user and specific to the local computer.
 As such, it should not be replicated to other machines.
@@ -68,7 +68,7 @@ As such, it should not be replicated to other machines.
 | Path (non-Windows; Alternative) | $HOME/.config/PowerShell/PSFramework/ |
 | Priority | 3 |
 
-### File: Per User, shared
+### File: Per User, shared (Scope: FileUserShared)
 
 The "File: per user, shared" location is specific to the user and should be shared among roamed profiles.
 Using this is a good way in windows to have different settings between PS Core and PS Desktop.
@@ -79,7 +79,7 @@ Using this is a good way in windows to have different settings between PS Core a
 | Path (non-Windows; Alternative) | $HOME/.local/share/PowerShell/PSFramework/ |
 | Priority | 5 |
 
-### File: Local Computer
+### File: Local Computer (Scope: FileSystem)
 
 The file-based local computer location is the lowest priority location among all locations.
 Use this for simple default settings on a machine, especially on non-windows machines.
