@@ -4,6 +4,7 @@
  - [Find-PSMDFileContent](PSModuleDevelopment/Find-PSMDFileContent.html)
  - [Find-PSMDType](PSModuleDevelopment/Find-PSMDType.html)
  - [Format-PSMDParameter](PSModuleDevelopment/Format-PSMDParameter.html)
+ - [Get-PSMDArgumentCompleter](PSModuleDevelopment/Get-PSMDArgumentCompleter.html)
  - [Get-PSMDAssembly](PSModuleDevelopment/Get-PSMDAssembly.html)
  - [Get-PSMDConstructor](PSModuleDevelopment/Get-PSMDConstructor.html)
  - [Get-PSMDHelpEx](PSModuleDevelopment/Get-PSMDHelpEx.html)

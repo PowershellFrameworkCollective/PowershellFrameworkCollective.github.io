@@ -13,7 +13,7 @@ Returns information on the available constructors of a type.
 ## SYNTAX
 
 ```
-Get-PSMDConstructor [[-InputObject] <Object>] [<CommonParameters>]
+Get-PSMDConstructor [[-InputObject] <Object>] [-NonPublic] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -56,6 +56,21 @@ Required: False
 Position: 1
 Default value: None
 Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -NonPublic
+Show non-public constructors instead.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
