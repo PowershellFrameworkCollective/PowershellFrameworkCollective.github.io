@@ -12,25 +12,25 @@ Creates a project/file from a template.
 
 ## SYNTAX
 
-### Template
-```
-Invoke-PSMDTemplate -Template <TemplateInfo[]> [[-OutPath] <String>] [[-Name] <String>] [-NoFolder]
- [-Parameters <Hashtable>] [-Raw] [-Force] [-Silent] [-EnableException] [-WhatIf] [-Confirm]
- [<CommonParameters>]
-```
-
 ### NamePath
 ```
 Invoke-PSMDTemplate [-TemplateName] <String> -Path <String> [[-OutPath] <String>] [[-Name] <String>]
- [-NoFolder] [-Parameters <Hashtable>] [-Raw] [-Force] [-Silent] [-EnableException] [-WhatIf] [-Confirm]
- [<CommonParameters>]
+ [-Encoding <EncodingParameter>] [-NoFolder] [-Parameters <Hashtable>] [-Raw] [-Force] [-Silent]
+ [-EnableException] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### NameStore
 ```
 Invoke-PSMDTemplate [-TemplateName] <String> [-Store <String>] [[-OutPath] <String>] [[-Name] <String>]
- [-NoFolder] [-Parameters <Hashtable>] [-Raw] [-Force] [-Silent] [-EnableException] [-WhatIf] [-Confirm]
- [<CommonParameters>]
+ [-Encoding <EncodingParameter>] [-NoFolder] [-Parameters <Hashtable>] [-Raw] [-Force] [-Silent]
+ [-EnableException] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### Template
+```
+Invoke-PSMDTemplate -Template <TemplateInfo[]> [[-OutPath] <String>] [[-Name] <String>]
+ [-Encoding <EncodingParameter>] [-NoFolder] [-Parameters <Hashtable>] [-Raw] [-Force] [-Silent]
+ [-EnableException] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -57,22 +57,6 @@ Creates a project based on the module template with the name "MyModule"
 
 ## PARAMETERS
 
-### -Template
-The template object to build from.
-Accepts objects returned by Get-PSMDTemplate.
-
-```yaml
-Type: TemplateInfo[]
-Parameter Sets: Template
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -TemplateName
 The name of the template to build from.
 Warning: This does wildcard interpretation, don't specify '*' unless you like answering parameter prompts.
@@ -86,6 +70,22 @@ Required: True
 Position: 1
 Default value: None
 Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Template
+The template object to build from.
+Accepts objects returned by Get-PSMDTemplate.
+
+```yaml
+Type: TemplateInfo[]
+Parameter Sets: Template
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -149,6 +149,23 @@ Aliases:
 Required: False
 Position: 2
 Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Encoding
+The encoding to apply to text files.
+The default setting for this can be configured by updating the 'PSFramework.Text.Encoding.DefaultWrite' configuration setting.
+The initial default value is utf8 with BOM.
+
+```yaml
+Type: EncodingParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: (Get-PSFConfigValue -FullName 'PSFramework.Text.Encoding.DefaultWrite')
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
