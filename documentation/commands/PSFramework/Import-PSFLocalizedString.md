@@ -88,5 +88,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## OUTPUTS
 
 ## NOTES
+This command is not safe to expose in a JEA endpoint.
+In its need to maintain compatibility it allows for a path for arbitrary code execution.
 
 ## RELATED LINKS

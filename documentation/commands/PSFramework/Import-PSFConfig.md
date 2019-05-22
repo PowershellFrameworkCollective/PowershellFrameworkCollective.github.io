@@ -15,13 +15,13 @@ Imports a json configuration file into the configuration system.
 ### Path (Default)
 ```
 Import-PSFConfig -Path <String[]> [-Schema <String>] [-IncludeFilter <String[]>] [-ExcludeFilter <String[]>]
- [-Peek] [-AllowDelete] [-EnableException] [<CommonParameters>]
+ [-Peek] [-AllowDelete] [-PassThru] [-EnableException] [<CommonParameters>]
 ```
 
 ### ModuleName
 ```
-Import-PSFConfig -ModuleName <String> [-ModuleVersion <Int32>] [-Scope <ConfigScope>] [-EnableException]
- [<CommonParameters>]
+Import-PSFConfig -ModuleName <String> [-ModuleVersion <Int32>] [-Scope <ConfigScope>] [-PassThru]
+ [-EnableException] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -176,6 +176,22 @@ This allows to purge them at a later time using Remove-PSFConfig.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: Path
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PassThru
+Return configuration settings that have been imported.
+By default, this command will not produce any output.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
 Aliases:
 
 Required: False

@@ -13,7 +13,8 @@ A proxy command that allows smoothly redirecting messages to Write-PSFMessage.
 ## SYNTAX
 
 ```
-Write-PSFMessageProxy [[-Message] <String>] [<CommonParameters>]
+Write-PSFMessageProxy [[-Message] <String>] [-NoNewline] [-Separator <Object>]
+ [-ForegroundColor <ConsoleColor>] [-BackgroundColor <ConsoleColor>] [-Tags <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -49,11 +50,91 @@ The message to write.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: Object, MessageData
 
 Required: False
 Position: 1
 Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -NoNewline
+Dummy parameter to make Write-Host redirection happy.
+IT WILL BE IGNORED!
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Separator
+Dummy parameter to make Write-Host redirection happy.
+IT WILL BE IGNORED!
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ForegroundColor
+Configure the foreground color for host messages.
+
+```yaml
+Type: ConsoleColor
+Parameter Sets: (All)
+Aliases:
+Accepted values: Black, DarkBlue, DarkGreen, DarkCyan, DarkRed, DarkMagenta, DarkYellow, Gray, DarkGray, Blue, Green, Cyan, Red, Magenta, Yellow, White
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -BackgroundColor
+Dummy parameter to make Write-Host redirection happy.
+IT WILL BE IGNORED!
+
+```yaml
+Type: ConsoleColor
+Parameter Sets: (All)
+Aliases:
+Accepted values: Black, DarkBlue, DarkGreen, DarkCyan, DarkRed, DarkMagenta, DarkYellow, Gray, DarkGray, Blue, Green, Cyan, Red, Magenta, Yellow, White
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Tags
+Add tags to the messages.
+
+```yaml
+Type: String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: Proxied
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
