@@ -30,6 +30,7 @@
  - [Import-PSFCmdlet](PSFramework/Import-PSFCmdlet.html)
  - [Import-PSFConfig](PSFramework/Import-PSFConfig.html)
  - [Import-PSFLocalizedString](PSFramework/Import-PSFLocalizedString.html)
+ - [Import-PSFPowerShellDataFile](PSFramework/Import-PSFPowerShellDataFile.html)
  - [Install-PSFLoggingProvider](PSFramework/Install-PSFLoggingProvider.html)
  - [Invoke-PSFCommand](PSFramework/Invoke-PSFCommand.html)
  - [Invoke-PSFProtectedCommand](PSFramework/Invoke-PSFProtectedCommand.html)

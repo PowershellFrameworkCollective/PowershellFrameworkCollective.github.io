@@ -1,5 +1,5 @@
 ---
-external help file: PSFramework-help.xml
+external help file: PSFramework.dll-Help.xml
 Module Name: PSFramework
 online version:
 schema: 2.0.0
@@ -8,33 +8,31 @@ schema: 2.0.0
 # ConvertTo-PSFHashtable
 
 ## SYNOPSIS
-Converts an object into a hashtable.
+{{ Fill in the Synopsis }}
 
 ## SYNTAX
 
 ```
-ConvertTo-PSFHashtable [[-Exclude] <String[]>] [[-Include] <String[]>] [-IncludeEmpty]
- [[-InputObject] <Object>] [<CommonParameters>]
+ConvertTo-PSFHashtable [-Include <String[]>] [-Exclude <String[]>] [-IncludeEmpty] [-Inherit]
+ [-InputObject <PSObject[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Converts an object into a hashtable.
-Can exclude individual properties from being included.
+{{ Fill in the Description }}
 
 ## EXAMPLES
 
-### EXAMPLE 1
-```
-Get-ChildItem | ConvertTo-PSFHashtable
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
 ```
 
-Scans all items in the current path and converts those objects into hashtables.
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -Exclude
-The propertynames to exclude.
-Must be full property-names, no wildcard/regex matching.
+{{ Fill Exclude Description }}
 
 ```yaml
 Type: String[]
@@ -42,15 +40,14 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 1
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -Include
-The propertynames to include.
-Must be full property-names, no wildcard/regex matching.
+{{ Fill Include Description }}
 
 ```yaml
 Type: String[]
@@ -58,16 +55,14 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 2
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -IncludeEmpty
-By default, only properties on the input object are included.
-In order to force all properties defiend in -Include to be included, specify this switch.
-Keys added through this have an empty ($null) value.
+{{ Fill IncludeEmpty Description }}
 
 ```yaml
 Type: SwitchParameter
@@ -76,21 +71,36 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: False
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Inherit
+{{ Fill Inherit Description }}
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -InputObject
-The object(s) to convert
+{{ Fill InputObject Description }}
 
 ```yaml
-Type: Object
+Type: PSObject[]
 Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 3
+Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
@@ -101,9 +111,12 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
+### System.Management.Automation.PSObject[]
+
 ## OUTPUTS
 
 ### System.Collections.Hashtable
+
 ## NOTES
 
 ## RELATED LINKS
