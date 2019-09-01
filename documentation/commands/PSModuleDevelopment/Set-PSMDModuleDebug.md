@@ -75,7 +75,7 @@ Aliases: n
 Required: True
 Position: 1
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
 
@@ -227,8 +227,5 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## OUTPUTS
 
 ## NOTES
-Version 1.1.0.0
-Author: Friedrich Weinmann
-Created on: August 7th, 2016
 
 ## RELATED LINKS

@@ -5,7 +5,7 @@ online version:
 schema: 2.0.0
 ---
 
-# Get-PSMDHelpEx
+# Get-PSMDHelp
 
 ## SYNOPSIS
 Displays localized information about Windows PowerShell commands and concepts.
@@ -14,54 +14,53 @@ Displays localized information about Windows PowerShell commands and concepts.
 
 ### AllUsersView (Default)
 ```
-Get-PSMDHelpEx [-Full] [-Category <String[]>] [-Component <String[]>] [[-Name] <String>] [[-Language] <String>]
+Get-PSMDHelp [-Full] [-Category <String[]>] [-Component <String[]>] [[-Name] <String>] [[-Language] <String>]
  [-SetLanguage <String>] [-Path <String>] [-Functionality <String[]>] [-Role <String[]>] [<CommonParameters>]
 ```
 
 ### Parameters
 ```
-Get-PSMDHelpEx -Parameter <String> [-Category <String[]>] [-Component <String[]>] [[-Name] <String>]
+Get-PSMDHelp -Parameter <String> [-Category <String[]>] [-Component <String[]>] [[-Name] <String>]
  [[-Language] <String>] [-SetLanguage <String>] [-Path <String>] [-Functionality <String[]>] [-Role <String[]>]
  [<CommonParameters>]
 ```
 
 ### Online
 ```
-Get-PSMDHelpEx [-Online] [-Category <String[]>] [-Component <String[]>] [[-Name] <String>]
- [[-Language] <String>] [-SetLanguage <String>] [-Path <String>] [-Functionality <String[]>] [-Role <String[]>]
- [<CommonParameters>]
+Get-PSMDHelp [-Online] [-Category <String[]>] [-Component <String[]>] [[-Name] <String>] [[-Language] <String>]
+ [-SetLanguage <String>] [-Path <String>] [-Functionality <String[]>] [-Role <String[]>] [<CommonParameters>]
 ```
 
 ### ShowWindow
 ```
-Get-PSMDHelpEx [-ShowWindow] [-Category <String[]>] [-Component <String[]>] [[-Name] <String>]
+Get-PSMDHelp [-ShowWindow] [-Category <String[]>] [-Component <String[]>] [[-Name] <String>]
  [[-Language] <String>] [-SetLanguage <String>] [-Path <String>] [-Functionality <String[]>] [-Role <String[]>]
  [<CommonParameters>]
 ```
 
 ### DetailedView
 ```
-Get-PSMDHelpEx [-Detailed] [-Category <String[]>] [-Component <String[]>] [[-Name] <String>]
+Get-PSMDHelp [-Detailed] [-Category <String[]>] [-Component <String[]>] [[-Name] <String>]
  [[-Language] <String>] [-SetLanguage <String>] [-Path <String>] [-Functionality <String[]>] [-Role <String[]>]
  [<CommonParameters>]
 ```
 
 ### Examples
 ```
-Get-PSMDHelpEx [-Examples] [-Category <String[]>] [-Component <String[]>] [[-Name] <String>]
+Get-PSMDHelp [-Examples] [-Category <String[]>] [-Component <String[]>] [[-Name] <String>]
  [[-Language] <String>] [-SetLanguage <String>] [-Path <String>] [-Functionality <String[]>] [-Role <String[]>]
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The Get-PSMDHelpEx function is a wrapper around get-help that allows localizing help queries.
+The Get-PSMDHelp function is a wrapper around get-help that allows localizing help queries.
 This is especially useful when developing modules with help in multiple languages.
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 ```
-Get-PSMDHelpEx Get-Help "en-us" -Detailed
+Get-PSMDHelp Get-Help "en-us" -Detailed
 ```
 
 Gets the detailed help text of Get-Help in English

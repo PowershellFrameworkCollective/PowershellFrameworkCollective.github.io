@@ -13,7 +13,7 @@ Used to quickly search in module files.
 ## SYNTAX
 
 ```
-Find-PSMDFileContent [-Pattern] <String> [-Extension <String[]>] [-Path <String>] [-EnableException]
+Find-PSMDFileContent [-Pattern] <String> [-Extension <String>] [-Path <String>] [-EnableException]
  [<CommonParameters>]
 ```
 
@@ -55,13 +55,13 @@ The extension of files to consider.
 Only files with this extension will be searched.
 
 ```yaml
-Type: String[]
+Type: String
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
-Default value: @(".ps1", ".psd1", ".psm1")
+Default value: (Get-PSFConfigValue -FullName 'PSModuleDevelopment.Find.DefaultExtensions')
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

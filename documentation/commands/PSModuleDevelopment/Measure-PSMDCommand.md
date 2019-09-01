@@ -5,15 +5,21 @@ online version:
 schema: 2.0.0
 ---
 
-# Measure-PSMDCommandEx
+# Measure-PSMDCommand
 
 ## SYNOPSIS
 Measures command performance with consecutive tests.
 
 ## SYNTAX
 
+### Script
 ```
-Measure-PSMDCommandEx [-ScriptBlock <ScriptBlock>] [-Iterations <Int32>] [<CommonParameters>]
+Measure-PSMDCommand -ScriptBlock <ScriptBlock> [-Iterations <Int32>] [<CommonParameters>]
+```
+
+### Set
+```
+Measure-PSMDCommand [-Iterations <Int32>] -TestSet <Hashtable> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -23,22 +29,31 @@ Warning: Running a command repeatedly may not yield reliable information, since 
 This is best suited for measuring the performance of tasks that will later be run repeatedly as well.
 It also is useful for mitigating local performance fluctuations when comparing performances.
 
-PARAMETER ScriptBlock
-The scriptblock whose performance is to be measure.
-
-PARAMETER Iterations
-How many times should this performance test be repeated.
-
 ## EXAMPLES
 
 ### EXAMPLE 1
 ```
-Measure-PSMDCommandEx -ScriptBlock { dir \\Server\share } -Iterations 100
+Measure-PSMDCommand -ScriptBlock { dir \\Server\share } -Iterations 100
 ```
 
 This tries to use Get-ChildItem on a remote directory 100 consecutive times, then measures performance and reports common performance indicators (Average duration, Maximum, Minimum, Total)
 
 ## PARAMETERS
+
+### -ScriptBlock
+The scriptblock whose performance is to be measure.
+
+```yaml
+Type: ScriptBlock
+Parameter Sets: Script
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -Iterations
 How many times should this performance test be repeated.
@@ -50,20 +65,21 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: 1
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ScriptBlock
-The scriptblock whose performance is to be measure.
+### -TestSet
+Accepts a hashtable, mapping a name to a specific scriptblock to measure.
+This will generate a result grading the performance of the various sets offered.
 
 ```yaml
-Type: ScriptBlock
-Parameter Sets: (All)
+Type: Hashtable
+Parameter Sets: Set
 Aliases:
 
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -78,16 +94,5 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## OUTPUTS
 
 ## NOTES
-Supported Interfaces:
-------------------------
-
-Author:       Friedrich Weinmann
-Company:      die netzwerker Computernetze GmbH
-Created:      06.07.2016
-LastChanged:  06.11.2016
-Version:      1.1
 
 ## RELATED LINKS
-
-[Link to Website.]()
-
