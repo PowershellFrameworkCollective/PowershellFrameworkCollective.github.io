@@ -35,6 +35,7 @@ Together the two cover the two basic steps to using the template system.
 ## Youtube Videos
 
  - [Tutorial 1 - File Templates](https://youtu.be/8WkHaH20OEE)
+ - [Usergroup Presentation: London PowerShell Usergroup 2019](https://youtu.be/eHKEfudtztA)
 
 ## In depth guides
 
