@@ -13,8 +13,8 @@ Creates a timer that will alarm the user after it has expired.
 ## SYNTAX
 
 ```
-Start-PSUTimer [-Duration] <DateTimeParameter> [-Message] <Object> [-NoProgress] [-AlarmInterval <Int32>]
- [-AlarmCount <Int32>] [<CommonParameters>]
+Start-PSUTimer [-Duration] <DateTimeParameter> [-Message] <Object> [[-AlarmCount] <Int32>] [-NoProgress]
+ [-AlarmInterval <Int32>] [-MinFrequency <Int32>] [-MaxFrequency <Int32>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -63,6 +63,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -AlarmCount
+How often to give warning.
+
+```yaml
+Type: Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 3
+Default value: 25
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -NoProgress
 Disables progress bar.
 
@@ -93,8 +108,10 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -AlarmCount
-How often to give warning.
+### -MinFrequency
+The minimum frequency of the beeps.
+Must be at least one lower than MaxFrequency.
+Increase delta to play random frequency sounds on each beep.
 
 ```yaml
 Type: Int32
@@ -103,7 +120,24 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: 25
+Default value: 2999
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -MaxFrequency
+The maximum frequency of the beeps.
+Must be at least one higher than MaxFrequency.
+Increase delta to play random frequency sounds on each beep.
+
+```yaml
+Type: Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: 3000
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

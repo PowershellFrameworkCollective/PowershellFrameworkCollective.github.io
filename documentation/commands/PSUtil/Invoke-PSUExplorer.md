@@ -13,7 +13,8 @@ Opens the windows explorer at the specified position.
 ## SYNTAX
 
 ```
-Invoke-PSUExplorer [[-Path] <String[]>] [-Module <PSModuleInfo[]>] [-Duplicates] [<CommonParameters>]
+Invoke-PSUExplorer [[-Path] <String[]>] [-Module <PSModuleInfo[]>] [-Duplicates] [-EnableException]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -66,6 +67,22 @@ Accept wildcard characters: False
 ### -Duplicates
 Setting this switch will cause the function to open the same folder multiple times, if it was passed multiple times.
 By default, the function will not open the same folder multiple times (a dir of a directory with multiple files would otherwise cause multiple open windows).
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -EnableException
+This parameters disables user-friendly warnings and enables the throwing of exceptions.
+This is less user friendly, but allows catching exceptions in calling scripts.
 
 ```yaml
 Type: SwitchParameter

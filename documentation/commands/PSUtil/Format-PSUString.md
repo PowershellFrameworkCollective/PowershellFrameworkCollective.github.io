@@ -13,7 +13,8 @@ Allows formatting objects into strings.
 ## SYNTAX
 
 ```
-Format-PSUString [-InputObject <Object>] [-Format] <String> [-LotSize <Int32>] [<CommonParameters>]
+Format-PSUString [-InputObject <Object>] [-Format] <String> [-LotSize <Int32>] [-Property <String[]>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -35,6 +36,13 @@ returns "foo 01" through "foo 05"
 ```
 
 returns "foo 001-002","foo 003-004","foo 005-006"
+
+### EXAMPLE 3
+```
+Get-ChildItem | Format-PSUString '{0} : {1}' -Property Name, Length
+```
+
+Returns a list of strings, using the Name and Length property of the items in the current folder.
 
 ## PARAMETERS
 
@@ -80,6 +88,22 @@ Aliases:
 Required: False
 Position: Named
 Default value: 1
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Property
+Property name(s) from the input object to use for formatting.
+If omitted, the base object will be used.
+
+```yaml
+Type: String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

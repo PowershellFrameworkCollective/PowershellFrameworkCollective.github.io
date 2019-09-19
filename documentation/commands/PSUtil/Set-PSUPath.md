@@ -13,7 +13,7 @@ Detects the alias that called it and sets the location to the corresponding path
 ## SYNTAX
 
 ```
-Set-PSUPath [[-Alias] <Object>] [-EnableException] [<CommonParameters>]
+Set-PSUPath [[-Alias] <String>] [-EnableException] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -37,16 +37,16 @@ It receives the path from Get-PSUPathAlias 'software'
 
 ### -Alias
 This is the name of the alias that called the command.
-      	Default Value is $MyInvocation.line and is detected automatically
+      Default Value is $MyInvocation.InvocationName and is detected automatically
 
 ```yaml
-Type: Object
+Type: String
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 1
-Default value: $MyInvocation.line
+Default value: $MyInvocation.InvocationName
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
