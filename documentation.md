@@ -45,4 +45,4 @@ Finally, sometimes you just need to browser the list of all the technical detail
  - [PSFramework Command Reference](https://psframework.org/documentation/commands/PSFramework.html)
  - [PSUtil Command Reference](https://psframework.org/documentation/commands/PSUtil.html)
  - [PSModuleDevelopment Command Reference](https://psframework.org/documentation/commands/PSModuleDevelopment.html)
- - [MailDaemon Command Reference](documentation/commands/PSModuleDevelopment.html)
+ - [MailDaemon Command Reference](documentation/commands/MailDaemon.html)
