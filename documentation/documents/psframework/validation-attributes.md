@@ -19,5 +19,6 @@ All `PSFramework`-provided validation attributes support custom error messages, 
 
 ## In depth guides
 
- - Validating using regex patterns: [PSFValidatePattern](validation-attributes/psfvalidatepattern.html)
- - Validating using scriptblocks: [PSFValidateScript](validation-attributes/psfvalidatescript.html)
+ - Validating using regex patterns: [PsfValidatePattern](validation-attributes/psfvalidatepattern.html)
+ - Validating using scriptblocks: [PsfValidateScript](validation-attributes/psfvalidatescript.html)
+ - Validating using dynamic validate sets: [PsfValidateSet](validation-attributes/psfvalidateset.html)
