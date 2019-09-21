@@ -93,7 +93,7 @@ For example `"MyModule.Validation.UserProfiles"` rather than just `"Validation.U
 
 ## Notes
 
-[Back to Validation Attributes](https://psframework.org/documentation/documents/PSFramework/validation-attributes.html)
+[Back to Validation Attributes](https://psframework.org/documentation/documents/psframework/validation-attributes.html)
 
 | Version | 1.0 |
 | Written on: | 2019-09-21 |

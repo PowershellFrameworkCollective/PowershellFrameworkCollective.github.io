@@ -33,7 +33,7 @@ Only when the command is called from a trusted source (such as a whitelisted mod
 
 ## Notes
 
-[Back to Validation Attributes](http://psframework.org/documentation/documents/PSFramework/validation-attributes.html)
+[Back to Validation Attributes](http://psframework.org/documentation/documents/psframework/validation-attributes.html)
 
 | Version | 1.0 |
 | Written on: | 2019-09-21 |
