@@ -15,14 +15,17 @@ Combines should process, try/catch error handling and logging in one package.
 ### Message
 ```
 Invoke-PSFProtectedCommand -ScriptBlock <ScriptBlock> -Action <String> [-Target <Object>]
- [-EnableException <Boolean>] [-PSCmdlet <PSCmdlet>] [-Continue] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-EnableException <Boolean>] [-PSCmdlet <PSCmdlet>] [-Continue] [-ContinueLabel <String>] [-Tag <String[]>]
+ [-RetryCount <Int32>] [-RetryWait <TimeSpanParameter>] [-RetryErrorType <String[]>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ### String
 ```
 Invoke-PSFProtectedCommand -ScriptBlock <ScriptBlock> -ActionString <String> [-ActionStringValues <Object[]>]
- [-Target <Object>] [-EnableException <Boolean>] [-PSCmdlet <PSCmdlet>] [-Continue] [-WhatIf] [-Confirm]
- [<CommonParameters>]
+ [-Target <Object>] [-EnableException <Boolean>] [-PSCmdlet <PSCmdlet>] [-Continue] [-ContinueLabel <String>]
+ [-Tag <String[]>] [-RetryCount <Int32>] [-RetryWait <TimeSpanParameter>] [-RetryErrorType <String[]>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -216,6 +219,81 @@ Aliases: wi
 Required: False
 Position: Named
 Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ContinueLabel
+{{ Fill ContinueLabel Description }}
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -RetryCount
+{{ Fill RetryCount Description }}
+
+```yaml
+Type: Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -RetryErrorType
+{{ Fill RetryErrorType Description }}
+
+```yaml
+Type: String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -RetryWait
+{{ Fill RetryWait Description }}
+
+```yaml
+Type: TimeSpanParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Tag
+{{ Fill Tag Description }}
+
+```yaml
+Type: String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

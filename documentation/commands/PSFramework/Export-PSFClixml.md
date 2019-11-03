@@ -14,7 +14,7 @@ Writes objects to the filesystem.
 
 ```
 Export-PSFClixml [-Path] <String> [-Depth <Int32>] [-InputObject <Object>] [-Style <ClixmlDataStyle>]
- [-NoCompression] [-Encoding <EncodingParameter>] [<CommonParameters>]
+ [-NoCompression] [-PassThru] [-Encoding <EncodingParameter>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -106,6 +106,22 @@ Accept wildcard characters: False
 ### -NoCompression
 By default, exported data is compressed, saving a lot of storage at the cost of some CPU cycles.
 This switch disables this compression, making string-style exports compatible with Import-Clixml.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PassThru
+Passes all objects along the pipeline.
+By default, Export-PSFClixml does not produce output.
 
 ```yaml
 Type: SwitchParameter
