@@ -31,6 +31,17 @@ Put an end to Mr. Typo and improve your everyday console experience!
 
 For more details on the tab completion system, see the [dedicated component page](psframework/tab-completion.html).
 
+## Flow-Control
+The Flow-Control component focuses on help govern how your code "flows".
+This includes support for error handling, enhancing readability of your flow constructs (such as how you implement -WhatIf & -Confirm) and other utilities for governing your own code's layout.
+
++ Implement better user experience
++ Provide expert command flow features for less effort
++ Provide extension points for other modules
++ Improve readability of your code
+
+For more details on the Flow-Control system, see the [dedicated component page](psframework/flow-control.html).
+
 ## Parameter Classes
 Parameter classes offer a more flexible way to accept user input.
 Since they move input interpretation and validation into the parameter binding, function-code also becomes cleaner to read.

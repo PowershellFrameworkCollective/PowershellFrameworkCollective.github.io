@@ -16,7 +16,7 @@ Utility is the catch-all category for individual commands that do not fit into a
 
 ## Notes
 
-[Back to PSFramework](http://psframework.org/documentation/documents/psframework.html)
+[Back to PSFramework](https://psframework.org/documentation/documents/psframework.html)
 
 | Version | 1.0 |
 | Written on: | 2018-10-23 |
