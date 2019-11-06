@@ -208,7 +208,7 @@ function Remove-File {
 
 ## Notes
 
-[Back to Flow-Control](https://psframework.org/documentation/documents/PSFramework/flow-control.html)
+[Back to Flow-Control](https://psframework.org/documentation/documents/psframework/flow-control.html)
 
 | Version | 1.0 |
 | Written on: | 2019-11-06 |
