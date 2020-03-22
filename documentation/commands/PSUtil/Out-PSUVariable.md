@@ -5,36 +5,61 @@ online version:
 schema: 2.0.0
 ---
 
-# Add-PSUString
+# Out-PSUVariable
 
 ## SYNOPSIS
-Makes it easy to add content to a string at pipeline.
+Writes the input to a variable.
 
 ## SYNTAX
 
 ```
-Add-PSUString [-InputString <String[]>] [[-Before] <String>] [[-After] <String>] [<CommonParameters>]
+Out-PSUVariable [-Name] <String> [-InputObject <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Makes it easy to add content to a string at pipeline.
+Writes the input to a variable.
+This allows doing variable assignments at the end of a pipeline, rather than just at the beginning.
+
+Previous contents will be overwritten.
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 ```
-1..10 | Add-PSUString "srv-ctx" "-dev"
+Get-ChildItem | Out-PSUVariable -Name 'files'
 ```
 
-Returns a set of strings from 'srv-ctx1-dev' through 'srv-ctx10-dev'
+Writes the files & folders in the current path into the variable $files
+
+### EXAMPLE 2
+```
+dir | ov files
+```
+
+Does the same thing as the first example, only this time in a convenient interactive commandline usage
 
 ## PARAMETERS
 
-### -InputString
-The string(s) to add content to
+### -Name
+The name of the variable to write to.
 
 ```yaml
-Type: String[]
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -InputObject
+The objects to write.
+
+```yaml
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
@@ -45,36 +70,6 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Before
-What is prepended to the input string.
-
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: 1
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -After
-What is appended to the input string
-
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: 2
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
@@ -82,7 +77,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### System.String
 ## NOTES
 
 ## RELATED LINKS
