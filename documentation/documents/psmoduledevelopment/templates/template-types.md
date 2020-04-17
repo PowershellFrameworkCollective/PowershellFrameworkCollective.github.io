@@ -1,7 +1,7 @@
 ﻿---
 title: Templates: Template Types
 ---
-# Tempalte Types
+# Template Types
 ## Synopsis
 
 There are two kinds of templates: File & Project. But what's the difference?
