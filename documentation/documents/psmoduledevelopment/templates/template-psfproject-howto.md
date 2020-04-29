@@ -19,7 +19,7 @@ Once GitHub creates your new module directory this is what it will look like.
 5. Change directory to that folder "C:\PSScripts\Git Repository\ModuleName" | cd
 6. Run imt PSFProject -nofolder
 
-NOTE: imt is an alias for Invoke-PSMDTemplate. Using the -nofolder will skip the folder creation because the folder has already been created by GitHub Desktop
+NOTE: imt is an alias for [Invoke-PSMDTemplate](https://psframework.org/documentation/commands/PSModuleDevelopment/Invoke-PSMDTemplate.html). Using the -nofolder will skip the folder creation because the folder has already been created by GitHub Desktop
 
 7. Enter value for parameter 'name': ModuleName
 8. Enter value for parameter 'description': Test Module
