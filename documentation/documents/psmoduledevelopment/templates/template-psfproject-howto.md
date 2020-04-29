@@ -27,15 +27,12 @@ Below is the output in the directory you will see after you invoke the creation 
 
 9. In explorer go up one directory to your Repositor and right click on your Test module folder and open in your programming application (VS Code, Visual Studio, etc.)
 	
-NOTE: Once your code is opened in your favorite developmental toold you can develop away until you have all of your code the way you like it. Since GitHub desktop is already connected to your local code path all new code changes will be detected.
+NOTE: Once your code is opened in your favorite developmental toold you can develop away until you have all of your code the way you like it. Since GitHub Desktop is already connected to your local code path all new code changes will be detected.
 
 10. Once you are finished with your code you can save your code changes.
 11. Commit your changes with your comments.
 12. Lastly publish your code to your GitHub repository.
 
-
 ![](resources/GithubCode.png)
 
-| Version | 1.0 |
-| Written on | 2020-04-29 |
-| Updated on | 2020-04-29 |
+| Version: 1.0 | Written and Updated 2020-04-29 |
