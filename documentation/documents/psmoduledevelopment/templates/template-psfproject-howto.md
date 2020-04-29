@@ -1,9 +1,12 @@
 ﻿	1. Create a local Repository Example c:\PsScriipts\Repository
-	2. Install GitHub desktop from here: https://desktop.github.com/
+	2. Install GitHub Desktop from here: https://desktop.github.com/
 	3. In GitHub Desktop click File | Create a new repository
 
+![](resources/NewRepository.png)
+
+
 NOTE: Directory must not already exist!
-	![](resources/NewRepository.png)
+
 This is what you will see in the directory when its created
 
 	4. This will create your module directory
