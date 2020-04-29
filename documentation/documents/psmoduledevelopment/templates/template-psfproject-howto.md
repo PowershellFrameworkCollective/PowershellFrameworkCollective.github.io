@@ -15,7 +15,6 @@ Once GitHub creates your new module directory this is what it will look like.
 
 ![](resources/NewDirectory.png)
 
-
 4. Open a new PS window
 5. Change directory to that folder "C:\PSScripts\Git Repository\YourModuleName" | cd
 6. Run imt PSFProject -nofolder
@@ -29,7 +28,6 @@ Below is the output in the directory you will see after you invoke the creation 
 
 
 ![](resources/TemplateDirectory.png)
-
 
 9. In explorer go up one directory to your Repositor and right click on your Test module folder and open in your programming application (VS Code, Visual Studio, etc.)
 	
