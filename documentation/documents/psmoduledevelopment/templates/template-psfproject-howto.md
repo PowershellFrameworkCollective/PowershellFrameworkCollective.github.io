@@ -6,12 +6,9 @@
 
 IMPORTANT: Directory must not already exist! If you have pre-created a directory for your code GitHub will throw an error.
 
-
 ![](resources/NewRepository.png)
 
-
 Once GitHub creates your new module directory this is what it will look like.
-
 
 ![](resources/NewDirectory.png)
 
@@ -25,7 +22,6 @@ NOTE: imt is an alias for [Invoke-PSMDTemplate](../../../commands/PSModuleDevelo
 8. Enter value for parameter 'description': This is a test PowerShell module
 
 Below is the output in the directory you will see after you invoke the creation of your new template. This template will be used for submitting your code to AzureDevOps for validation testing. You will want to do this before real work release of your code.
-
 
 ![](resources/TemplateDirectory.png)
 
@@ -41,5 +37,5 @@ NOTE: Once your code is opened in your favorite developmental toold you can deve
 ![](resources/GithubCode.png)
 
 | Version | 1.0 |
-| Written on: | 2020-04-29 |
-| Updated on: | 2020-04-29 |
+| Written on | 2020-04-29 |
+| Updated on | 2020-04-29 |
