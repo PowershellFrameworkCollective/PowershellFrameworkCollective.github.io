@@ -25,19 +25,6 @@ Complex tools need lots of guidance. This is where that guidance comes in, split
  - [PSModuleDevelopment Documents](https://psframework.org/documentation/documents/psmoduledevelopment.html)
  - [MailDaemon Documents](documentation/documents/maildaemon.html) `Not yet Implemented`
 
-## Blog Posts
-
-```
-Not implemented yet!
-```
-
-This project may be the font of all code developed by it, but it is not the font of all knowledge. Users may share their PSFramework success stories and offer insights into how to use it. We try to keep up with what is happening out there and offer a sorted reference.
-
- - [PSFramework Blog Posts](https://psframework.org/documentation/blog/psframework.html)
- - [PSUtil Blog Posts](https://psframework.org/documentation/blog/psutil.html)
- - [PSModuleDevelopment Blog Posts](https://psframework.org/documentation/blog/psmoduledevelopment.html)
- - [MailDaemon Blog Posts](documentation/blog/maildaemon.html)
-
 ## Command Reference
 
 Finally, sometimes you just need to browser the list of all the technical details yourself. This list is fully available here in this section of the documentation and automatically updated with each release.
