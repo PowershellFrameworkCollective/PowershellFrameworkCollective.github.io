@@ -41,6 +41,9 @@ Together the two cover the two basic steps to using the template system.
 
 Since this component has some complexities that need to be dealt with, some in-depth tutorials have been provided:
 
+### Default Template Guides
+ - [PSFProject: Setting up a PowerShell Module project with CI/CD in no time](templates/template-psfproject-howto.html)
+
 ### Working with templates
  - [Template Types](templates/template-types.html)
  - [Creating a new file template](templates/creating-a-new-file-template.html)
