@@ -1,5 +1,7 @@
 ﻿# Logging to: Debuglog
 
+> [Back to: Logging](../../logging.html)
+
 ## Setting up logging
 
 The debug log is enabled by default, there is nothing that needs to be done to prepare for it.
@@ -153,3 +155,5 @@ Namespace: `PSFramework.Logging.FileSystem`
 For more detailed docs, [see the full documentation for the FileSystem logging provider](../providers/filesystem.html)
 
 > Note: Technically, the in-memory log is part of the message system and not a dedicated logging provider, hence the docs in this link only cover the file-based portions.
+
+> [Back to: Logging](../../logging.html)
