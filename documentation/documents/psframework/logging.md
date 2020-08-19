@@ -53,7 +53,7 @@ The resolved message gets processed by each active provider and is thus written.
 A quick refence list on how to log to the built-in Logging Providers:
 
 - [... the debug log](logging/loggingto/debuglog.html)
-- ... a logfile
+- [... a logfile](logging/loggingto/logfile.html)
 - ... the Windows Eventlog
 - ... Azure Log Analytics
 - ... Splunk
