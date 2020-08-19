@@ -29,4 +29,4 @@ Note: Replacing custom functions such as the often used `Write-Log` works just t
 
 # Further reading
 
- - [Presentation: Logging in a DevOps World (PSConfAsia 2018)](https://livestream.com/gaelcolas/PSConfAsia/videos/182706619)
+- [Documentation root for the Logging System](https://psframework.org/documentation/documents/psframework/logging.html)
