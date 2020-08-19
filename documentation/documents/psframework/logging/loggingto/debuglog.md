@@ -116,10 +116,12 @@ Using the [PSFramework Configuration System](../../configuration.html) you can c
 
 Using `Set-PSFConfig` and/or `Register-PSFConfig` or the other tools open to govern configuration, you can define the following settings:
 
-> Note: Each setting starts with `PSFramework.Logging` before the listed setting name.
-> `FileSystem.ErrorLogFileEnabled` would thus become `PSFramework.Logging.FileSystem.ErrorLogFileEnabled`.
+> Note: Each setting starts with namespace before the listed setting name.
+> `ErrorLogFileEnabled` would thus become `PSFramework.Logging.FileSystem.ErrorLogFileEnabled`.
 
 ### In-Memory Log
+
+Namespace: `PSFramework.Logging`
 
 | Name | Default Value | Description |
 |---|---|---|
@@ -130,19 +132,21 @@ Using `Set-PSFConfig` and/or `Register-PSFConfig` or the other tools open to gov
 
 ### File-based log
 
+Namespace: `PSFramework.Logging.FileSystem`
+
 | Name | Default Value | Description |
 |---|---|---|
-| FileSystem.ErrorLogFileEnabled | True | Governs, whether log files for errors are written. This setting is on a per-Process basis. Runspaces share, jobs or other consoles counted separately. |
-| FileSystem.LogPath | <%AppData%\\...> | The path where the PSFramework writes all its logs and debugging information. |
-| FileSystem.MaxErrorFileBytes | 20MB | The maximum size all error files combined may have. When this number is exceeded, the oldest entry is culled. This setting is on a per-Process basis. Runspaces share, jobs or other consoles counted separately. |
-| FileSystem.MaxLogFileAge | 7.00:00:00 | Any logfile older than this will automatically be cleansed. This setting is global. |
-| FileSystem.MaxMessagefileBytes | 5MB | The maximum size of a given logfile. When reaching this limit, the file will be abandoned and a new log created. Set to 0 to not limit the size. This setting is on a per-Process basis. Runspaces share, jobs or other consoles counted separately. |
-| FileSystem.MaxMessagefileCount | 5 | The maximum number of logfiles maintained at a time. Exceeding this number will cause the oldest to be culled. Set to 0 to disable the limit. This setting is on a per-Process basis. Runspaces share, jobs or other consoles counted separately. |
-| FileSystem.MaxTotalFolderSize | 100MB | This is the upper limit of length all items in the log folder may have combined across all processes. |
-| FileSystem.MessageLogFileEnabled | True | Governs, whether a log file for the system messages is written. This setting is on a per-Process basis. Runspaces share, jobs or other consoles counted separately. |
-| FileSystem.ModernLog | True | Enables the modern, more powereful version of the filesystem log, including headers and extra columns |
-| FileSystem.TargetSerializationDepth | -1 | Whether the target object should be stored as a serialized object. 0 or less will see it logged as string, 1 or greater will see it logged as compressed CLIXML. |
-| FileSystem.TimeFormat | yyyy-MM-dd HH:mm:ss | The format used for timestamps in the logfile |
+| ErrorLogFileEnabled | True | Governs, whether log files for errors are written. This setting is on a per-Process basis. Runspaces share, jobs or other consoles counted separately. |
+| LogPath | <%AppData%\\...> | The path where the PSFramework writes all its logs and debugging information. |
+| MaxErrorFileBytes | 20MB | The maximum size all error files combined may have. When this number is exceeded, the oldest entry is culled. This setting is on a per-Process basis. Runspaces share, jobs or other consoles counted separately. |
+| MaxLogFileAge | 7.00:00:00 | Any logfile older than this will automatically be cleansed. This setting is global. |
+| MaxMessagefileBytes | 5MB | The maximum size of a given logfile. When reaching this limit, the file will be abandoned and a new log created. Set to 0 to not limit the size. This setting is on a per-Process basis. Runspaces share, jobs or other consoles counted separately. |
+| MaxMessagefileCount | 5 | The maximum number of logfiles maintained at a time. Exceeding this number will cause the oldest to be culled. Set to 0 to disable the limit. This setting is on a per-Process basis. Runspaces share, jobs or other consoles counted separately. |
+| MaxTotalFolderSize | 100MB | This is the upper limit of length all items in the log folder may have combined across all processes. |
+| MessageLogFileEnabled | True | Governs, whether a log file for the system messages is written. This setting is on a per-Process basis. Runspaces share, jobs or other consoles counted separately. |
+| ModernLog | True | Enables the modern, more powereful version of the filesystem log, including headers and extra columns |
+| TargetSerializationDepth | -1 | Whether the target object should be stored as a serialized object. 0 or less will see it logged as string, 1 or greater will see it logged as compressed CLIXML. |
+| TimeFormat | yyyy-MM-dd HH:mm:ss | The format used for timestamps in the logfile |
 
 ## Logging Provider Documentation
 
