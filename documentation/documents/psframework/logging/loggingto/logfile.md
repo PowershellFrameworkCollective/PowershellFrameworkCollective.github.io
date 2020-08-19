@@ -6,10 +6,10 @@ To enable logging to a dedicated logfile, in its simple-most format, run the fol
 
 ```powershell
 $paramSetPSFLoggingProvider = @{
-	Name		 = 'logfile'
-	InstanceName = '<taskname>'
-	FilePath	 = 'C:\Logs\TaskName-%Date%.csv'
-	Enabled	     = $true
+    Name         = 'logfile'
+    InstanceName = '<taskname>'
+    FilePath     = 'C:\Logs\TaskName-%Date%.csv'
+    Enabled      = $true
 }
 Set-PSFLoggingProvider @paramSetPSFLoggingProvider
 ```
@@ -23,11 +23,11 @@ To configure it to log in that format, execute the following instead:
 
 ```powershell
 $paramSetPSFLoggingProvider = @{
-	Name		 = 'logfile'
-	InstanceName = '<taskname>'
-	FilePath	 = 'C:\Logs\TaskName-%Date%.log'
-	FileType	 = 'CMTrace'
-	Enabled	     = $true
+    Name         = 'logfile'
+    InstanceName = '<taskname>'
+    FilePath     = 'C:\Logs\TaskName-%Date%.log'
+    FileType     = 'CMTrace'
+    Enabled      = $true
 }
 Set-PSFLoggingProvider @paramSetPSFLoggingProvider
 ```
@@ -38,11 +38,11 @@ Want to include logrotation?
 
 ```powershell
 $paramSetPSFLoggingProvider = @{
-	Name		  = 'logfile'
-	InstanceName  = '<taskname>'
-	FilePath	  = 'C:\Logs\TaskName-%Date%.csv'
-	Enabled	      = $true
-	LogRotatePath = 'C:\Logs\TaskName-*.csv'
+    Name          = 'logfile'
+    InstanceName  = '<taskname>'
+    FilePath      = 'C:\Logs\TaskName-%Date%.csv'
+    Enabled       = $true
+    LogRotatePath = 'C:\Logs\TaskName-*.csv'
 }
 Set-PSFLoggingProvider @paramSetPSFLoggingProvider
 ```
@@ -86,7 +86,7 @@ For more details on how to generate messages, [see the dedicated documentation p
 The logfile provider has a great many options to tune its actual behavior.
 Key Highlights:
 
-> File Format
+### File Format
 
 The file format is defined through the `FileType` parameter / settings.
 
@@ -98,14 +98,14 @@ The file format is defined through the `FileType` parameter / settings.
 | Json | Output as a Json fragment. Slight post-processing needed. |
 | CMTrace | Output in the CMTrace format, ignores the property selection. |
 
-> Timestamp
+### Timestamp
 
 There are two parameters / settings governing timestamps:
 
 + TimeFormat: A format string to use on the timestamp
 + UTC: Whether the timestamp should be written in UTC, rather than localtime
 
-> FilePath
+### FilePath
 
 The path to where the file will be created.
 This path supports placeholders that will be autoamtically resolved:
@@ -131,7 +131,7 @@ Two reasons:
 
 The logging provider will create the folder in which to create files if needed and able to.
 
-> Headers
+### Headers
 
 This setting/parameter defines which property of the message to log (and in which order).
 It is ignored in CMTrace File Format, but all other formats support it.
@@ -143,7 +143,7 @@ Write-PSFMessage -Message 'Some text'
 Get-PSFMessage | Select-Object -Last 1 | fl *
 ```
 
-> Log Rotation
+### Log Rotation
 
 This provider includes the ability to automatically rotate stale logfiles.
 
