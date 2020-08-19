@@ -119,7 +119,7 @@ Using `Set-PSFConfig` and/or `Register-PSFConfig` or the other tools open to gov
 > In-Memory Log
 
 | Setting | Default Value | Description |
-|###|###|###|
+|---|---|---|
 | PSFramework.Logging.MaxErrorCount | 128 | The maximum number of error records maintained in-memory. |
 | PSFramework.Logging.MaxMessageCount | 1024 | The maximum number of messages that can be maintained in the in-memory message queue. |
 | PSFramework.Logging.MessageLogEnabled | True | Governs, whether a log of recent messages is kept in memory. |
@@ -128,9 +128,9 @@ Using `Set-PSFConfig` and/or `Register-PSFConfig` or the other tools open to gov
 > File-based log
 
 | Setting | Default Value | Description |
-|###|###|###|
+|---|---|---|
 | PSFramework.Logging.FileSystem.ErrorLogFileEnabled | True | Governs, whether log files for errors are written. This setting is on a per-Process basis. Runspaces share, jobs or other consoles counted separately. |
-| PSFramework.Logging.FileSystem.LogPath | C:\Users\frweinma\AppData\Roaming\WindowsPowerShell\PSFramework\Logs | The path where the PSFramework writes all its logs and debugging information. |
+| PSFramework.Logging.FileSystem.LogPath | <%AppData%\\...> | The path where the PSFramework writes all its logs and debugging information. |
 | PSFramework.Logging.FileSystem.MaxErrorFileBytes | 20MB | The maximum size all error files combined may have. When this number is exceeded, the oldest entry is culled. This setting is on a per-Process basis. Runspaces share, jobs or other consoles counted separately. |
 | PSFramework.Logging.FileSystem.MaxLogFileAge | 7.00:00:00 | Any logfile older than this will automatically be cleansed. This setting is global. |
 | PSFramework.Logging.FileSystem.MaxMessagefileBytes | 5MB | The maximum size of a given logfile. When reaching this limit, the file will be abandoned and a new log created. Set to 0 to not limit the size. This setting is on a per-Process basis. Runspaces share, jobs or other consoles counted separately. |
