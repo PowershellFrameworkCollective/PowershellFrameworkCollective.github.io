@@ -140,3 +140,9 @@ Using `Set-PSFConfig` and/or `Register-PSFConfig` or the other tools open to gov
 | PSFramework.Logging.FileSystem.ModernLog | True | Enables the modern, more powereful version of the filesystem log, including headers and extra columns |
 | PSFramework.Logging.FileSystem.TargetSerializationDepth | -1 | Whether the target object should be stored as a serialized object. 0 or less will see it logged as string, 1 or greater will see it logged as compressed CLIXML. |
 | PSFramework.Logging.FileSystem.TimeFormat | yyyy-MM-dd HH:mm:ss | The format used for timestamps in the logfile |
+
+## Logging Provider Documentation
+
+For more detailed docs, [see the full documentation for the FileSystem logging provider](../providers/filesystem.html)
+
+> Note: Technically, the in-memory log is part of the message system and not a dedicated logging provider, hence the docs in this link only cover the file-based portions.
