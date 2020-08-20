@@ -2,7 +2,42 @@
 
 ## Setting up logging
 
-> TODO: Add Content
+For logging to Splunk, you first need to [create an http listener](https://ntsystems.it/post/sending-events-to-splunks-http-event-collector-with-powershell).
+
+Once that has been taken care of, you can register the logging thus:
+
+```powershell
+$paramSetPSFLoggingProvider = @{
+    Name         = 'splunk'
+    InstanceName = 'MyTask'
+    Url          = 'https://servername:8088/services/collector'
+    Token        = '<Token>'
+    Enabled      = $true
+}
+Set-PSFLoggingProvider @paramSetPSFLoggingProvider
+```
+
+> Splunk Cloud service
+
+Logging to the cloud version of Splunk works exactly the same way - configure the listener, then register it with the hostname of your cloud instance: `'https://instance-hostname:8088/services/collector'`
+
+> The SSL Thing
+
+On default Splunk instances, you can - and probably should - use https, not the unencrypted http.
+However, default installations - including the cloud service - do not contain a trusted certificate.
+If you cannot make it trusted, you can have the logging provider ignore it thus:
+
+```powershell
+$paramSetPSFLoggingProvider = @{
+    Name         = 'splunk'
+    InstanceName = 'MyTask'
+    Url          = 'https://servername:8088/services/collector'
+    Token        = '<Token>'
+    IgnoreCert   = $true
+    Enabled      = $true
+}
+Set-PSFLoggingProvider @paramSetPSFLoggingProvider
+```
 
 ## Generating Messages
 
@@ -36,12 +71,8 @@ Write-PSFMessage -Message "Doing something" -Target $ComputerName
 
 For more details on how to generate messages, [see the dedicated documentation page](../basics/writing-messages.html)
 
-## Using the log
-
-> TODO: Add Content
-
 ## Logging Provider Documentation
 
-For more detailed docs, [see the full documentation for the PROVIDERNAME logging provider](../providers/PROVIDERNAME.html)
+For more detailed docs, [see the full documentation for the splunk logging provider](../providers/splunk.html)
 
 > [Back to: Logging](../../logging.html)

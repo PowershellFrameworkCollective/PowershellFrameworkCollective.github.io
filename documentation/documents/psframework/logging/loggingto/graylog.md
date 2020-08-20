@@ -2,7 +2,33 @@
 
 ## Setting up logging
 
-> TODO: Add Content
+> Installation
+
+This logging provider requires an installation step:
+It uses/depends upon the [PowerShell module PSGELF](https://github.com/jeremymcgee73/PSGELF).
+
+To provide this module, you can run the following line:
+
+```powershell
+Install-PSFLoggingProvider -Name gelf
+```
+
+> Setting up logging
+
+To register the Graylog server as a logging target, run:
+
+```powershell
+$paramSetPSFLoggingProvider = @{
+    Name         = 'gelf'
+    InstanceName = 'MyTask'
+    GelfServer   = 'hostname'
+    Port         = 443
+    Enabled      = $true
+}
+Set-PSFLoggingProvider @paramSetPSFLoggingProvider
+```
+
+(replacing the values for GelfServer and port accordingly)
 
 ## Generating Messages
 
@@ -36,12 +62,8 @@ Write-PSFMessage -Message "Doing something" -Target $ComputerName
 
 For more details on how to generate messages, [see the dedicated documentation page](../basics/writing-messages.html)
 
-## Using the log
-
-> TODO: Add Content
-
 ## Logging Provider Documentation
 
-For more detailed docs, [see the full documentation for the PROVIDERNAME logging provider](../providers/PROVIDERNAME.html)
+For more detailed docs, [see the full documentation for the GELF logging provider](../providers/gelf.html)
 
 > [Back to: Logging](../../logging.html)

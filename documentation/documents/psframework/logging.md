@@ -56,9 +56,9 @@ A quick refence list on how to log to the built-in Logging Providers:
 - [... a logfile](logging/loggingto/logfile.html)
 - [... the Windows Eventlog](logging/loggingto/eventlog.html)
 - [... Azure Log Analytics](logging/loggingto/azureloganalytics.html)
-- ... Splunk
-- ... Graylog
-- ... SQL
+- [... Splunk](logging/loggingto/splunk.html)
+- [... Graylog](logging/loggingto/graylog.html)
+- [... SQL](logging/loggingto/sql.html)
 
 ## Basics
 
@@ -68,13 +68,13 @@ A quick refence list on how to log to the built-in Logging Providers:
 
 The full reference documentation for each built-in Logging Provider
 
-- The FileSystem Provider
-- The LogFile Provider
-- The Eventlog Provider
-- The Azure Log Analytics Provider
-- The GELF Provider
-- The Splunk Provider
-- The SQL Provider
+- [The FileSystem Provider](logging/providers/filesystem.html)
+- [The LogFile Provider](logging/providers/logfile.html)
+- [The Eventlog Provider](logging/providers/eventlog.html)
+- [The Azure Log Analytics Provider](logging/providers/azureloganalytics.html)
+- [The GELF Provider](logging/providers/gelf.html)
+- [The Splunk Provider](logging/providers/splunk.html)
+- [The SQL Provider](logging/providers/sql.html)
 
 ## Conference Recordings
 
