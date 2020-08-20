@@ -17,7 +17,7 @@ Set-PSFLoggingProvider @paramSetPSFLoggingProvider
 
 > Custom LogType
 
-By default, all messages will get written to the `Message` "container" (logtype).
+By default, all messages will get written to the `Message` table (logtype).
 This can of course be customized:
 
 ```powershell
