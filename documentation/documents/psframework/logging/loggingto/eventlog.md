@@ -1,4 +1,6 @@
-﻿> [Back to: Logging](../../logging.html)
+﻿# Logging to: Windows Eventlog
+
+> [Back to: Logging](../../logging.html)
 
 ## Setting up logging
 

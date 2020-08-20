@@ -1,4 +1,6 @@
-﻿> [Back to: Logging](../../logging.html)
+﻿# Logging to: Azure Log Analytics
+
+> [Back to: Logging](../../logging.html)
 
 ## Setting up logging
 

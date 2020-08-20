@@ -1,4 +1,6 @@
-﻿> [Back to: Logging](../../logging.html)
+﻿# Logging to: Graylog
+
+> [Back to: Logging](../../logging.html)
 
 ## Setting up logging
 

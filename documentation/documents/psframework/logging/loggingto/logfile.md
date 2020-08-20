@@ -1,4 +1,6 @@
-﻿> [Back to: Logging](../../logging.html)
+﻿# Logging to: A Logfile
+
+> [Back to: Logging](../../logging.html)
 
 ## Setting up logging
 
