@@ -54,7 +54,7 @@ A quick refence list on how to log to the built-in Logging Providers:
 
 - [... the debug log](logging/loggingto/debuglog.html)
 - [... a logfile](logging/loggingto/logfile.html)
-- ... the Windows Eventlog
+- [... the Windows Eventlog](logging/loggingto/eventlog.html)
 - ... Azure Log Analytics
 - ... Splunk
 - ... Graylog
