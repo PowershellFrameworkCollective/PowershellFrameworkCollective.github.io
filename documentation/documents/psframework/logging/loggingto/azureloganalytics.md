@@ -2,7 +2,35 @@
 
 ## Setting up logging
 
-> TODO: Add Content
+To enable logging to Azure Log Analytics, after [preparing a workspace](https://docs.microsoft.com/en-us/azure/azure-monitor/learn/quick-create-workspace), run the following command (insert id and Shared Key):
+
+```powershell
+$paramSetPSFLoggingProvider = @{
+    Name         = 'AzureLogAnalytics'
+    InstanceName = 'MyTask'
+    WorkspaceId  = '<id>'
+    SharedKey    = '<key>'
+    Enabled      = $true
+}
+Set-PSFLoggingProvider @paramSetPSFLoggingProvider
+```
+
+> Custom LogType
+
+By default, all messages will get written to the `Message` "container" (logtype).
+This can of course be customized:
+
+```powershell
+$paramSetPSFLoggingProvider = @{
+    Name         = 'AzureLogAnalytics'
+    InstanceName = 'MyTask'
+    WorkspaceId  = '<id>'
+    SharedKey    = '<key>'
+    LogType      = 'MyTask'
+    Enabled      = $true
+}
+Set-PSFLoggingProvider @paramSetPSFLoggingProvider
+```
 
 ## Generating Messages
 
@@ -36,12 +64,8 @@ Write-PSFMessage -Message "Doing something" -Target $ComputerName
 
 For more details on how to generate messages, [see the dedicated documentation page](../basics/writing-messages.html)
 
-## Using the log
-
-> TODO: Add Content
-
 ## Logging Provider Documentation
 
-For more detailed docs, [see the full documentation for the PROVIDERNAME logging provider](../providers/PROVIDERNAME.html)
+For more detailed docs, [see the full documentation for the Azure Log Analytics logging provider](../providers/azureloganalytics.html)
 
 > [Back to: Logging](../../logging.html)
