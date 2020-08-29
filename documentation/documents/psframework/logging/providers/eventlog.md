@@ -1,6 +1,9 @@
 ﻿# Logging Provider: Eventlog
 
+> [Back to: Logging](../../logging.html)
+
 > What are [Logging Providers](../basics/logging-providers.html)?
+>
 > [Logging to NAME](../loggingto/eventlog.html)
 
 ## Description
@@ -80,3 +83,5 @@ Data| <key> : <value>
 
 Due to limitations in the eventlog system, there is a [maximum length of 31839 characters](https://docs.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-reporteventa).
 Datasets that are longer will get truncated.
+
+> [Back to: Logging](../../logging.html)

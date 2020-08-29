@@ -1,6 +1,9 @@
 ﻿# Logging Provider: Azure Log Analytics
 
+> [Back to: Logging](../../logging.html)
+
 > What are [Logging Providers](../basics/logging-providers.html)?
+>
 > [Logging to Azure Log Analytics](../loggingto/azureloganalytics.html)
 
 ## Description
@@ -30,3 +33,5 @@ Requires you to have already configured a target workspace to log to.
 
 This Logging Provider currently does not support special proxy handling.
 In order to successfully log to Azure Log Analytics, default connectivity must succeed.
+
+> [Back to: Logging](../../logging.html)
