@@ -25,6 +25,7 @@ It will also create clixml exports of all error records that are logged.
 |Version|1|
 |ConfigurationRoot|PSFramework.Logging.FileSystem|
 |Supports Data|False|
+|Installation|Not Required|
 
 ## Properties
 
@@ -82,9 +83,9 @@ Want to roll this out by group policy for all computers?
 Apply the following registry key per GPO:
 
 ```text
-Key: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsPowerShell\PSFramework\Config\Default
-Name: PSFramework.Logging.FileSystem.ModernLog
-Type: REG_SZ
+Key:   HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsPowerShell\PSFramework\Config\Default
+Name:  PSFramework.Logging.FileSystem.ModernLog
+Type:  REG_SZ
 Value: Bool:true
 ```
 

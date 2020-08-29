@@ -4,7 +4,7 @@
 
 > What are [Logging Providers](../basics/logging-providers.html)?
 >
-> [Logging to NAME](../loggingto/eventlog.html)
+> [Logging to EventLog](../loggingto/eventlog.html)
 
 ## Description
 
@@ -20,6 +20,7 @@ Sources that do not exist yet will automatically be created if able to (this wou
 |Version|2|
 |ConfigurationRoot|PSFramework.Logging.EventLog|
 |Supports Data|True|
+|Installation|Not Required|
 
 ## Properties
 

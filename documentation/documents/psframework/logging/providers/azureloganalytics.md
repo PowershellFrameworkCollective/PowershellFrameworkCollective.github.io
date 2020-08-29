@@ -17,6 +17,7 @@ Requires you to have already configured a target workspace to log to.
 |Version|2|
 |ConfigurationRoot|PSFramework.Logging.AzureLogAnalytics|
 |Supports Data|False|
+|Installation|Not Required|
 
 ## Properties
 
