@@ -4,9 +4,8 @@ title: PSFramework: The Logging System
 
 # The Logging System
 
-> The documentation of this component refers to v1.3.135, which is as of this writing still in prerelease/preview.
-> Some of this documentation may point at content not yet published to the gallery at all.
-> Some aspects may yet be subject to change.
+> The documentation is still a work in progress.
+Some pages still contain but a placeholder, filling in the content as fast as I an make myself write it.
 
 ## Synopsis
 
