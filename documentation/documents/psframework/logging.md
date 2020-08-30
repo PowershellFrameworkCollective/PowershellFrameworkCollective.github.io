@@ -25,24 +25,9 @@ Its asynchronous nature prevents impact on code performance while being runspace
 - Rich log data for both debugging and auditing
 - Automatic debug log
 
-## Description
+## Core Concepts
 
-The PSFramework logging system is the most powerful logging solution in the PowerShell ecosystem.
-At its core concept, it separates the usual logging process into two individual segments:
-
-- Message
-- Logging
-
-On one end, scripts use `Write-PSFMessage` and related commands to generate messages.
-To these, policies and transformations may be applied if registered by code or user.
-The final result is queued for logging.
-
-Then the logging parts come into play.
-The logging is configured either per configuration or using `Set-PSFLoggingProvider`.
-Each logging plugin - "Logging Provider" - can be configured separately and active in parallel.
-The resolved message gets processed by each active provider and is thus written.
-
-> The details are a bit more evolved - see the "advanced" section - but those are of interest only to those writing their own Logging Providers.
+- [Core Concepts](logging/core/core-concepts.html)
 
 ## Quick Start Guides
 
