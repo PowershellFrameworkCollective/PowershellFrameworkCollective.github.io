@@ -103,36 +103,6 @@ Write-PSFMessage -Message "Doing something" -Target $ComputerName
 
 For more details on how to generate messages, [see the dedicated documentation page](../basics/writing-messages.html)
 
-## The Table
-
-The logging provider offers to configure the table if needed.
-However often enough, you don't want the actual script to have any more access than the ability to write log data.
-
-If you want to provision the table yourself, this is the actual CREATE TABLE statement we use:
-
-```SQL
-CREATE TABLE $SqlTable (
-    Message VARCHAR(max),
-    Level VARCHAR(max),
-    TimeStamp [DATETIME],
-    FunctionName VARCHAR(max),
-    ModuleName VARCHAR(max),
-    Tags VARCHAR(max),
-    Runspace VARCHAR(36),
-    ComputerName VARCHAR(max),
-    TargetObject VARCHAR(max),
-    [File] VARCHAR(max),
-    Line BIGINT,
-    ErrorRecord VARCHAR(max),
-    CallStack VARCHAR(max)
-)
-```
-
-The column sizes are not validated, so if you want to do more conservative constraints, feel free.
-These were picked for maximum compatibility.
-
-The only permissions that the logging account needs is the ability to ascertain the table exists and to insert new values into it.
-
 ## Logging Provider Documentation
 
 For more detailed docs, [see the full documentation for the sql logging provider](../providers/sql.html)
