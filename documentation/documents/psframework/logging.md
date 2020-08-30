@@ -78,12 +78,14 @@ The full reference documentation for each built-in Logging Provider
 
 ## Conference Recordings
 
-- [PSConfAsia 2018: Logging in a DevOps world](https://livestream.com/gaelcolas/PSConfAsia/videos/182706619)
 - [PowerShell Summit 2019: Logging in a DevOps world](https://www.youtube.com/watch?v=Uy5Qd9g25Dg)
+- [PSConfAsia 2018: Logging in a DevOps world](https://livestream.com/gaelcolas/PSConfAsia/videos/182706619)
 
 ## Advanced
 
 > Structure & Content Pending
+
+- [Logging Provider Generations](logging/advanced/logging-provider-generations.html)
 
 ## Notes
 
