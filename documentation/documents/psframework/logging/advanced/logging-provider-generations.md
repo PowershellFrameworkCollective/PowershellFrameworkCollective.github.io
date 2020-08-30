@@ -1,5 +1,7 @@
 ﻿# Logging Provider: Generations
 
+> [Back to: Logging](../../logging.html)
+
 ## Synopsis
 
 The logging system has evolved over time.
@@ -27,3 +29,5 @@ With the second generation logging provider system, significant new capabilities
 + Full resource isolation
 + Improved debugging capabilities
 + Easier to implement
+
+> [Back to: Logging](../../logging.html)
