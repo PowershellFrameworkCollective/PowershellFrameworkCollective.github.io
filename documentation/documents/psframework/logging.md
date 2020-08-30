@@ -27,6 +27,7 @@ Its asynchronous nature prevents impact on code performance while being runspace
 
 ## Core Concepts
 
+- [Summary: Architecture](logging/core/summary-architecture.html)
 - [Core Concepts](logging/core/core-concepts.html)
 
 ## Quick Start Guides

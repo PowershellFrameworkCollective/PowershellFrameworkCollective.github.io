@@ -58,4 +58,8 @@ By having a dedicated logging runspace it is guaranteed that only one thread wri
 Messages can be written from any number of runspaces at the same time (the queue is threadsafe).
 This logging is inherently _asynchronous_ so write latency of logs does not cost you code performance.
 
+The configurability and extensibility also means you do not have to define your logging at coding time.
+You can later define it at the machine level.
+You can also combine many scripts and modules, all of which will integrate into your logging scheme without you having to modify it.
+
 > [Back to: Logging](../../logging.html)
