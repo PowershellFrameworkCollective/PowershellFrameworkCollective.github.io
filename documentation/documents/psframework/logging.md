@@ -75,8 +75,11 @@ The full reference documentation for each built-in Logging Provider
 
 ## Advanced
 
-> Structure & Content Pending
-
+- [Writing Custom Logging Providers](logging/advanced/writing-logging-providers.html)
+- [The Logging Sequence](logging/advanced/logging-sequence.html)
+- [Debugging Logging Providers](logging/advanced/debugging-providers.html)
+- [Message Policies](logging/advanced/message-policies.html)
+- [Cmdlets & Logging](logging/advanced/cmdlets-and-logging.html)
 - [Logging Provider Generations](logging/advanced/logging-provider-generations.html)
 
 ## Notes
