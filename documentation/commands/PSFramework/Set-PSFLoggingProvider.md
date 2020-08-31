@@ -13,9 +13,10 @@ Configures a logging provider.
 ## SYNTAX
 
 ```
-Set-PSFLoggingProvider [[-Name] <String>] [[-Enabled] <Boolean>] [[-IncludeModules] <String[]>]
- [[-ExcludeModules] <String[]>] [[-IncludeTags] <String[]>] [[-ExcludeTags] <String[]>] [-EnableException]
- [<CommonParameters>]
+Set-PSFLoggingProvider [-Name] <String> [[-InstanceName] <String>] [[-Enabled] <Boolean>]
+ [[-IncludeModules] <String[]>] [[-ExcludeModules] <String[]>] [[-IncludeFunctions] <String[]>]
+ [[-ExcludeFunctions] <String[]>] [[-IncludeTags] <String[]>] [[-ExcludeTags] <String[]>] [[-MinLevel] <Int32>]
+ [[-MaxLevel] <Int32>] [-ExcludeWarning] [-EnableException] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -51,8 +52,23 @@ Type: String
 Parameter Sets: (All)
 Aliases: Provider, ProviderName
 
-Required: False
+Required: True
 Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -InstanceName
+A description of the InstanceName parameter.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 2
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -67,7 +83,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 2
+Position: 3
 Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -83,7 +99,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 3
+Position: 4
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -99,7 +115,39 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 4
+Position: 5
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -IncludeFunctions
+Only messages from functions that match at least one entry noted here will be logged.
+Uses wildcard expressions.
+
+```yaml
+Type: String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 6
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ExcludeFunctions
+Messages from functions that match at least one entry noted here will NOT be logged.
+Uses wildcard expressions.
+
+```yaml
+Type: String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 7
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -115,7 +163,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 5
+Position: 8
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -131,8 +179,69 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 6
+Position: 9
 Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -MinLevel
+The minimum level of a message that will be logged.
+Note: The lower the message level, the MORE important it is.
+Levels range from 1 through 9:
+- InternalComment: 9
+- Debug: 8
+- Verbose: 5
+- Host: 2
+- Critical: 1
+The level "Warning" is not represented on this scale.
+
+```yaml
+Type: Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 10
+Default value: 0
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -MaxLevel
+The maximum level of a message that will be logged.
+Note: The lower the message level, the MORE important it is.
+Levels range from 1 through 9:
+- InternalComment: 9
+- Debug: 8
+- Verbose: 5
+- Host: 2
+- Critical: 1
+The level "Warning" is not represented on this scale.
+
+```yaml
+Type: Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 11
+Default value: 0
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ExcludeWarning
+Whether to exclude warnings from the logging provider / instance.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

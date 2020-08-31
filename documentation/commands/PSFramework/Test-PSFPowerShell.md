@@ -14,7 +14,8 @@ Tests for conditions in the PowerShell environment.
 
 ```
 Test-PSFPowerShell [[-PSMinVersion] <Version>] [[-PSMaxVersion] <Version>] [[-Edition] <PSEdition>]
- [[-OperatingSystem] <OperatingSystem>] [-Elevated] [<CommonParameters>]
+ [[-OperatingSystem] <OperatingSystem>] [-Elevated] [[-ComputerName] <ComputerParameter>]
+ [[-Credential] <PSCredential>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -136,6 +137,38 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ComputerName
+The computer on which to test local PowerShell conditions.
+If this parameter is not specified, it tests the current PowerShell process and hosting OS.
+Accepts established PowerShell sessions.
+
+```yaml
+Type: ComputerParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 5
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Credential
+The credentials to use when connecting to a remote computer.
+
+```yaml
+Type: PSCredential
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 6
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

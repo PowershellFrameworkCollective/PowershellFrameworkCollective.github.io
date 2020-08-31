@@ -14,7 +14,7 @@ Registers a scriptblock under name, to later be available for TabExpansion.
 
 ```
 Register-PSFTeppScriptblock [-ScriptBlock] <ScriptBlock> [-Name] <String> [[-Mode] <TeppScriptMode>]
- [[-CacheDuration] <TimeSpanParameter>] [<CommonParameters>]
+ [[-CacheDuration] <TimeSpanParameter>] [-Global] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -124,6 +124,22 @@ Aliases:
 Required: False
 Position: 4
 Default value: 0
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Global
+Whether the scriptblock should be executed in the global context.
+This parameter is needed to reliably execute in background runspaces, but means no direct access to module content.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

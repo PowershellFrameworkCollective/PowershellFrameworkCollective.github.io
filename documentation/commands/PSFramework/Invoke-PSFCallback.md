@@ -8,7 +8,7 @@ schema: 2.0.0
 # Invoke-PSFCallback
 
 ## SYNOPSIS
-{{ Fill in the Synopsis }}
+Invokes all registered callback scripts applicable to the calling command.
 
 ## SYNTAX
 
@@ -17,21 +17,52 @@ Invoke-PSFCallback [-Data <Object>] [-EnableException <Boolean>] [-PSCmdlet <PSC
 ```
 
 ## DESCRIPTION
-{{ Fill in the Description }}
+Invokes all registered callback scripts applicable to the calling command.
+
+Use Register-PSFCallback to register scriptblocks that get applied.
+
+By calling Invoke-PSFCallback - which will not do anything unless somebody registers callback scriptblocks - a module can provide extensions points to which other modules can attach, without the implementing module needing to know those external modules.
 
 ## EXAMPLES
 
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
+### Example 1 : Basic Invocation
+```
+PS C:\> Invoke-PSFCallback
 ```
 
-{{ Add example description here }}
+Simply by calling the command, any registered scriptblocks that apply to your command get triggered.
+
+_
+
+### Example 2 : Providing Information
+```
+PS C:\> Invoke-PSFCallback -Data $Server
+```
+
+Executes all applicable, registered callback scriptblocks.
+
+Provides the information stored in $Server to the scriptblock(s) being this executed.
+
+_
+
+### Example 3 : The full invocation
+```
+PS C:\> Invoke-PSFCallback -Data $Server -EnableException $true -PSCmdlet $PSCmdlet
+```
+
+Executes all applicable, registered callback scriptblocks.
+
+Provides the information stored in $Server to the scriptblock(s) being this executed.
+
+If any of the executed callback scriptblocks fails with a terminating exception, the command calling Invoke-PSFCallback also fails in a terminating exception (no try/catch necessary).
 
 ## PARAMETERS
 
 ### -Data
-{{ Fill Data Description }}
+Additional data to provide to the callback scriptblock.
+
+This can be useful to implement input-driven workflows.
+For example, it would allow a callback scriptblock to load configuration, based on the server being processed.
 
 ```yaml
 Type: Object
@@ -46,7 +77,11 @@ Accept wildcard characters: False
 ```
 
 ### -EnableException
-{{ Fill EnableException Description }}
+Enables - if $true - terminating exceptions when a single callback scriptblock fails.
+The terminating exception is thrown in the context of the calling command, not Invoke-PSFCallback, so it is unneccessary - and impossible - to handle within a try/catch block.
+
+If set to $false (default), failure flags the calling command for failure, as detected by Test-PSFFunctionInterrupt.
+In that case, Invoke-PSFCallback will log the error, but not directly terminate the calling command.
 
 ```yaml
 Type: Boolean
@@ -61,7 +96,9 @@ Accept wildcard characters: False
 ```
 
 ### -PSCmdlet
-{{ Fill PSCmdlet Description }}
+The $PSCmdlet object of the calling command.
+If this value is not provided, it will autoamtically be picked up.
+Providing it improves performance slightly, as it removes the need to look it up.
 
 ```yaml
 Type: PSCmdlet
@@ -81,7 +118,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### None
-
 ## OUTPUTS
 
 ### System.Object

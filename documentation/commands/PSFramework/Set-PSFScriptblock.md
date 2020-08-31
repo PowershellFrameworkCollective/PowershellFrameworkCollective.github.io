@@ -13,7 +13,7 @@ Stores a scriptblock in the central scriptblock store.
 ## SYNTAX
 
 ```
-Set-PSFScriptblock [-Name] <String> [-Scriptblock] <ScriptBlock> [<CommonParameters>]
+Set-PSFScriptblock [-Name] <String> [-Scriptblock] <ScriptBlock> [-Global] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -61,6 +61,22 @@ Aliases:
 Required: True
 Position: 2
 Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Global
+Whether the scriptblock should be invoked in the global context.
+If defined, accessing the scriptblock will automatically globalize it before returning it.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

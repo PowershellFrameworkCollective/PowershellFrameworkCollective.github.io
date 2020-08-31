@@ -5,57 +5,44 @@ online version:
 schema: 2.0.0
 ---
 
-# Disable-PSFTaskEngineTask
+# Export-PSFModuleClass
 
 ## SYNOPSIS
-Disables a task registered to the PSFramework task engine.
+Exports a module-defined PowerShell class irrespective of how the module is being imported.
 
 ## SYNTAX
 
 ```
-Disable-PSFTaskEngineTask [[-Name] <String[]>] [[-Task] <PsfTask[]>] [<CommonParameters>]
+Export-PSFModuleClass [-ClassType] <Type[]> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Disables a task registered to the PSFramework task engine.
+Exports a module-defined PowerShell class irrespective of how the module is being imported.
+This avoids having to worry about how the module is being imported.
+
+Please beware the risk of class-name-collisions however.
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 ```
-Get-PSFTaskEngineTask -Name 'mymodule.maintenance' | Disable-PSFTaskEngineTask
+Export-PSFModuleClass -ClassType ([MyModule_MyClass])
 ```
 
-Disables the task named 'mymodule.maintenance'
+Publishes the class MyModule_MyClass, making it available outside of your module.
 
 ## PARAMETERS
 
-### -Name
-Name of the task to disable.
+### -ClassType
+The types to publish.
 
 ```yaml
-Type: String[]
+Type: Type[]
 Parameter Sets: (All)
 Aliases:
 
-Required: False
+Required: True
 Position: 1
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Task
-The task registered.
-Must be a task object returned by Get-PSFTaskEngineTask.
-
-```yaml
-Type: PsfTask[]
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: 2
 Default value: None
 Accept pipeline input: True (ByValue)
 Accept wildcard characters: False

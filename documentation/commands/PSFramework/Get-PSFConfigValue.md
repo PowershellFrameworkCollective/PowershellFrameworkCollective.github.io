@@ -13,7 +13,7 @@ Returns the configuration value stored under the specified name.
 ## SYNTAX
 
 ```
-Get-PSFConfigValue [-FullName] <String> [[-Fallback] <Object>] [-NotNull] [<CommonParameters>]
+Get-PSFConfigValue [-FullName] <String> [-Fallback <Object>] [-NotNull] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -64,7 +64,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 2
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

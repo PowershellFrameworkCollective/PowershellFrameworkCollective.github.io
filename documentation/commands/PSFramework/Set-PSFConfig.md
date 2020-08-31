@@ -104,7 +104,7 @@ Aliases:
 Required: True
 Position: Named
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
 
@@ -123,7 +123,7 @@ Aliases:
 Required: True
 Position: Named
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -139,7 +139,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -227,7 +227,7 @@ Accept wildcard characters: False
 ### -Default
 Setting this parameter causes the system to treat this configuration as a default setting.
 If the configuration already exists, no changes will be performed.
-Useful in scenarios where for some reason it is not practical to automatically set defaults before loading userprofiles.
+Useful in scenarios where for some reason it is not practical to automatically set defaults before loading user profiles.
 
 ```yaml
 Type: SwitchParameter

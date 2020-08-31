@@ -13,7 +13,7 @@ Enables a task registered to the PSFramework task engine.
 ## SYNTAX
 
 ```
-Enable-PSFTaskEngineTask [-Task] <PsfTask[]> [<CommonParameters>]
+Enable-PSFTaskEngineTask [[-Name] <String[]>] [-Task] <PsfTask[]> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -34,6 +34,21 @@ Enables the task named 'mymodule.maintenance'
 
 ## PARAMETERS
 
+### -Name
+Name of the task to enable.
+
+```yaml
+Type: String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Task
 The task registered.
 Must be a task object returned by Get-PSFTaskEngineTask.
@@ -44,7 +59,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: True
-Position: 1
+Position: 2
 Default value: None
 Accept pipeline input: True (ByValue)
 Accept wildcard characters: False

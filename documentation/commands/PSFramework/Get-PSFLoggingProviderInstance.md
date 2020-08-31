@@ -5,19 +5,19 @@ online version:
 schema: 2.0.0
 ---
 
-# Get-PSFLoggingProvider
+# Get-PSFLoggingProviderInstance
 
 ## SYNOPSIS
-Returns a list of the registered logging providers.
+Returns a list of the enabled logging provider instances.
 
 ## SYNTAX
 
 ```
-Get-PSFLoggingProvider [[-Name] <String>] [<CommonParameters>]
+Get-PSFLoggingProviderInstance [[-ProviderName] <String>] [[-Name] <String>] [-Force] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Returns a list of the registered logging providers.
+Returns a list of the enabled logging provider instances.
 Those are used to log messages to whatever system they are designed to log to.
 
 PSFramework ships with a few default logging providers.
@@ -27,32 +27,63 @@ Custom logging destinations can be created by implementing your own, custom prov
 
 ### EXAMPLE 1
 ```
-Get-PSFLoggingProvider
+Get-PSFLoggingProviderInstance
 ```
 
-Returns all logging provider
+Returns all enabled logging provider instances.
 
 ### EXAMPLE 2
 ```
-Get-PSFLoggingProvider -Name filesystem
+Get-PSFLoggingProviderInstance -ProviderName logfile -Force
 ```
 
-Returns the filesystem provider
+Returns all logging provider instances - enabled or not - of the logfile provider
 
 ## PARAMETERS
 
-### -Name
+### -ProviderName
 Default: '*'
-The name to filter by
+The name of the provider the instance is an instance of.
 
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: Provider, ProviderName
+Aliases:
 
 Required: False
 Position: 1
 Default value: *
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Name
+Default: '*'
+The name of the instance to filter by.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 2
+Default value: *
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Force
+Enables returning disabled instances.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

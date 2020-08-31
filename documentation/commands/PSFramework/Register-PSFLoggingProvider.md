@@ -12,14 +12,25 @@ Registers a new logging provider to the PSFramework logging system.
 
 ## SYNTAX
 
+### Version1 (Default)
 ```
-Register-PSFLoggingProvider [-Name] <String> [-Enabled] [[-RegistrationEvent] <ScriptBlock>]
- [[-BeginEvent] <ScriptBlock>] [[-StartEvent] <ScriptBlock>] [-MessageEvent] <ScriptBlock>
- [[-ErrorEvent] <ScriptBlock>] [[-EndEvent] <ScriptBlock>] [[-FinalEvent] <ScriptBlock>]
- [[-ConfigurationParameters] <ScriptBlock>] [[-ConfigurationScript] <ScriptBlock>]
- [[-IsInstalledScript] <ScriptBlock>] [[-InstallationScript] <ScriptBlock>]
- [[-InstallationParameters] <ScriptBlock>] [[-ConfigurationSettings] <ScriptBlock>] [-EnableException]
- [<CommonParameters>]
+Register-PSFLoggingProvider -Name <String> [-Enabled] [-RegistrationEvent <ScriptBlock>]
+ [-BeginEvent <ScriptBlock>] [-StartEvent <ScriptBlock>] -MessageEvent <ScriptBlock>
+ [-ErrorEvent <ScriptBlock>] [-EndEvent <ScriptBlock>] [-FinalEvent <ScriptBlock>]
+ [-ConfigurationParameters <ScriptBlock>] [-ConfigurationScript <ScriptBlock>]
+ [-IsInstalledScript <ScriptBlock>] [-InstallationScript <ScriptBlock>] [-InstallationParameters <ScriptBlock>]
+ [-ConfigurationSettings <ScriptBlock>] [-EnableException] [<CommonParameters>]
+```
+
+### Version2
+```
+Register-PSFLoggingProvider -Name <String> [-Version2] [-Enabled] -ConfigurationRoot <String>
+ -InstanceProperties <String[]> [-ConfigurationDefaultValues <Hashtable>] [-FunctionDefinitions <ScriptBlock>]
+ [-RegistrationEvent <ScriptBlock>] [-BeginEvent <ScriptBlock>] [-StartEvent <ScriptBlock>]
+ -MessageEvent <ScriptBlock> [-ErrorEvent <ScriptBlock>] [-EndEvent <ScriptBlock>] [-FinalEvent <ScriptBlock>]
+ [-ConfigurationParameters <ScriptBlock>] [-ConfigurationScript <ScriptBlock>]
+ [-IsInstalledScript <ScriptBlock>] [-InstallationScript <ScriptBlock>] [-InstallationParameters <ScriptBlock>]
+ [-ConfigurationSettings <ScriptBlock>] [-EnableException] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -32,6 +43,12 @@ In order to properly utilize its power, it becomes necessary to understand how t
 Each of those steps has its own event, allowing for fine control over what happens where.
 - Finally, on shutdown of a provider it again offers an option to execute some code (to dispose/free resources in use)
 
+NOTE: Logging Provider Versions
+There are two versions / generations of logging providers, that are fundamentally different from each other:
+
+Version 1
+---------
+
 All providers share the same scope for the execution of ALL of those actions/scriptblocks!
 This makes it important to give your variables/functions a unique name, in order to avoid conflicts.
 General Guideline:
@@ -40,8 +57,13 @@ Example: $filesystem_root
 - All functions should use the name of the provider as prefix.
 Example: Clean-FileSystemErrorXml
 
-A simple implementation example can be seen with the FileSystem provider, stored in the module folder:
-internal/loggingProvider/filesystem.provider.ps1
+Version 2
+---------
+
+Each provider runs in an isolated module context.
+A provider can have multiple instances of itself active at the same time, each with separate resource isolation.
+Additional tooling provided makes it also easier to publish complex logging providers.
+Share variables between events by making them script-scope (e.g.: $script:path)
 
 ## EXAMPLES
 
@@ -65,8 +87,26 @@ Parameter Sets: (All)
 Aliases:
 
 Required: True
-Position: 1
+Position: Named
 Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Version2
+Flags the provider as a second generation logging provider.
+This reduces the complexity and improves the overall user experience while adding multi-instance capability to the service.
+All new providers should be built as version2 providers.
+Generation 1 legacy providers are still supported under the PSFramework Reliability Promise
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: Version2
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -86,6 +126,81 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -ConfigurationRoot
+Provider instance information is stored in the configuration system.
+Assuming you would store the path location for the provider under this config setting:
+'PSFramework.Logging.LogFile.FilePath'
+Then the ConfigurationRoot would be:
+'PSFramework.Logging.LogFile'
+
+For more information on the configuration system, see:
+https://psframework.org/documentation/documents/psframework/configuration.html
+
+```yaml
+Type: String
+Parameter Sets: Version2
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -InstanceProperties
+The properties needed to define an instance of a provider.
+Examples from the default providers:
+LogFile: 'CsvDelimiter','FilePath','FileType','Headers','IncludeHeader','Logname','TimeFormat'
+GELF: 'Encrypt','GelfServer','Port'
+
+```yaml
+Type: String[]
+Parameter Sets: Version2
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ConfigurationDefaultValues
+A hashtable containing the default values to assume when creating a new instance of a logging provider.
+This data is used during Set-PSFLoggingProvider when nothing in particular is specified for a given value.
+Instances that are defined through configuration are responsible for their full configuration set and will not be provided these values.
+
+```yaml
+Type: Hashtable
+Parameter Sets: Version2
+Aliases:
+
+Required: False
+Position: Named
+Default value: @{ }
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -FunctionDefinitions
+If your provider instances need access to helper functions, the easiest way is to provide them using this parameter.
+Specify a scriptblock that contains your function statements with the full definition, they will be made available to the provider instances.
+Note: All logging provider instances are isolated from each other.
+Even though multiple instances will have access to equal instances, they will not share access to variables and such.
+
+```yaml
+Type: ScriptBlock
+Parameter Sets: Version2
+Aliases:
+
+Required: False
+Position: Named
+Default value: { }
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -RegistrationEvent
 Scriptblock that should be executed on registration.
 This allows you to perform installation actions synchronously, with direct user interaction.
@@ -97,7 +212,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 2
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -113,7 +228,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 3
+Position: Named
 Default value: { }
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -129,7 +244,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 4
+Position: Named
 Default value: { }
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -147,7 +262,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: True
-Position: 5
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -167,7 +282,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 6
+Position: Named
 Default value: { }
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -183,7 +298,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 7
+Position: Named
 Default value: { }
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -203,7 +318,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 8
+Position: Named
 Default value: { }
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -219,7 +334,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 9
+Position: Named
 Default value: { }
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -234,7 +349,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 10
+Position: Named
 Default value: { }
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -249,7 +364,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 11
+Position: Named
 Default value: { $true }
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -265,7 +380,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 12
+Position: Named
 Default value: { }
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -281,7 +396,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 13
+Position: Named
 Default value: { }
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -297,7 +412,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 14
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

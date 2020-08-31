@@ -16,8 +16,8 @@ Combines should process, try/catch error handling and logging in one package.
 ```
 Invoke-PSFProtectedCommand -ScriptBlock <ScriptBlock> -Action <String> [-Target <Object>]
  [-EnableException <Boolean>] [-PSCmdlet <PSCmdlet>] [-Continue] [-ContinueLabel <String>] [-Tag <String[]>]
- [-RetryCount <Int32>] [-RetryWait <TimeSpanParameter>] [-RetryErrorType <String[]>] [-WhatIf] [-Confirm]
- [<CommonParameters>]
+ [-RetryCount <Int32>] [-RetryWait <TimeSpanParameter>] [-RetryErrorType <String[]>]
+ [-RetryCondition <ScriptBlock>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### String
@@ -25,7 +25,7 @@ Invoke-PSFProtectedCommand -ScriptBlock <ScriptBlock> -Action <String> [-Target 
 Invoke-PSFProtectedCommand -ScriptBlock <ScriptBlock> -ActionString <String> [-ActionStringValues <Object[]>]
  [-Target <Object>] [-EnableException <Boolean>] [-PSCmdlet <PSCmdlet>] [-Continue] [-ContinueLabel <String>]
  [-Tag <String[]>] [-RetryCount <Int32>] [-RetryWait <TimeSpanParameter>] [-RetryErrorType <String[]>]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-RetryCondition <ScriptBlock>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -224,7 +224,7 @@ Accept wildcard characters: False
 ```
 
 ### -ContinueLabel
-{{ Fill ContinueLabel Description }}
+When used together with -Continue, this allows you to pick the loop to continue with.
 
 ```yaml
 Type: String
@@ -239,7 +239,7 @@ Accept wildcard characters: False
 ```
 
 ### -RetryCount
-{{ Fill RetryCount Description }}
+How many times the command should attempt to try an action again, before giving up.
 
 ```yaml
 Type: Int32
@@ -254,7 +254,12 @@ Accept wildcard characters: False
 ```
 
 ### -RetryErrorType
-{{ Fill RetryErrorType Description }}
+When using -RetryCount to attempt a failed action again, this is a bit unspecific.
+Often we want to retry to deal with specific scenarios ...
+with specific errors.
+Using this parameter, it becomes possible to specify just what exception types can only trigger a retry attempt.
+
+Note: Exceptions of type ActionPreferenceStopException will be unwrapped to the original exception BEFORE performing the comparison.
 
 ```yaml
 Type: String[]
@@ -269,7 +274,8 @@ Accept wildcard characters: False
 ```
 
 ### -RetryWait
-{{ Fill RetryWait Description }}
+The interval the command will wait between failed attempts.
+Defaults to 5 seconds.
 
 ```yaml
 Type: TimeSpanParameter
@@ -284,10 +290,29 @@ Accept wildcard characters: False
 ```
 
 ### -Tag
-{{ Fill Tag Description }}
+What tags - if any - to include in all messages.
 
 ```yaml
 Type: String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -RetryCondition
+Only when this scriptblock returns $true will it try again.
+The script receives two input items:
+
+- $_ : The exception (not error record) thrown
+- $args\[0\] : The Target object specified in the -Target parameter
+
+```yaml
+Type: ScriptBlock
 Parameter Sets: (All)
 Aliases:
 

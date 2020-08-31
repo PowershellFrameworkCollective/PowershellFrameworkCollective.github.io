@@ -17,8 +17,8 @@ Function that interrupts a function.
 Stop-PSFFunction -Message <String> [-EnableException <Boolean>] [-Category <ErrorCategory>]
  [-ErrorRecord <ErrorRecord[]>] [-Tag <String[]>] [-FunctionName <String>] [-ModuleName <String>]
  [-File <String>] [-Line <Int32>] [-Exception <Exception>] [-OverrideExceptionMessage] [-Target <Object>]
- [-Continue] [-SilentlyContinue] [-ContinueLabel <String>] [-Cmdlet <PSCmdlet>] [-StepsUpward <Int32>]
- [<CommonParameters>]
+ [-AlwaysWarning] [-Continue] [-SilentlyContinue] [-ContinueLabel <String>] [-Cmdlet <PSCmdlet>]
+ [-StepsUpward <Int32>] [<CommonParameters>]
 ```
 
 ### String
@@ -26,8 +26,8 @@ Stop-PSFFunction -Message <String> [-EnableException <Boolean>] [-Category <Erro
 Stop-PSFFunction -String <String> [-StringValues <Object[]>] [-EnableException <Boolean>]
  [-Category <ErrorCategory>] [-ErrorRecord <ErrorRecord[]>] [-Tag <String[]>] [-FunctionName <String>]
  [-ModuleName <String>] [-File <String>] [-Line <Int32>] [-Exception <Exception>] [-OverrideExceptionMessage]
- [-Target <Object>] [-Continue] [-SilentlyContinue] [-ContinueLabel <String>] [-Cmdlet <PSCmdlet>]
- [-StepsUpward <Int32>] [<CommonParameters>]
+ [-Target <Object>] [-AlwaysWarning] [-Continue] [-SilentlyContinue] [-ContinueLabel <String>]
+ [-Cmdlet <PSCmdlet>] [-StepsUpward <Int32>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -300,6 +300,24 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AlwaysWarning
+Ensures the command always writes a warning, no matter what.
+by default, when -EnableException is set to $true it will hide the warning instead.
+You can enable this to always be on for your module by setting the feature flag: PSFramework.Stop-PSFFunction.ShowWarning
+For more information on feature flags, see "Get-Help Set-PSFFeature -Detailed"
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
