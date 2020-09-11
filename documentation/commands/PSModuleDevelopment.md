@@ -1,5 +1,6 @@
 # PSModuleDevelopment Command Reference
 
+ - [Convert-PSMDMessage](PSModuleDevelopment/Convert-PSMDMessage.html)
  - [Expand-PSMDTypeName](PSModuleDevelopment/Expand-PSMDTypeName.html)
  - [Export-PSMDString](PSModuleDevelopment/Export-PSMDString.html)
  - [Find-PSMDFileContent](PSModuleDevelopment/Find-PSMDFileContent.html)
