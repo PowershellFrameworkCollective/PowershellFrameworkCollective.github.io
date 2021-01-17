@@ -41,6 +41,10 @@ It also offers logrotate capabilities, to clean up after itself.
 |LogRetentionTime|30 days|The minimum age for a logfile to be considered for deletion as part of logrotation|
 |LogRotateFilter|*|A filter to apply to all files logrotated|
 |LogRotateRecurse|False|Whether the logrotate aspect should recursively look for files to logrotate|
+|MutexName|''|Name of a mutex to use. Use this to handle parallel logging into the same file from multiple processes, by picking the same name in each process.|
+|JsonCompress|$false|Will compress the json entries, condensing each entry into a single line.|
+|JsonString|$false|Will convert all enumerated properties to string values when converting to json. This causes the level property to be 'Debug','Host', ... rather than 8,2,...|
+|JsonNoComma|$false|Prevent adding commas between two json entries.|
 
 ## Notes
 
@@ -104,6 +108,33 @@ $paramSetPSFLoggingProvider = @{
 }
 Set-PSFLoggingProvider @paramSetPSFLoggingProvider
 ```
+
+### Mutex: Writing to the same file from multiple processes
+
+The PSFramework logging system has always been threadsafe.
+In other words, logging in parallel from within the same process will never lead to write conflicts.
+However if you want to write to the same file from multiple processes (for example when using PowerShell jobs), then there still is a problem.
+
+Using something called Mutex it is possible to avoid that even across processes, so long as it is happening on the same computer.
+This has been implemented in this logging provider.
+To do so, all you need to do is specify a mutex name:
+
+```powershell
+$paramSetPSFLoggingProvider = @{
+    Name         = 'logfile'
+    InstanceName = 'MyMutexTask'
+    FilePath     = 'C:\Logs\TaskName-%Date%.csv'
+    MutexName    = 'PowerShellLogMyTask'
+    Enabled      = $true
+}
+Set-PSFLoggingProvider @paramSetPSFLoggingProvider
+```
+
+The specific name chosen for the mutex is not important and can be pretty much anything.
+However, all processes trying to write to the same file need to use the same mutex name.
+
+> Note: Using Mutexes is not a free action - there is a performance overhead involved.
+> Only use it where you actually need to.
 
 ### Logrotation
 

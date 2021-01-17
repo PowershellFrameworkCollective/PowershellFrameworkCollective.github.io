@@ -80,6 +80,7 @@ The full reference documentation for each built-in Logging Provider
 - [Message Policies](logging/advanced/message-policies.html)
 - [Cmdlets & Logging](logging/advanced/cmdlets-and-logging.html)
 - [Logging Provider Generations](logging/advanced/logging-provider-generations.html)
+- [Filtering by Runspace](logging/advanced/filtering-by-runspace.html)
 
 ## Notes
 
