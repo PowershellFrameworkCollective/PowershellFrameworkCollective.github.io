@@ -132,7 +132,7 @@ Visibility is controlled by the following two configuration settings:
 Type: MessageLevel
 Parameter Sets: (All)
 Aliases:
-Accepted values: Critical, Important, Output, Host, Significant, VeryVerbose, Verbose, SomewhatVerbose, System, Debug, InternalComment, Warning
+Accepted values: Critical, Important, Output, Host, Significant, VeryVerbose, Verbose, SomewhatVerbose, System, Debug, InternalComment, Warning, Error
 
 Required: False
 Position: 3

@@ -176,7 +176,7 @@ Will select the first 6 levels (Critical - SomewhatVerbose).
 Type: MessageLevel[]
 Parameter Sets: (All)
 Aliases:
-Accepted values: Critical, Important, Output, Host, Significant, VeryVerbose, Verbose, SomewhatVerbose, System, Debug, InternalComment, Warning
+Accepted values: Critical, Important, Output, Host, Significant, VeryVerbose, Verbose, SomewhatVerbose, System, Debug, InternalComment, Warning, Error
 
 Required: False
 Position: 8

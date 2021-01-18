@@ -15,8 +15,9 @@ Configures a logging provider.
 ```
 Set-PSFLoggingProvider [-Name] <String> [[-InstanceName] <String>] [[-Enabled] <Boolean>]
  [[-IncludeModules] <String[]>] [[-ExcludeModules] <String[]>] [[-IncludeFunctions] <String[]>]
- [[-ExcludeFunctions] <String[]>] [[-IncludeTags] <String[]>] [[-ExcludeTags] <String[]>] [[-MinLevel] <Int32>]
- [[-MaxLevel] <Int32>] [-ExcludeWarning] [-EnableException] [<CommonParameters>]
+ [[-ExcludeFunctions] <String[]>] [[-IncludeRunspaces] <Guid[]>] [[-ExcludeRunspaces] <Guid[]>]
+ [[-IncludeTags] <String[]>] [[-ExcludeTags] <String[]>] [[-MinLevel] <Int32>] [[-MaxLevel] <Int32>]
+ [-RequiresInclude] [-ExcludeWarning] [-EnableException] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -153,6 +154,36 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -IncludeRunspaces
+Only messages that come from one of the defined runspaces will be logged.
+
+```yaml
+Type: Guid[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 8
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ExcludeRunspaces
+Messages that come from one of the defined runspaces will NOT be logged.
+
+```yaml
+Type: Guid[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 9
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -IncludeTags
 Only messages containing the listed tags will be logged.
 Exact match only, only a single match is required for a message to qualify.
@@ -163,7 +194,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 8
+Position: 10
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -179,7 +210,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 9
+Position: 11
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -202,7 +233,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 10
+Position: 12
 Default value: 0
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -225,8 +256,26 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 11
+Position: 13
 Default value: 0
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -RequiresInclude
+By default, messages will be written to a logging provider, unless a specific exclude rule was met or any include rule was not met.
+That means, if no exclude and include rules exist at a given time, all messages will be written to the logging provider instance.
+Setting this to true will instead require at least one include rule to exist - and be met - before logging a message.
+This is designed for in particular for runspace-bound logging providers, which might at runtime swiftly gain or lose included runspaces.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

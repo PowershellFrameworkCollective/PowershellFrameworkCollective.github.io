@@ -150,7 +150,7 @@ Include only messages of the specified levels.
 Type: MessageLevel[]
 Parameter Sets: (All)
 Aliases:
-Accepted values: Critical, Important, Output, Host, Significant, VeryVerbose, Verbose, SomewhatVerbose, System, Debug, InternalComment, Warning
+Accepted values: Critical, Important, Output, Host, Significant, VeryVerbose, Verbose, SomewhatVerbose, System, Debug, InternalComment, Warning, Error
 
 Required: False
 Position: Named

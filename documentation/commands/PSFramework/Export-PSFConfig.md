@@ -158,7 +158,7 @@ By default it writes to the suer profile.
 Type: ConfigScope
 Parameter Sets: ModuleName
 Aliases:
-Accepted values: UserDefault, UserMandatory, SystemDefault, SystemMandatory, FileUserLocal, FileUserShared, FileSystem
+Accepted values: UserDefault, UserMandatory, SystemDefault, SystemMandatory, FileUserLocal, FileUserShared, FileSystem, Environment, EnvironmentSimple
 
 Required: False
 Position: Named

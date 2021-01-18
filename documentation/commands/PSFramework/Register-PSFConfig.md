@@ -128,7 +128,7 @@ Legal values: UserDefault, UserMandatory, SystemDefault, SystemMandatory
 Type: ConfigScope
 Parameter Sets: (All)
 Aliases:
-Accepted values: UserDefault, UserMandatory, SystemDefault, SystemMandatory, FileUserLocal, FileUserShared, FileSystem
+Accepted values: UserDefault, UserMandatory, SystemDefault, SystemMandatory, FileUserLocal, FileUserShared, FileSystem, Environment, EnvironmentSimple
 
 Required: False
 Position: Named

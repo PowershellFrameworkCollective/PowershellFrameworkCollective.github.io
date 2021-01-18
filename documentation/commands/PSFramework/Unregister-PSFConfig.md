@@ -126,7 +126,7 @@ Use this parameter to choose the actual scope for the command to process.
 Type: ConfigScope
 Parameter Sets: (All)
 Aliases:
-Accepted values: UserDefault, UserMandatory, SystemDefault, SystemMandatory, FileUserLocal, FileUserShared, FileSystem
+Accepted values: UserDefault, UserMandatory, SystemDefault, SystemMandatory, FileUserLocal, FileUserShared, FileSystem, Environment, EnvironmentSimple
 
 Required: False
 Position: Named

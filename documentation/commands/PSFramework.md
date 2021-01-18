@@ -1,5 +1,6 @@
 # PSFramework Command Reference
 
+ - [Add-PSFLoggingProviderRunspace](PSFramework/Add-PSFLoggingProviderRunspace.html)
  - [Clear-PSFResultCache](PSFramework/Clear-PSFResultCache.html)
  - [Compare-PSFArray](PSFramework/Compare-PSFArray.html)
  - [ConvertFrom-PSFArray](PSFramework/ConvertFrom-PSFArray.html)
@@ -64,6 +65,7 @@
  - [Remove-PSFAlias](PSFramework/Remove-PSFAlias.html)
  - [Remove-PSFConfig](PSFramework/Remove-PSFConfig.html)
  - [Remove-PSFLicense](PSFramework/Remove-PSFLicense.html)
+ - [Remove-PSFLoggingProviderRunspace](PSFramework/Remove-PSFLoggingProviderRunspace.html)
  - [Remove-PSFMessageLevelModifier](PSFramework/Remove-PSFMessageLevelModifier.html)
  - [Remove-PSFNull](PSFramework/Remove-PSFNull.html)
  - [Reset-PSFConfig](PSFramework/Reset-PSFConfig.html)
