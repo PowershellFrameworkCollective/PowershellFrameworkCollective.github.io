@@ -44,6 +44,7 @@ A quick refence list on how to log to the built-in Logging Providers:
 - [... Splunk](logging/loggingto/splunk.html)
 - [... Graylog](logging/loggingto/graylog.html)
 - [... SQL](logging/loggingto/sql.html)
+- [... Console](logging/loggingto/console.html)
 
 ## Basics
 
@@ -66,6 +67,7 @@ The full reference documentation for each built-in Logging Provider
 - [The GELF Provider](logging/providers/gelf.html)
 - [The Splunk Provider](logging/providers/splunk.html)
 - [The SQL Provider](logging/providers/sql.html)
+- [The Console Provider](logging/providers/console.html)
 
 ## Conference Recordings
 

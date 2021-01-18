@@ -1,10 +1,10 @@
 The PowerShell Framework project strives to provide tools and infrastructure for PowerShell developers.
 Main Goals:
 
- - Reduce development time needed
- - Improve Manageability of developed code
- - Enhance scalability of code
- - Enhance uniformity of user experience
+- Reduce development time needed
+- Improve Manageability of developed code
+- Enhance scalability of code
+- Enhance uniformity of user experience
 
 
 # The project's modules
@@ -19,11 +19,11 @@ The PSFramework module is designed as a large toolkit, enabling simple integrati
 
 Prominent features:
 
- - Advanced message & logging functionality
- - Manage scripts & modules using DSC
- - Simple Tab Completion
- - Runspace-safe development
- - PowerShell Scheduled tasks
+- Advanced message & logging functionality
+- Manage scripts & modules using DSC
+- Simple Tab Completion
+- Runspace-safe development
+- PowerShell Scheduled tasks
 
 ## PSModuleDevelopment
 
@@ -35,11 +35,11 @@ The PSModuleDevelopment module provides tools for the developer, for interactive
 
 Prominent features:
 
- - Speed up test cycles
- - Speed up debugging
- - Refactoring tools
- - Assembly/Typesystem tools
- - Multilingual Help testing
+- Speed up test cycles
+- Speed up debugging
+- Refactoring tools
+- Assembly/Typesystem tools
+- Multilingual Help testing
 
 ## PSUtil
 
@@ -51,11 +51,11 @@ The PSUtil module is designed for improving the efficiency of _anybody_ using an
 
 Prominent features:
 
- - Keybindings for frequently needed functionalities
- - Simple directory navigation to often needed folders
- - String manipulation on the pipeline (`trim`\|`replace`\|`split`\|`join`\|`format`\|...)
- - Short aliases for commonly used commands (`grep` --> `Select-String`)
- - Lots of other utilities ...
+- Keybindings for frequently needed functionalities
+- Simple directory navigation to often needed folders
+- String manipulation on the pipeline (`trim`\|`replace`\|`split`\|`join`\|`format`\|...)
+- Short aliases for commonly used commands (`grep` --> `Select-String`)
+- Lots of other utilities ...
 
 ## MailDaemon
 
@@ -74,6 +74,6 @@ Enter MailDaemon, the module to reliably handle all your email needs.
 
 Prominent Features:
 
- - Never lose an email to service interruption again
- - Centrally manage your mail settings using the Group Policy, SCCM or another management platform of your choice.
- - Authenticated SMTP without having to handle credentials in the individual tasks sending emails
+- Never lose an email to service interruption again
+- Centrally manage your mail settings using the Group Policy, SCCM or another management platform of your choice.
+- Authenticated SMTP without having to handle credentials in the individual tasks sending emails
