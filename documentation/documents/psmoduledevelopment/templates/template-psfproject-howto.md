@@ -4,7 +4,7 @@
 2. Install GitHub Desktop from here: https://desktop.github.com/
 3. In GitHub Desktop click File | Create a new repository
 
-IMPORTANT: Directory must not already exist! If you have pre-created a directory for your code GitHub will throw an error.
+**IMPORTANT:** Directory must not already exist! If you have pre-created a directory for your code GitHub will throw an error.
 
 ![](resources/NewRepository.png)
 
