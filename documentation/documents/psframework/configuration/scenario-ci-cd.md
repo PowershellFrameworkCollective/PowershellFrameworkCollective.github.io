@@ -54,7 +54,7 @@ Either way, each configuration item is natively valid as long as the process run
 
 ```powershell
 # Importing a set of settings from file
-Import-PSFConfig -File .\config-test.json
+Import-PSFConfig -Path .\config-test.json
 ```
 
 > When importing multiple files that change the same setting, the last one to be imported wins.
