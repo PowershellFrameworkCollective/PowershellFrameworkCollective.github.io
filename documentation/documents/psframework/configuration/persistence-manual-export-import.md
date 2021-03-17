@@ -85,7 +85,7 @@ A failed validation or handler event however will not interrupt the import of ot
 
 As it may be of interest in some cases to merely peek at the content of a file, rather than immediately applying settings, `Import-PSFConfig` provides an option to do so.
 The `-Peek` parameter will process the configuration file as it normally would be, but rather than applying the changes will merely return the parsed settings.
-This does not run validation or handler events however, so some settings may still fail in reality.
+This does not run validation or handler events however, so some settings may still fail when actually applied.
 
 ```powershell
 Import-PSFConfig -Path C:\temp\demo.json -Peek
@@ -111,9 +111,24 @@ This will import all settings from demo.json, so long as their names ...
 #>
 ```
 
-## Notes
-[Back to Configuration](https://psframework.org/documentation/documents/psframework/configuration.html)
+### Input Format / Schemata
 
-| Version | 1.1 |
-| Written on: | 2018-05-23 |
-| Updated on: | 2018-06-22 |
+While in this document we generally speak about Json files/data when importing configuration, that is not strictly required.
+`Import-PSFConfig` supports a concept called "Configuration Schema" - a schema defines how the input data needs to be formatted in order to be read.
+[Schemas can be added](schema-writing.html), and more than one is included by default, so while the _default_ schema is designed to understand the very format `Export-PSFConfig` produces, more userfriendly and powerful options are available ... and you can [write your own](schema-writing.html) if you have custom needs.
+
+To use a schema, simply specify it during import:
+
+```powershell
+# Load the configuration file applying the MetaJson format
+Import-PSFConfig -Path .\config.json -Schema MetaJson
+```
+
+Builtin schemata that are available out-of-the-box:
+
+|[Default](schema-default.html)|The simple default schema, designed to understand the output of Export-PSFConfig|
+|[MetaJson](schema-metajson.html)|Advanced Json format, easy to author for a human, very flexible, supports hierarchical processing of multiple files that can react to the environment|
+
+## Notes
+
+[Back to Configuration](https://psframework.org/documentation/documents/psframework/configuration.html)

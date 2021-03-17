@@ -58,6 +58,17 @@ This includes support for error handling, enhancing readability of your flow con
 
 For more details on the Flow-Control system, see the [dedicated component page](psframework/flow-control.html).
 
+## Filters
+
+The filter system in PSFramework allows developers to implement their own filter expression syntaxes.
+This allows enabling users to define filter conditions in a user friendly manner.
+
++ Simple definition of condition logic
++ User-friendly authoring of filter expressions
++ Safe to use in data documents
+
+For more details on the Filter system, see the [dedicated component page](psframework/filters.html).
+
 ## Parameter Classes
 Parameter classes offer a more flexible way to accept user input.
 Since they move input interpretation and validation into the parameter binding, function-code also becomes cleaner to read.

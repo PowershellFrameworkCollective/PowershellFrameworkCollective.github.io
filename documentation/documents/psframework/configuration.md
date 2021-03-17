@@ -75,6 +75,12 @@ The configuration system can also be used as a data cache that persists across s
  - [Purging persisted data](configuration/persistence-purge.html)
  - [Persistence and Serialization](configuration/persistence-serialization.html)
 
+### Schemata
+
+ - [Writing a Configuration Schema](configuration/schema-writing.html)
+ - [Schema: Default](configuration/schema-default.html)
+ - [Schema: MetaJson](configuration/schema-metajson.html)
+
 ### Other
 
  - [Deleting Settings](configuration/deleting-settings.html)
