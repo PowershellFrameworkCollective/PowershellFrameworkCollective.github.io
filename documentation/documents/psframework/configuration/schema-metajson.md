@@ -249,7 +249,7 @@ However, the `Deployment.Path` setting is defined with different values, dependi
 + If powershell is running on Github Actions, the value will be `"/var/etc/whateverElse"`.
 + If powershell is running on a Gitlab runner, the value will be `"/var/etc/lab"`.
 
-By default, each [Filter Expression](../../filters.html) defined under `!Condition` is executed against the Environment Condition Set provided by the PSFramework.
+By default, each [Filter Expression](../filters.html) defined under `!Condition` is executed against the Environment Condition Set provided by the PSFramework.
 If you want your expression to be evaluated using a different Condition Set, you also need to specify `!ConditionSet`, which consists of two parts:
 
 + The text until the first whitespace is the module name of the Condition Set
