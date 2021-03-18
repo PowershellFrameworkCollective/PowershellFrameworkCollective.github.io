@@ -17,9 +17,14 @@ Access the scriptblocks stored with Set-PSFScriptblock.
 Get-PSFScriptblock -Name <String[]> [<CommonParameters>]
 ```
 
-### List
+### Container
 ```
-Get-PSFScriptblock [-Name <String[]>] [-List] [<CommonParameters>]
+Get-PSFScriptblock -Name <String[]> [-Container] [<CommonParameters>]
+```
+
+### Search
+```
+Get-PSFScriptblock [-Name <String[]>] [-List] [-Description <String>] [-Tag <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -50,6 +55,22 @@ Get-PSFScriptblock -List -Name 'MyModule.TestServer'
 
 Returns scriptblock and meta information for the MyModule.TestServer scriptblock.
 
+### EXAMPLE 4
+```
+Get-PSFScriptblock -Name 'MyModule.*' -Tag StateChanging, Networking
+```
+
+Returns scriptblock and meta information for all scriptblocks tagged StateChanging
+or Networking and with a name starting with MyModule.
+
+### EXAMPLE 5
+```
+Get-PSFScriptblock -Description '*Infrastructure Script*'
+```
+
+Returns scriptblock and meta information for all script blocks containing the
+description '*Infrastructure Script*'.
+
 ## PARAMETERS
 
 ### -Name
@@ -58,25 +79,25 @@ It's mandatory for explicitly requesting a scriptblock, but optional to use with
 
 ```yaml
 Type: String[]
-Parameter Sets: Name
+Parameter Sets: Name, Container
 Aliases:
 
 Required: True
 Position: Named
 Default value: *
-Accept pipeline input: True (ByValue)
+Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
 
 ```yaml
 Type: String[]
-Parameter Sets: List
+Parameter Sets: Search
 Aliases:
 
 Required: False
 Position: Named
 Default value: *
-Accept pipeline input: True (ByValue)
+Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
 
@@ -86,10 +107,57 @@ This can be further filtered by using a wildcard supporting string as -Name.
 
 ```yaml
 Type: SwitchParameter
-Parameter Sets: List
+Parameter Sets: Search
 Aliases:
 
-Required: True
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Description
+Filter scriptblocks by their description using wildcard characters.
+This can be further filtered by using a wildcard supporting string as -Name.
+
+```yaml
+Type: String
+Parameter Sets: Search
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Tag
+Filter scriptblocks by their tags.
+This can be further filtered by using a wildcard supporting string as -Name.
+
+```yaml
+Type: String[]
+Parameter Sets: Search
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Container
+Return the scriptblock container item rather than the scriptblock directly.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: Container
+Aliases:
+
+Required: False
 Position: Named
 Default value: False
 Accept pipeline input: False
@@ -103,6 +171,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
+### PSFramework.Utility.ScriptBlockItem
 ### PSFramework.Utility.ScriptBlockItem
 ### System.Management.Automation.ScriptBlock
 ## NOTES

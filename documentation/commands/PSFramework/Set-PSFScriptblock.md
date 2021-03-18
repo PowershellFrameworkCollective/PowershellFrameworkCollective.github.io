@@ -13,7 +13,8 @@ Stores a scriptblock in the central scriptblock store.
 ## SYNTAX
 
 ```
-Set-PSFScriptblock [-Name] <String> [-Scriptblock] <ScriptBlock> [-Global] [<CommonParameters>]
+Set-PSFScriptblock [-Name] <String> [-Scriptblock] <ScriptBlock> [-Global] [-Local] [-Tag <String[]>]
+ [-Description <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -30,6 +31,14 @@ Set-PSFScriptblock -Name 'MyModule.TestServer' -Scriptblock $Scriptblock
 ```
 
 Stores the scriptblock contained in $Scriptblock under the 'MyModule.TestServer' name.
+
+### EXAMPLE 2
+```
+Set-PSFScriptblock -Name 'MyModule.TestServer' -Scriptblock $Scriptblock -Tag Awesome, BestCodeEver -Description 'This scriptblock is the only one you need'
+```
+
+Stores the scriptblock contained in $Scriptblock under the 'MyModule.TestServer' name.
+Applies the tags 'Awesome' and 'BestCodeEver', as well as a descriptive text.
 
 ## PARAMETERS
 
@@ -77,6 +86,54 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Local
+Whether the scriptblock should be local to the current runspace.
+If defined, each runspace must define its own instance of the scriptblock to use it.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Tag
+A list of tags to apply to a scriptblock.
+Used for easier filtering.
+
+```yaml
+Type: String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Description
+A description for a scriptblock.
+Used for easier filtering and in lieu of documentation.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
