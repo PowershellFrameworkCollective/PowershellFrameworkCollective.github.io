@@ -1,5 +1,6 @@
 # PSFramework Command Reference
 
+ - [Add-PSFFilterCondition](PSFramework/Add-PSFFilterCondition.html)
  - [Add-PSFLoggingProviderRunspace](PSFramework/Add-PSFLoggingProviderRunspace.html)
  - [Clear-PSFResultCache](PSFramework/Clear-PSFResultCache.html)
  - [Compare-PSFArray](PSFramework/Compare-PSFArray.html)
@@ -84,6 +85,7 @@
  - [Set-PSFDynamicContentObject](PSFramework/Set-PSFDynamicContentObject.html)
  - [Set-PSFFeature](PSFramework/Set-PSFFeature.html)
  - [Set-PSFLoggingProvider](PSFramework/Set-PSFLoggingProvider.html)
+ - [Set-PSFObjectOrder](PSFramework/Set-PSFObjectOrder.html)
  - [Set-PSFPath](PSFramework/Set-PSFPath.html)
  - [Set-PSFResultCache](PSFramework/Set-PSFResultCache.html)
  - [Set-PSFScriptblock](PSFramework/Set-PSFScriptblock.html)

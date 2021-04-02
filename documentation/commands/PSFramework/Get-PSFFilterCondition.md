@@ -14,17 +14,19 @@ Retrieve defined filter conditions.
 
 ### default (Default)
 ```
-Get-PSFFilterCondition [-Module <String>] [-Name <String>] [<CommonParameters>]
+Get-PSFFilterCondition [-Module <String>] [-Name <String>] [-SetName <String>] [<CommonParameters>]
 ```
 
 ### Version
 ```
-Get-PSFFilterCondition [-Module <String>] [-Name <String>] [-Version <Version>] [<CommonParameters>]
+Get-PSFFilterCondition [-Module <String>] [-Name <String>] [-SetName <String>] [-Version <Version>]
+ [<CommonParameters>]
 ```
 
 ### AllVersion
 ```
-Get-PSFFilterCondition [-Module <String>] [-Name <String>] [-AllVersions] [<CommonParameters>]
+Get-PSFFilterCondition [-Module <String>] [-Name <String>] [-SetName <String>] [-AllVersions]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -77,6 +79,22 @@ Aliases:
 Required: False
 Position: Named
 Default value: *
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SetName
+The name of the condition set the condition is assigned to.
+Allows searching by assignment.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
