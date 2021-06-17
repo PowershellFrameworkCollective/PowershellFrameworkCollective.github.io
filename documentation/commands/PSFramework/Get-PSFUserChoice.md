@@ -13,8 +13,8 @@ Prompts the user to choose between a set of options.
 ## SYNTAX
 
 ```
-Get-PSFUserChoice [-Options] <Object[]> [[-Caption] <String>] [[-Message] <String>] [[-DefaultChoice] <Int32>]
- [<CommonParameters>]
+Get-PSFUserChoice [-Options] <Object[]> [[-Caption] <String>] [-Vertical] [[-Message] <String>]
+ [[-DefaultChoice] <Int32>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -68,6 +68,23 @@ Aliases:
 Required: False
 Position: 2
 Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Vertical
+Displays the options vertically, one per line, rather than the default side-by-side display.
+Each option will be numbered.
+Option numbering starts at 1, return will always be one lower than the selected number.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
