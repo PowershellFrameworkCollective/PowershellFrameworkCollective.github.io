@@ -372,8 +372,5 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## OUTPUTS
 
 ## NOTES
-Version 1.0.0.0
-         Author: Friedrich Weinmann
-         Created on: August 15th, 2016
 
 ## RELATED LINKS
