@@ -14,7 +14,8 @@ Creates a timer that will alarm the user after it has expired.
 
 ```
 Start-PSUTimer [-Duration] <DateTimeParameter> [-Message] <Object> [[-AlarmCount] <Int32>] [-NoProgress]
- [-AlarmInterval <Int32>] [-MinFrequency <Int32>] [-MaxFrequency <Int32>] [<CommonParameters>]
+ [-AlarmInterval <Int32>] [-RandomInterval] [-MinFrequency <Int32>] [-MaxFrequency <Int32>]
+ [-DisableScreensaver] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -108,6 +109,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -RandomInterval
+Randomizes the interval between two signal sounds.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -MinFrequency
 The minimum frequency of the beeps.
 Must be at least one lower than MaxFrequency.
@@ -138,6 +154,22 @@ Aliases:
 Required: False
 Position: Named
 Default value: 3000
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DisableScreensaver
+Disables the screensaver while the timer is pending.
+This only works on Windows and has the command pretend to be a video & backup application, preventing untimely activation of a screensaver.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

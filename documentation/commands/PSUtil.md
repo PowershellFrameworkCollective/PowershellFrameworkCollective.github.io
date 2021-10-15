@@ -3,6 +3,7 @@
  - [Backup-PSULocation](PSUtil/Backup-PSULocation.html)
  - [Convert-PSUObject](PSUtil/Convert-PSUObject.html)
  - [Expand-PSUObject](PSUtil/Expand-PSUObject.html)
+ - [Get-PSUCalendarWeek](PSUtil/Get-PSUCalendarWeek.html)
  - [Get-PSUPathAlias](PSUtil/Get-PSUPathAlias.html)
  - [Invoke-PSUDesktop](PSUtil/Invoke-PSUDesktop.html)
  - [Invoke-PSUExplorer](PSUtil/Invoke-PSUExplorer.html)

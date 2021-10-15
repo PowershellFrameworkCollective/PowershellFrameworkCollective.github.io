@@ -27,7 +27,7 @@ Use Register-PSUObjectConversion to set up such a type conversion.
 
 ### EXAMPLE 1
 ```
-100..110 | convert IntDec IntHex
+100..110 | convert dec hex
 ```
 
 Converts the numbers 100 through 110 from decimal to hexadecimal.
