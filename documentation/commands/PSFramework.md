@@ -54,6 +54,7 @@
  - [New-PSFMessageLevelModifier](PSFramework/New-PSFMessageLevelModifier.html)
  - [New-PSFSessionContainer](PSFramework/New-PSFSessionContainer.html)
  - [New-PSFSupportPackage](PSFramework/New-PSFSupportPackage.html)
+ - [New-PSFThrottle](PSFramework/New-PSFThrottle.html)
  - [Register-PSFCallback](PSFramework/Register-PSFCallback.html)
  - [Register-PSFConfig](PSFramework/Register-PSFConfig.html)
  - [Register-PSFConfigSchema](PSFramework/Register-PSFConfigSchema.html)

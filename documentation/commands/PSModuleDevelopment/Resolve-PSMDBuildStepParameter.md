@@ -8,7 +8,7 @@ schema: 2.0.0
 # Resolve-PSMDBuildStepParameter
 
 ## SYNOPSIS
-Update missing build action parameters from the configuration system.
+Resolves and consolidates the overall parameters of a given step.
 
 ## SYNTAX
 
@@ -18,8 +18,15 @@ Resolve-PSMDBuildStepParameter [-Parameters] <Hashtable> [-FromArtifacts] <Hasht
 ```
 
 ## DESCRIPTION
-Update missing build action parameters from the configuration system.
-This command is for use within the defined code of build actions.
+Resolves and consolidates the overall parameters of a given step.
+This ensures that individual actions do not have to implement manual resolution and complex conditionals.
+Sources of parameters:
+- Explicitly defined parameter in the step
+- Value from Artifacts
+- Value from Configuration (only if not otherwise sourced)
+- Value from implicit artifact resolution: Any value that is formatted like this:
+  "%!NameOfArtifact!%" will be replaced with the value of the artifact of the same name.
+  This supports wildcard resolution, so "%!Session.*!%" will resolve to all artifacts with a name starting with "Session."
 
 ## EXAMPLES
 

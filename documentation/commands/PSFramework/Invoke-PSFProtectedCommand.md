@@ -17,7 +17,8 @@ Combines should process, try/catch error handling and logging in one package.
 Invoke-PSFProtectedCommand -ScriptBlock <ScriptBlock> -Action <String> [-Target <Object>]
  [-EnableException <Boolean>] [-PSCmdlet <PSCmdlet>] [-Continue] [-ContinueLabel <String>] [-Tag <String[]>]
  [-RetryCount <Int32>] [-RetryWait <TimeSpanParameter>] [-RetryErrorType <String[]>]
- [-RetryCondition <ScriptBlock>] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-RetryCondition <ScriptBlock>] [-ErrorEvent <ScriptBlock>] [-Level <MessageLevel>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ### String
@@ -25,7 +26,8 @@ Invoke-PSFProtectedCommand -ScriptBlock <ScriptBlock> -Action <String> [-Target 
 Invoke-PSFProtectedCommand -ScriptBlock <ScriptBlock> -ActionString <String> [-ActionStringValues <Object[]>]
  [-Target <Object>] [-EnableException <Boolean>] [-PSCmdlet <PSCmdlet>] [-Continue] [-ContinueLabel <String>]
  [-Tag <String[]>] [-RetryCount <Int32>] [-RetryWait <TimeSpanParameter>] [-RetryErrorType <String[]>]
- [-RetryCondition <ScriptBlock>] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-RetryCondition <ScriptBlock>] [-ErrorEvent <ScriptBlock>] [-Level <MessageLevel>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -313,6 +315,36 @@ The script receives two input items:
 
 ```yaml
 Type: ScriptBlock
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ErrorEvent
+{{ Fill ErrorEvent Description }}
+
+```yaml
+Type: ScriptBlock
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Level
+{{ Fill Level Description }}
+
+```yaml
+Type: MessageLevel
 Parameter Sets: (All)
 Aliases:
 

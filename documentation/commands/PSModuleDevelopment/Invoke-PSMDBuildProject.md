@@ -13,7 +13,7 @@ Execute a build project.
 ## SYNTAX
 
 ```
-Invoke-PSMDBuildProject [[-Path] <String>] [-RetainArtifacts] [<CommonParameters>]
+Invoke-PSMDBuildProject [[-Path] <String>] [-InheritArtifacts] [-RetainArtifacts] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -57,6 +57,22 @@ Aliases:
 Required: False
 Position: 1
 Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -InheritArtifacts
+Accept artifacts that were generated before ever executing this pipeline.
+By default, any artifacts previously provisioned are cleared on pipeline start.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
