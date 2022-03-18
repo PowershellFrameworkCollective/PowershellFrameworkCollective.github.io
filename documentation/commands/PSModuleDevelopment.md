@@ -52,3 +52,4 @@
  - [Set-PSMDStagingRepository](PSModuleDevelopment/Set-PSMDStagingRepository.html)
  - [Show-PSMDSyntax](PSModuleDevelopment/Show-PSMDSyntax.html)
  - [Split-PSMDScriptFile](PSModuleDevelopment/Split-PSMDScriptFile.html)
+ - [Test-PSMDClmCompatibility](PSModuleDevelopment/Test-PSMDClmCompatibility.html)
