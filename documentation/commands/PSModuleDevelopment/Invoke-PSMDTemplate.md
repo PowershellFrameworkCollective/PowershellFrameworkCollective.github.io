@@ -15,22 +15,22 @@ Creates a project/file from a template.
 ### NamePath
 ```
 Invoke-PSMDTemplate [-TemplateName] <String> -Path <String> [[-OutPath] <String>] [[-Name] <String>]
- [-Encoding <EncodingParameter>] [-NoFolder] [-Parameters <Hashtable>] [-Raw] [-Force] [-Silent]
- [-EnableException] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-Encoding <EncodingParameter>] [-NoFolder] [-Parameters <Hashtable>] [-Raw] [-GenerateObjects] [-Force]
+ [-Silent] [-EnableException] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### NameStore
 ```
 Invoke-PSMDTemplate [-TemplateName] <String> [-Store <String>] [[-OutPath] <String>] [[-Name] <String>]
- [-Encoding <EncodingParameter>] [-NoFolder] [-Parameters <Hashtable>] [-Raw] [-Force] [-Silent]
- [-EnableException] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-Encoding <EncodingParameter>] [-NoFolder] [-Parameters <Hashtable>] [-Raw] [-GenerateObjects] [-Force]
+ [-Silent] [-EnableException] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Template
 ```
 Invoke-PSMDTemplate -Template <TemplateInfo[]> [[-OutPath] <String>] [[-Name] <String>]
- [-Encoding <EncodingParameter>] [-NoFolder] [-Parameters <Hashtable>] [-Raw] [-Force] [-Silent]
- [-EnableException] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-Encoding <EncodingParameter>] [-NoFolder] [-Parameters <Hashtable>] [-Raw] [-GenerateObjects] [-Force]
+ [-Silent] [-EnableException] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -217,6 +217,22 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -GenerateObjects
+By default, Invoke-PSMDTemplate generates files.
+In GenerateObjects mode, no file but objects are created.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Force
 If the target path the template should be written to (filename or folder name within $OutPath), then overwrite it.
 By default, this function will fail if an overwrite is required.
@@ -301,6 +317,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
+### PSModuleDevelopment.Template.TemplateResult
 ## NOTES
 
 ## RELATED LINKS
