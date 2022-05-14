@@ -14,12 +14,12 @@ A wrapper command around Import-PowerShellDataFile
 
 ### ByPath
 ```
-Import-PSFPowerShellDataFile [-Path <String[]>] [<CommonParameters>]
+Import-PSFPowerShellDataFile [-Path <String[]>] [-Unsafe] [<CommonParameters>]
 ```
 
 ### ByLiteralPath
 ```
-Import-PSFPowerShellDataFile [-LiteralPath <String[]>] [<CommonParameters>]
+Import-PSFPowerShellDataFile [-LiteralPath <String[]>] [-Unsafe] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -28,7 +28,9 @@ This enables use of the command on PowerShell 3+ as well as during JEA endpoints
 
 Note: The protective value of Import-PowerShellDataFile is only offered when run on PS5+.
 This is merely meant to provide compatibility in the scenarios, where the original command would fail!
-If you care about PowerShell security, update to the latest version (in which case this command is still as secure as the default command, as that is what will actually be run.
+If you care about PowerShell security, update to the latest version (in which case this command is still as secure as the default command, as that is what will actually be run).
+
+Also supports importing Json files.
 
 ## EXAMPLES
 
@@ -38,6 +40,13 @@ Import-PSFPowerShellDataFile -Path .\data.psd1
 ```
 
 Safely loads the data stored in data.psd1
+
+### EXAMPLE 2
+```
+Import-PSFPowerShellDataFile -Path .\data.json
+```
+
+Safely loads the data stored in data.json
 
 ## PARAMETERS
 
@@ -69,6 +78,26 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Unsafe
+Disables the protective value of Import-PowerShellDataFile.
+This effectively runs the provided powershell scriptfile as untrusted scriptfile, no matter the environment.
+By default, Import-PowerShellDataFile would only process the first hashtable, while unsafe mode allows files with multiple hashtables or more dynamic content.
+
+Note: In environments with tight security constraints, the file imported will be executed in constrained lnguage mode, even if the source file is trusted.
+Specifically, path-based rules will be ignored and .cab files will have no effect, but directly signed and trusted files will remain unconstrained.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
