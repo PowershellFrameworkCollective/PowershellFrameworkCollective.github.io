@@ -2,6 +2,7 @@
 
  - [Add-PSFFilterCondition](PSFramework/Add-PSFFilterCondition.html)
  - [Add-PSFLoggingProviderRunspace](PSFramework/Add-PSFLoggingProviderRunspace.html)
+ - [Clear-PSFMessage](PSFramework/Clear-PSFMessage.html)
  - [Clear-PSFResultCache](PSFramework/Clear-PSFResultCache.html)
  - [Compare-PSFArray](PSFramework/Compare-PSFArray.html)
  - [ConvertFrom-PSFArray](PSFramework/ConvertFrom-PSFArray.html)

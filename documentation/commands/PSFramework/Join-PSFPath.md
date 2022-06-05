@@ -59,7 +59,7 @@ Any number of child paths to add.
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases:
+Aliases: ChildPath
 
 Required: False
 Position: Named

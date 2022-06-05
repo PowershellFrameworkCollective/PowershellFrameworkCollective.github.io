@@ -17,7 +17,7 @@ Set-PSFLoggingProvider [-Name] <String> [[-InstanceName] <String>] [[-Enabled] <
  [[-IncludeModules] <String[]>] [[-ExcludeModules] <String[]>] [[-IncludeFunctions] <String[]>]
  [[-ExcludeFunctions] <String[]>] [[-IncludeRunspaces] <Guid[]>] [[-ExcludeRunspaces] <Guid[]>]
  [[-IncludeTags] <String[]>] [[-ExcludeTags] <String[]>] [[-MinLevel] <Int32>] [[-MaxLevel] <Int32>]
- [-RequiresInclude] [-ExcludeWarning] [-EnableException] [<CommonParameters>]
+ [-RequiresInclude] [-ExcludeWarning] [-Wait] [-EnableException] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -282,6 +282,23 @@ Accept wildcard characters: False
 
 ### -ExcludeWarning
 Whether to exclude warnings from the logging provider / instance.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Wait
+Whether to have the command wait until the provider instance is provisioned and ready to handle messages.
+By default, the asynchroneous nature of the logging system my cause a slight delay, that in some instances could lead to missing the first few messages.
+Enables the logging runspace if disabled, may timeout (30 seconds) in extreme-load situations caused by other runspaces.
 
 ```yaml
 Type: SwitchParameter
