@@ -7,16 +7,6 @@ title: Tab Completion: Basics
 Covers the basics of implementing custom tab expansion.
 
 ## Description
-### Prerequisites
-
-Any of the following two must be true, in order for custom tabcompletion to apply:
-
- - PowerShell v5+
- - PowerShell v3+ & TabExpansionPlusPlus imported
-
-If neither is true, it will silently not have any effect.
-Since this is a feature of user convenience, not a functional prerequisite, this should not have any effect on automation.
-
 ### The Order of Things
 
 Custom tab completion in PSFramework consists of two steps:
@@ -66,6 +56,32 @@ Register-PSFTeppArgumentCompleter -Command Get-Alcohol -Parameter Type -Name "my
 
 > Nothing in this claims you can only provide custom tab completion only for your own commands! You can update tab completion for commands in other modules. This allows using this system in your profile to customize tab completion to your environment (for example to auto-populate the list of Hyper-V hosts to connect to).
 
+### Adding Tooltips
+
+Starting with version 1.7.237, `PSFramework` now supports adding tooltips to your tab completion.
+Tooltips provide additional help to the user without impacting the tab completion core behavior.
+For example, imagine providing tab completion to a parameter requiring a unique ID, and not the more convenient display name - with the tooltip feature, you can still show the user what they are selecting!
+
+This requires little in the way of change, only that the scriptblock needs to return information slightly differently:
+
+```powershell
+# Create scriptblock that collects information and name it
+Register-PSFTeppScriptblock -Name "mymodule.alcohol" -ScriptBlock {
+    @{ Text = 'Beer'; ToolTip = 'Elixir of the gods'}
+    @{ Text = 'Mead'; ToolTip = 'Elixir of the angry gods' }
+    @{ Text = 'Whiskey'; ToolTip = 'Unleash the Irishman in you!' }
+    @{ Text = 'Wine'; ToolTip = 'For the discriminating somelier' }
+    @{ Text = 'Vodka'; ToolTip = 'Melancholy as national culture' }
+    @{ Text = 'Rum (3y)'; ToolTip = 'Barkeepers Delight' }
+    @{ Text = 'Rum (5y)'; ToolTip = 'Barkeepers Delight' }
+    @{ Text = 'Rum (7y)'; ToolTip = 'Barkeepers Delight' }
+}
+```
+
+In other words, so long as your return objects contain a "Text" and "ToolTip" key/property, they will be picked up:
+
+![ToolTips in Tab Expansion](psftepp-tooltips.png)
+
 ### Module Design Advice
 
 When implementing this in your module, there are three main ways to distribute your code.
@@ -107,6 +123,6 @@ There are more advanced topics to help building your scriptblock:
 ## Notes
 [Back to Tab Expansion](https://psframework.org/documentation/documents/psframework/tab-completion.html)
 
-| Version | 1.0 |
+| Version | 2.0 |
 | Written on: | 2018-06-18 |
-| Updated on: | 2018-06-18 |
+| Updated on: | 2022-06-15 |
