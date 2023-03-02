@@ -62,4 +62,13 @@ The configurability and extensibility also means you do not have to define your 
 You can later define it at the machine level.
 You can also combine many scripts and modules, all of which will integrate into your logging scheme without you having to modify it.
 
+The asynchronous nature might also mean, that if the process is closed before the logging is done, messages might be lost.
+For example when run in a scheduled task or cron-job, this might risk losing some content.
+To avoid that, include a `Wait-PSFMessage` call at the end of scripts, which causes the script to wait until it is done processing all messages:
+
+```powershell
+# At the end of your script to wait for messages
+Wait-PSFMessage
+```
+
 > [Back to: Logging](../../logging.html)

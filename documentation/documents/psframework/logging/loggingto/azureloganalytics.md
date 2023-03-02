@@ -66,6 +66,27 @@ Write-PSFMessage -Message "Doing something" -Target $ComputerName
 
 For more details on how to generate messages, [see the dedicated documentation page](../basics/writing-messages.html)
 
+## Log Analytics and Azure Functions
+
+If you are trying to log using PSFramework while inside an Azure Function App, there is one additional catch:
+By default, logging is disabled in Function Apps, as it might keep the Function App running after the main script is done, creating unexpected overhead (and thus costs).
+
+To enable it, run:
+
+```powershell
+Start-PSFRunspace -Name psframework.logging
+```
+
+When your code is done, be sure to disable it again avoid aforementioned costs:
+
+```powershell
+# Wait for logging to complete
+Wait-PSFMessage
+
+# Stop logging runspace
+Stop-PSFRunspace -Name psframework.logging
+```
+
 ## Logging Provider Documentation
 
 For more detailed docs, [see the full documentation for the Azure Log Analytics logging provider](../providers/azureloganalytics.html)

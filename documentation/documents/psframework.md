@@ -8,9 +8,6 @@ Whether it is message handling, logging, configuration, parameter classes, custo
 
 ## Logging
 
-> The documentation of this component refers to v1.3.135, which is as of this writing still in prerelease/preview
-> Some of this documentation may point at content not yet published to the gallery at all
-
 The logging system provides powerful logging for little effort:
 
 - Log to file, eventlog, SQL, Graylog, Splunk or Azure Log Analytics out-of-the-box

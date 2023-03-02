@@ -30,6 +30,27 @@ Requires you to have already configured a target workspace to log to.
 |SharedKey||SharedId for the Azure Workspace we are logging our data objects to.|
 |LogType|'Message'|Log type we will log information to.|
 
+## Log Analytics and Azure Functions
+
+If you are trying to log using PSFramework while inside an Azure Function App, there is one additional catch:
+By default, logging is disabled in Function Apps, as it might keep the Function App running after the main script is done, creating unexpected overhead (and thus costs).
+
+To enable it, run:
+
+```powershell
+Start-PSFRunspace -Name psframework.logging
+```
+
+When your code is done, be sure to disable it again avoid aforementioned costs:
+
+```powershell
+# Wait for logging to complete
+Wait-PSFMessage
+
+# Stop logging runspace
+Stop-PSFRunspace -Name psframework.logging
+```
+
 ## Notes
 
 This Logging Provider currently does not support special proxy handling.
