@@ -31,7 +31,7 @@ It also offers logrotate capabilities, to clean up after itself.
 |CsvDelimiter|,|The delimiter to use when writing to csv.|
 |FilePath||The path to where the logfile is written. Supports some placeholders such as %Date% to allow for timestamp in the name.|
 |FileType|CSV|In what format to write the logfile. Supported styles: CSV, XML, Html, Json or CMTrace. Html, XML and Json will be written as fragments.|
-|Headers|'ComputerName', 'File', 'FunctionName', 'Level', 'Line', 'Message', 'ModuleName', 'Runspace', 'Tags', 'TargetObject', 'Timestamp', 'Type', 'Username'|The properties to export, in the order to select them.|
+|Headers|'ComputerName', 'File', 'FunctionName', 'Level', 'Line', 'Message', 'ModuleName', 'Runspace', 'Tags', 'TargetObject', 'Timestamp', 'Type', 'Username'|The properties to export, in the order to select them. For writing the data field or renaming properties, see below under "Notes".|
 |IncludeHeader|True|Whether a written csv file will include headers|
 |Logname||A special string you can use as a placeholder in the logfile path (by using '%logname%' as placeholder)|
 |TimeFormat|`<current locale>`|The format used for timestamps in the logfile|
@@ -86,6 +86,31 @@ If you define logging using the above-mentioned command, feel free to pick which
 
 > If the resolved path's folder does not exist yet, it will try to create it.
 
+### Renaming Columns or access Sub-Properties
+
+The `Headers` setting supports not just a list of columns:
+It also allows you to provide an expression to rename a column or access a sub-property.
+This notably includes values in the `Data` property on the log message.
+
+> Examples
+
+```powershell
+# Rename Level to Status
+$headers = 'Timestamp', 'Level as Status', 'Message'
+
+# Add the ticket number from the data section (where present)
+$headers = 'Timestamp', 'Level', 'Message', 'Data.Ticket as TicketNr'
+
+$paramSetPSFLoggingProvider = @{
+    Name         = 'logfile'
+    InstanceName = 'MyTask'
+    FilePath     = 'C:\Logs\TaskName-%Date%.csv'
+    Headers      = $headers
+    Enabled      = $true
+}
+Set-PSFLoggingProvider @paramSetPSFLoggingProvider
+```
+
 ### The Data field
 
 When using `Write-PSFMessage`, the command offers the ability to specify additional data in form of a hashtable passed to the `-Data` parameter.
@@ -104,6 +129,32 @@ $paramSetPSFLoggingProvider = @{
     FilePath     = 'C:\Logs\TaskName-%Date%.json'
     FileType     = 'Json'
     Headers      = 'ComputerName', 'File', 'FunctionName', 'Level', 'Line', 'Message', 'ModuleName', 'Runspace', 'Tags', 'TargetObject', 'Timestamp', 'Type', 'Username', 'Data'
+    Enabled      = $true
+}
+Set-PSFLoggingProvider @paramSetPSFLoggingProvider
+```
+
+> Data & CSV format
+
+While some formats - such as Json or XML - can handle structured data, CSV is a flat table, which is the default format and the reason the `Data` property is not included by default.
+There are however two useful ways to get that data into CSV logs:
+
++ Using a sub-property select statement (as shown in the previous section)
++ Using the `DataCompact` header.
+
+The `DataCompact` header is a way to convert _all_ data entries into a string form (where present).
+It is not ideal for later content processing, but it makes sure it all is in there at least.
+
+Example:
+
+```powershell
+$headers = 'Timestamp', 'Level', 'Message', 'DataCompact'
+
+$paramSetPSFLoggingProvider = @{
+    Name         = 'logfile'
+    InstanceName = 'MyTask'
+    FilePath     = 'C:\Logs\TaskName-%Date%.csv'
+    Headers      = $headers
     Enabled      = $true
 }
 Set-PSFLoggingProvider @paramSetPSFLoggingProvider
