@@ -38,6 +38,8 @@ Sources that do not exist yet will automatically be created if able to (this wou
 |ErrorID|666|Event ID under which an error message would be written to log.|
 |ErrorTag|error|Tag a message must have in order to be categorized as an Error when it comes to logging to eventlog.|
 |TimeFormat|'yyyy-MM-dd HH:mm:ss.fff'|The time format to use for timestamps|
+|NumericTagAsID|False|When set to True, purely numeric tags (e.g. '123') are used to determine the EventID if present.|
+|TagToID|Null|A hashtable mapping tag on a message to an event ID.|
 
 ## Notes
 
@@ -84,5 +86,68 @@ Data| <key> : <value>
 
 Due to limitations in the eventlog system, there is a [maximum length of 31839 characters](https://docs.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-reporteventa).
 Datasets that are longer will get truncated.
+
+### Specifying the EventID with the message
+
+> By Data Field
+
+The Windows eventlog has theoretically the ability to classify different messages with event IDs, making it easier to filter by / monitor for specific IDs, rather than having to inspect the message more deeply.
+
+The problem with that from a PSFramework logging perspective is that messages are not specific to a given logging provider, thus there is no parameter for an event ID.
+The solution for that is the flexible `-Data` parameter on `Write-PSFMessage`.
+With that we can check for a specific key and select the EventID from that.
+
+We look for the key `'EventLog.ID'`:
+
+```powershell
+Write-PSFmessage -Message "Hello" -Data @{ 'EventLog.ID' = 1234 }
+```
+
+This also means, that the `'EventLog.ID'` key in the Data hashtable will _not_ be included in the data field as all other entries in Data are (as described in the section above)
+
+> By numeric tag
+
+When configuring the logging provider, you can provide a setting that will cause the instance to consider tags that are purely numeric to mean the event ID:
+
+```powershell
+$paramSetPSFLoggingProvider = @{
+    Name           = 'eventlog'
+    InstanceName   = 'MyTask'
+    Enabled        = $true
+    NumericTagAsID = $true
+}
+Set-PSFLoggingProvider @paramSetPSFLoggingProvider
+```
+
+With that, you can now provide the ID with the message via the tag field:
+
+```powershell
+# Eventlog entry with ID 123
+Write-PSFMessage -Message 'Something happened' -Tag 123
+```
+
+> Mapping any tag to an ID
+
+A second option allows you to specify an ID for any given tag (but in return means, you cannot read from the message call what ID is being assigned):
+
+```powershell
+$paramSetPSFLoggingProvider = @{
+    Name         = 'eventlog'
+    InstanceName = 'MyTask'
+    Enabled      = $true
+    TagToID      = @{
+        start = 1
+        end = 2
+    }
+}
+Set-PSFLoggingProvider @paramSetPSFLoggingProvider
+```
+
+With that, you can now provide the ID with the message via the tag field:
+
+```powershell
+# Eventlog entry with ID 1
+Write-PSFMessage -Message 'Something happened' -Tag start
+```
 
 > [Back to: Logging](../../logging.html)

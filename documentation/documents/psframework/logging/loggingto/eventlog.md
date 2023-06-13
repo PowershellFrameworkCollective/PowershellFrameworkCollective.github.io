@@ -50,6 +50,9 @@ Write-PSFMessage -Level Debug -Message "Very well hidden message"
 
 # Warning
 Write-PSFMessage -Level Warning -Message "Warning Message"
+
+# Change EventID
+Write-PSFMessage -Message "Test Message" -Data @{ 'EventLog.ID' = 1234 }
 ```
 
 You can also add tags for better filtering:
