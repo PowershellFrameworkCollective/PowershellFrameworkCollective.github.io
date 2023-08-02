@@ -50,7 +50,7 @@ A quick refence list on how to log to the built-in Logging Providers:
 
 - [Writing Messages](logging/basics/writing-messages.html)
 - [Logging Providers](logging/basics/logging-providers.html)
-- [In-Memory debug log](logging/basics/inmemory-gebuglog.html)
+- [In-Memory debug log](logging/basics/inmemory-debuglog.html)
 - [Message Levels](logging/basics/message-levels.html)
 - [Multilingual Messages](logging/basics/multilingual.html)
 - [Message Configuration Settings](logging/basics/message-configuration-settings.html)
