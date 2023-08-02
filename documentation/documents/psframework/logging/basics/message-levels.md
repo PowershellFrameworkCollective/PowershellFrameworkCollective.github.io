@@ -70,6 +70,14 @@ With this, even verbose messages will show by default:
 Write-PSFMessage Whatever
 ```
 
+> Configuration Settings and why modules should not touch them
+
+These settings are _process-wide_.
+Changing them changes them for everybody, not just any given module.
+
+Thus, settings governing the global visibility of all messages belong to the user of the console, and not any given module.
+As a module author, you should never touch these in your module and instead adjust the messages you write ... or possibly use a well-targeted Message Level Modifier (see below).
+
 ## Hacking the level - Message Level Modifiers
 
 It is possible to define rules that change the level of a message from what it was written as.
