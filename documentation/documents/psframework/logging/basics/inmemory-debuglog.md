@@ -35,6 +35,17 @@ Due to that, even a lengthy task that writes a vast amount of messages will not 
 
 To access the error log, use [Get-PSFMessage](../../../../commands/PSFramework/Get-PSFMessage.html)'s `-Errors` switch parameter.
 
+## Clearing the log
+
+You may sometimes want to clear the log between test run, to only have the current entries from the latest run in there.
+There is a way to do that easy: `Clear-PSFMessage` will handle that in one, neat call:
+
+```powershell
+Clear-PSFMessage
+```
+
+No parameters needed.
+
 ## Configuring the debug log
 
 There are separate configuration settings governing the in-memory debug log.
