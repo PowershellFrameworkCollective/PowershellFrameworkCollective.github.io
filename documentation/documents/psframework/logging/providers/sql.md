@@ -54,19 +54,21 @@ If you want to provision the table yourself, this is the actual CREATE TABLE sta
 
 ```SQL
 CREATE TABLE $SqlTable (
-    Message VARCHAR(max),
-    Level VARCHAR(max),
-    TimeStamp [DATETIME],
-    FunctionName VARCHAR(max),
-    ModuleName VARCHAR(max),
-    Tags VARCHAR(max),
-    Runspace VARCHAR(36),
-    ComputerName VARCHAR(max),
-    TargetObject VARCHAR(max),
-    [File] VARCHAR(max),
-    Line BIGINT,
-    ErrorRecord VARCHAR(max),
-    CallStack VARCHAR(max)
+	Message VARCHAR(max),
+	Level VARCHAR(max),
+	TimeStamp [DATETIME],
+	FunctionName VARCHAR(max),
+	ModuleName VARCHAR(max),
+	Tags VARCHAR(max),
+	Runspace VARCHAR(36),
+	ComputerName VARCHAR(max),
+	Username VARCHAR(max),
+	TargetObject VARCHAR(max),
+	[File] VARCHAR(max),
+	Line BIGINT,
+	ErrorRecord VARCHAR(max),
+	CallStack VARCHAR(max),
+	[Data] VARCHAR(max)
 )
 ```
 
