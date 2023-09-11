@@ -44,6 +44,7 @@ They generally also offer greater flexibility in accepting input and are often c
 ## In depth Guides
 
  - [Computer Parameter Class](parameter-classes/computer-parameter.html)
+ - [Path Parameter Class](parameter-classes/path-parameter.html)
  - [DateTime Parameter Class](parameter-classes/datetime-parameter.html)
  - [TimeSpan Parameter Class](parameter-classes/timespan-parameter.html)
 
