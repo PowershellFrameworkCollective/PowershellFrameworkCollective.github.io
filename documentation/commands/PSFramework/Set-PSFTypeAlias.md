@@ -38,11 +38,10 @@ Creates an alias for the type 'System.IO.File' named 'file'
 ### EXAMPLE 2
 ```
 Set-PSFTypeAlias -Mapping @{
-```
-
-file = 'System.IO.File'
+	file = 'System.IO.File'
 	path = 'System.IO.Path'
 }
+```
 
 Creates an alias for the type 'System.IO.File' named 'file'
 Creates an alias for the type 'System.IO.Path' named 'path'

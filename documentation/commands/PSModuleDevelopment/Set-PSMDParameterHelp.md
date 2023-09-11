@@ -35,11 +35,10 @@ If there is no help for the specified parameter, it will simply do nothing, but 
 ### EXAMPLE 1
 ```
 Set-PSMDParameterHelp -Path "C:\PowerShell\Projects\MyModule" -CommandName "*" -ParameterName "Foo" -HelpText @"
-```
-
 This is some foo text
 For a truly foo-some result
 "@
+```
 
 Scans all files in the specified path.
 - Considers every function found

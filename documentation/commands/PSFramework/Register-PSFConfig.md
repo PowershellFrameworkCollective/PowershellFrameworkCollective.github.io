@@ -122,7 +122,10 @@ Default: UserDefault
 Who will be affected by this export how?
 Current user or all?
 Default setting or enforced?
-Legal values: UserDefault, UserMandatory, SystemDefault, SystemMandatory
+For more information on scopes and what location they correspond to, see:
+https://psframework.org/documentation/documents/psframework/configuration/persistence-location.html
+
+Environment variable scopes will only be persisted to the current process, affecting all child processes but not the computer in its entirety.
 
 ```yaml
 Type: ConfigScope

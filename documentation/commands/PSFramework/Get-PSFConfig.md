@@ -14,12 +14,12 @@ Retrieves configuration elements by name.
 
 ### FullName (Default)
 ```
-Get-PSFConfig [[-FullName] <String>] [-Force] [<CommonParameters>]
+Get-PSFConfig [[-FullName] <String>] [-Persisted] [-Force] [<CommonParameters>]
 ```
 
 ### Module
 ```
-Get-PSFConfig [[-Name] <String>] [[-Module] <String>] [-Force] [<CommonParameters>]
+Get-PSFConfig [[-Name] <String>] [[-Module] <String>] [-Persisted] [-Force] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -41,6 +41,13 @@ Get-PSFConfig -Force
 ```
 
 Retrieve all configuration elements from all modules, even hidden ones.
+
+### EXAMPLE 3
+```
+Get-PSFConfig -Persisted
+```
+
+Retrieve all persisted settings.
 
 ## PARAMETERS
 
@@ -89,6 +96,21 @@ Aliases:
 Required: False
 Position: 1
 Default value: *
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Persisted
+Rather than retrieving current settings, look for configuration entries that have been persisted on the machine.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

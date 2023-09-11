@@ -18,7 +18,7 @@ Stop-PSFFunction -Message <String> [-EnableException <Boolean>] [-Category <Erro
  [-ErrorRecord <ErrorRecord[]>] [-Tag <String[]>] [-FunctionName <String>] [-ModuleName <String>]
  [-File <String>] [-Line <Int32>] [-Exception <Exception>] [-OverrideExceptionMessage] [-Target <Object>]
  [-AlwaysWarning] [-Continue] [-SilentlyContinue] [-ContinueLabel <String>] [-Cmdlet <PSCmdlet>]
- [-StepsUpward <Int32>] [<CommonParameters>]
+ [-StepsUpward <Int32>] [-Level <MessageLevel>] [<CommonParameters>]
 ```
 
 ### String
@@ -27,7 +27,7 @@ Stop-PSFFunction -String <String> [-StringValues <Object[]>] [-EnableException <
  [-Category <ErrorCategory>] [-ErrorRecord <ErrorRecord[]>] [-Tag <String[]>] [-FunctionName <String>]
  [-ModuleName <String>] [-File <String>] [-Line <Int32>] [-Exception <Exception>] [-OverrideExceptionMessage]
  [-Target <Object>] [-AlwaysWarning] [-Continue] [-SilentlyContinue] [-ContinueLabel <String>]
- [-Cmdlet <PSCmdlet>] [-StepsUpward <Int32>] [<CommonParameters>]
+ [-Cmdlet <PSCmdlet>] [-StepsUpward <Int32>] [-Level <MessageLevel>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -48,9 +48,8 @@ Get-Help about_psf_flowcontrol
 ### EXAMPLE 1
 ```
 Stop-PSFFunction -Message "Foo failed bar!" -EnableException $EnableException -ErrorRecord $_
-```
-
 return
+```
 
 Depending on whether $EnableException is true or false it will:
 - Throw a bloody terminating error.
@@ -305,10 +304,11 @@ Accept wildcard characters: False
 ```
 
 ### -AlwaysWarning
-Ensures the command always writes a warning, no matter what.
+Ensures the command always writes a visible warning, no matter what.
 by default, when -EnableException is set to $true it will hide the warning instead.
 You can enable this to always be on for your module by setting the feature flag: PSFramework.Stop-PSFFunction.ShowWarning
 For more information on feature flags, see "Get-Help Set-PSFFeature -Detailed"
+Note: When changing the level of the message using the -Level parameter, this applies to the new level as well.
 
 ```yaml
 Type: SwitchParameter
@@ -399,6 +399,25 @@ Aliases:
 Required: False
 Position: Named
 Default value: 0
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Level
+The level the associated message should be written at.
+This affects the log entry as well as the visibility of the message (for example 'Verbose' would not be shown by default).
+Defaults to: Warning
+Possible levels: Critical (1), Important / Output / Host (2), Significant (3), VeryVerbose (4), Verbose (5), SomewhatVerbose (6), System (7), Debug (8), InternalComment (9), Warning (666), Error (667)
+
+```yaml
+Type: MessageLevel
+Parameter Sets: (All)
+Aliases:
+Accepted values: Critical, Important, Output, Host, Significant, VeryVerbose, Verbose, SomewhatVerbose, System, Debug, InternalComment, Warning, Error
+
+Required: False
+Position: Named
+Default value: Warning
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

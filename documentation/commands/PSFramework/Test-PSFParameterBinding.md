@@ -25,11 +25,10 @@ Helper function that tests, whether a parameter was bound.
 ### EXAMPLE 1
 ```
 if (Test-PSFParameterBinding "Day")
-```
-
 {
     
 }
+```
 
 Snippet as part of a function.
 Will check whether the parameter "Day" was bound.

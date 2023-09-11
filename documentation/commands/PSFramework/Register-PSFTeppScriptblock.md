@@ -37,9 +37,8 @@ Get-Help about_psf_tabexpansion
 ### EXAMPLE 1
 ```
 Register-PSFTeppScriptblock -Name "psalcohol-liquids" -ScriptBlock { "beer", "mead", "wine", "vodka", "whiskey", "rum" }
-```
-
 Register-PSFTeppArgumentCompleter -Command Get-Alcohol -Parameter Type -Name "psalcohol-liquids"
+```
 
 In step one we set a list of questionable liquids as the list of available beverages for parameter 'Type' on the command 'Get-Alcohol'
 
@@ -53,9 +52,8 @@ Stores the scriptblock stored in $scriptBlock under the name "MyFirstTeppScriptB
 ### EXAMPLE 3
 ```
 $scriptBlock = { (Get-ChildItem (Get-PSFConfigValue -FullName mymodule.path.scripts -Fallback "$env:USERPROFILE\Documents\WindowsPowerShell\Scripts")).FullName }
-```
-
 Register-PSFTeppScriptblock -Name mymodule-scripts -ScriptBlock $scriptBlock -Mode Simple
+```
 
 Stores a simple scriptblock that will return a list of strings under the name "mymodule-scripts".
 The system will wrap all the stuff around this that is necessary to provide Tab Expansion and filter out output that doesn't fit the user input so far.

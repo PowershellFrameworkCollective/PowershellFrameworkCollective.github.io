@@ -25,9 +25,8 @@ This function will normally be called using an alias that gets set by using Set-
 ### EXAMPLE 1
 ```
 Software
+PS C:\Software>
 ```
-
-PS C:\Software\>
 
 In this example 'Software' is an alias for Set-PSUPath that was created by using Set-PSUPathAlias.
 Set-PSUPath detected that 'Software' was the alias that called it and then sends it to the path.

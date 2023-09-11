@@ -12,16 +12,10 @@ Converts an object into a hashtable.
 
 ## SYNTAX
 
-### filter (Default)
 ```
 ConvertTo-PSFHashtable [-Include <String[]>] [-Exclude <String[]>] [-CaseSensitive] [-IncludeEmpty] [-Inherit]
- [-Remap <Hashtable>] [-InputObject <PSObject[]>] [<CommonParameters>]
-```
-
-### reference
-```
-ConvertTo-PSFHashtable [-CaseSensitive] [-IncludeEmpty] [-Inherit] [-Remap <Hashtable>]
- [-InputObject <PSObject[]>] [-ReferenceCommand <String>] [<CommonParameters>]
+ [-Remap <Hashtable>] [-InputObject <PSObject[]>] [-ReferenceCommand <String>]
+ [-ReferenceParameterSetName <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -57,7 +51,7 @@ Must be full property-names, no wildcard/regex matching.
 
 ```yaml
 Type: String[]
-Parameter Sets: filter
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -73,7 +67,7 @@ Must be full property-names, no wildcard/regex matching.
 
 ```yaml
 Type: String[]
-Parameter Sets: filter
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -152,7 +146,22 @@ Accept wildcard characters: False
 
 ```yaml
 Type: String
-Parameter Sets: reference
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ReferenceParameterSetName
+{{ Fill ReferenceParameterSetName Description }}
+
+```yaml
+Type: String
+Parameter Sets: (All)
 Aliases:
 
 Required: False

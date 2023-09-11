@@ -35,9 +35,8 @@ Will write the message "Example Message" to verbose.
 ### EXAMPLE 2
 ```
 Set-Alias Write-Host Write-PSFMessageProxy
+PS C:\> Write-Host "Example Message"
 ```
-
-PS C:\\\> Write-Host "Example Message"
 
 This will create an alias named "Write-Host" pointing at "Write-PSFMessageProxy".
 Then it will write the message "Example Message", which is automatically written to Level "Important" (which by default will be written to host).

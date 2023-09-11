@@ -44,9 +44,8 @@ If it already exists, it will overwrite the scriptblock without affecting the ru
 ### EXAMPLE 2
 ```
 Register-PSFRunspace -ScriptBlock $scriptBlock -Name 'mymodule.maintenance'
+PS C:\> Start-PSFRunspace -Name 'mymodule.maintenance'
 ```
-
-PS C:\\\> Start-PSFRunspace -Name 'mymodule.maintenance'
 
 Registers the script defined in $scriptBlock under the name 'mymodule.maintenance'
 Then it starts the runspace, running the registered $scriptBlock

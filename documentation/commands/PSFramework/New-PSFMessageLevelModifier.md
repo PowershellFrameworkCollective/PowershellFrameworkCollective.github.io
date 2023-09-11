@@ -35,9 +35,8 @@ Adding too many level modifiers may impact performance, use with discretion.
 ### EXAMPLE 1
 ```
 New-PSFMessageLevelModifier -Name 'MyModule-Include' -Modifier -9 -IncludeModuleName MyModule
+PS C:\> New-PSFMessageLevelModifier -Name 'MyModule-Exclude' -Modifier 9 -ExcludeModuleName MyModule
 ```
-
-PS C:\\\> New-PSFMessageLevelModifier -Name 'MyModule-Exclude' -Modifier 9 -ExcludeModuleName MyModule
 
 These settings will cause all messages from the module 'MyModule' to be highly prioritized and almost certainly written to host.
 It will also make it highly unlikely, that messages from other modules will even be considered for anything but the lowest level.

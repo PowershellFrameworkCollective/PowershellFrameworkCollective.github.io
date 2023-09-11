@@ -16,18 +16,18 @@ Combines should process, try/catch error handling and logging in one package.
 ```
 Invoke-PSFProtectedCommand -ScriptBlock <ScriptBlock> -Action <String> [-Target <Object>]
  [-EnableException <Boolean>] [-PSCmdlet <PSCmdlet>] [-Continue] [-ContinueLabel <String>] [-Tag <String[]>]
- [-RetryCount <Int32>] [-RetryWait <TimeSpanParameter>] [-RetryErrorType <String[]>]
- [-RetryCondition <ScriptBlock>] [-ErrorEvent <ScriptBlock>] [-Level <MessageLevel>] [-WhatIf] [-Confirm]
- [<CommonParameters>]
+ [-RetryCount <Int32>] [-RetryWait <TimeSpanParameter>] [-RetryWaitEscalation <Double>]
+ [-RetryErrorType <String[]>] [-RetryCondition <ScriptBlock>] [-ErrorEvent <ScriptBlock>]
+ [-Level <MessageLevel>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### String
 ```
 Invoke-PSFProtectedCommand -ScriptBlock <ScriptBlock> -ActionString <String> [-ActionStringValues <Object[]>]
  [-Target <Object>] [-EnableException <Boolean>] [-PSCmdlet <PSCmdlet>] [-Continue] [-ContinueLabel <String>]
- [-Tag <String[]>] [-RetryCount <Int32>] [-RetryWait <TimeSpanParameter>] [-RetryErrorType <String[]>]
- [-RetryCondition <ScriptBlock>] [-ErrorEvent <ScriptBlock>] [-Level <MessageLevel>] [-WhatIf] [-Confirm]
- [<CommonParameters>]
+ [-Tag <String[]>] [-RetryCount <Int32>] [-RetryWait <TimeSpanParameter>] [-RetryWaitEscalation <Double>]
+ [-RetryErrorType <String[]>] [-RetryCondition <ScriptBlock>] [-ErrorEvent <ScriptBlock>]
+ [-Level <MessageLevel>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -345,6 +345,21 @@ Accept wildcard characters: False
 
 ```yaml
 Type: MessageLevel
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -RetryWaitEscalation
+{{ Fill RetryWaitEscalation Description }}
+
+```yaml
+Type: Double
 Parameter Sets: (All)
 Aliases:
 

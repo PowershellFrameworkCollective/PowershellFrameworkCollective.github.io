@@ -59,13 +59,12 @@ Adds all Conditions defined in the same module to it.
 ### EXAMPLE 3
 ```
 New-PSFFilterConditionSet -Module 'Bartender' -Name 'Alcohols' -ScriptBlock {
-```
-
-New-PSFFilterCondition -Module Bartender -Name Beer -ScriptBlock { $_.Type -eq 'Beer' }
+	New-PSFFilterCondition -Module Bartender -Name Beer -ScriptBlock { $_.Type -eq 'Beer' }
 	New-PSFFilterCondition -Module Bartender -Name Vodka -ScriptBlock { $_.Type -eq 'Vodka' }
 	New-PSFFilterCondition -Module Bartender -Name Whiskey -ScriptBlock { $_.Type -eq 'Whiskey' }
 	New-PSFFilterCondition -Module Bartender -Name Rum -ScriptBlock { $_.Type -eq 'Rum' }
 }
+```
 
 Defines a new Condition Set named Alcohols in the module Bartender.
 Adds the four newly created Coditions straight to the Set.

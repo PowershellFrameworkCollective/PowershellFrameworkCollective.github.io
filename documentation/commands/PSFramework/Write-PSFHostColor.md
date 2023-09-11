@@ -41,22 +41,18 @@ Will print the specified line in multiple colors
 ### EXAMPLE 2
 ```
 bloody red</c> text! And this is <c="green">green stuff</c> for extra color'
-```
-
-$string2 = '\<c="red"\>bloody red\</c\> text!
-And this is \<c="green"\>green stuff\</c\> for extra color'
-$string3 = 'This is going to be \<c="red"\>bloody red\</c\> text!
-And this is \<c="green"\>green stuff\</c\>'
+$string2 = '<c="red">bloody red</c> text! And this is <c="green">green stuff</c> for extra color'
+$string3 = 'This is going to be <c="red">bloody red</c> text! And this is <c="green">green stuff</c>'
 $string1, $string2, $string3 | Write-PSFHostColor -DefaultColor "Magenta"
+```
 
 Will print all three lines, respecting the color-codes, but use the color "Magenta" as default color.
 
 ### EXAMPLE 3
 ```
 $stringLong = @"
+Dear <c="red">Sirs</c><c="green"> and</c> <c="blue">Madams</c>,
 ```
-
-Dear \<c="red"\>Sirs\</c\>\<c="green"\> and\</c\> \<c="blue"\>Madams\</c\>,
 
 it has come to our attention that you are not sufficiently \<c="darkblue"\>awesome!\</c\>
 Kindly improve your \<c="yellow"\>AP\</c\> (\<c="magenta"\>awesome-ness points\</c\>) by at least 50% to maintain you membership in Awesome Inc!

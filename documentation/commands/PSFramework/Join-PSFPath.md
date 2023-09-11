@@ -31,10 +31,10 @@ Returns 'C:\temp\Foo\Bar'
 ### EXAMPLE 2
 ```
 Join-PSFPath -Path 'C:\temp' 'Foo' 'Bar' -Normalize
-```
-
-Returns 'C:\temp\Foo\Bar' on a Windows OS.
+  
+      Returns 'C:\temp\Foo\Bar' on a Windows OS.
 Returns 'C:/temp/Foo/Bar' on most non-Windows OSes.
+```
 
 ## PARAMETERS
 

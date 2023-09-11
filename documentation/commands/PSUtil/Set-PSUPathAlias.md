@@ -24,9 +24,8 @@ A detailed description of the Set-PSUPathAlias function.
 ### EXAMPLE 1
 ```
 Set-PSUPathAlias -Alias 'work' -Path 'C:\work'
-```
-
 Creates an alias to Set-PSUPath that will set the location to 'c:\work'
+```
 
 ### EXAMPLE 2
 ```

@@ -17,7 +17,7 @@ Set-PSFLoggingProvider [-Name] <String> [[-InstanceName] <String>] [[-Enabled] <
  [[-IncludeModules] <String[]>] [[-ExcludeModules] <String[]>] [[-IncludeFunctions] <String[]>]
  [[-ExcludeFunctions] <String[]>] [[-IncludeRunspaces] <Guid[]>] [[-ExcludeRunspaces] <Guid[]>]
  [[-IncludeTags] <String[]>] [[-ExcludeTags] <String[]>] [[-MinLevel] <Int32>] [[-MaxLevel] <Int32>]
- [-RequiresInclude] [-ExcludeWarning] [-Wait] [-EnableException] [<CommonParameters>]
+ [-RequiresInclude] [-ExcludeWarning] [-ExcludeError] [-Wait] [-EnableException] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -282,6 +282,21 @@ Accept wildcard characters: False
 
 ### -ExcludeWarning
 Whether to exclude warnings from the logging provider / instance.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ExcludeError
+Whether to exclude errors from the logging provider / instance.
 
 ```yaml
 Type: SwitchParameter

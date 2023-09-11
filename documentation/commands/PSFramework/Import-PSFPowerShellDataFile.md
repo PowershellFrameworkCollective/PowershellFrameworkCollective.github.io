@@ -12,14 +12,14 @@ A wrapper command around Import-PowerShellDataFile
 
 ## SYNTAX
 
-### ByPath
+### ByPath (Default)
 ```
-Import-PSFPowerShellDataFile [-Path <String[]>] [-Unsafe] [<CommonParameters>]
+Import-PSFPowerShellDataFile [[-Path] <String[]>] [-Psd1Mode <String>] [-Unsafe] [<CommonParameters>]
 ```
 
 ### ByLiteralPath
 ```
-Import-PSFPowerShellDataFile [-LiteralPath <String[]>] [-Unsafe] [<CommonParameters>]
+Import-PSFPowerShellDataFile [-LiteralPath <String[]>] [-Psd1Mode <String>] [-Unsafe] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -59,7 +59,7 @@ Parameter Sets: ByPath
 Aliases:
 
 Required: False
-Position: Named
+Position: 1
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -81,7 +81,37 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
+### -Psd1Mode
+How psd1 files should be parsed.
+Available modes:
+- Classic: Only safe documents will be executed, and only the first hashtable will be processed.
+        This option is only available on PowerShell v5 or later.
+In older versions, this mode is automatically
+  converted to "Safe"
+ 	- Safe: Only safe documents without executable code are processed, but any number of hashtables
+  will be processed.
+At the root level of the document, only hashtables or an array containing only
+  hashtables may exist.
+- Unsafe: Psd1 file is basically processed as if it were a ps1 file.
+Both safe and unsafe modes respect Constrained Language Mode.
+
+Defaults to "Classic"
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: Classic
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Unsafe
+This parameter has been deprecated and should no longer be used.
+Use "-Psd1Mode Unsafe" instead.
 Disables the protective value of Import-PowerShellDataFile.
 This effectively runs the provided powershell scriptfile as untrusted scriptfile, no matter the environment.
 By default, Import-PowerShellDataFile would only process the first hashtable, while unsafe mode allows files with multiple hashtables or more dynamic content.

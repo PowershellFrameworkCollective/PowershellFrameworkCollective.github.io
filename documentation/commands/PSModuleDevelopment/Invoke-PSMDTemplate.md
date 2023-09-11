@@ -16,21 +16,21 @@ Creates a project/file from a template.
 ```
 Invoke-PSMDTemplate [-TemplateName] <String> -Path <String> [[-OutPath] <String>] [[-Name] <String>]
  [-Encoding <EncodingParameter>] [-NoFolder] [-Parameters <Hashtable>] [-Raw] [-GenerateObjects] [-Force]
- [-Silent] [-EnableException] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-Silent] [-NoConfigFile] [-EnableException] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### NameStore
 ```
 Invoke-PSMDTemplate [-TemplateName] <String> [-Store <String>] [[-OutPath] <String>] [[-Name] <String>]
  [-Encoding <EncodingParameter>] [-NoFolder] [-Parameters <Hashtable>] [-Raw] [-GenerateObjects] [-Force]
- [-Silent] [-EnableException] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-Silent] [-NoConfigFile] [-EnableException] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Template
 ```
 Invoke-PSMDTemplate -Template <TemplateInfo[]> [[-OutPath] <String>] [[-Name] <String>]
  [-Encoding <EncodingParameter>] [-NoFolder] [-Parameters <Hashtable>] [-Raw] [-GenerateObjects] [-Force]
- [-Silent] [-EnableException] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-Silent] [-NoConfigFile] [-EnableException] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -251,6 +251,21 @@ Accept wildcard characters: False
 
 ### -Silent
 This places the function in unattended mode, causing it to error on anything requiring direct user input.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -NoConfigFile
+By default, this command will look in the execution path and above for files named "PSMDConfig.psd1" to populate template parameters from.
 
 ```yaml
 Type: SwitchParameter

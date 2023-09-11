@@ -1,6 +1,12 @@
-$commandReferenceBasePath = "$($env:SYSTEM_DEFAULTWORKINGDIRECTORY)\documentation\commands"
+param (
+	[string]
+	$RootPath = $env:SYSTEM_DEFAULTWORKINGDIRECTORY
+)
+if (-not $RootPath) { $RootPath = Split-Path $PSScriptRoot }
+
+$commandReferenceBasePath = Join-Path -Path $RootPath -ChildPath "documentation\commands"
 $modules = @("PSFramework", "PSUtil", "PSModuleDevelopment", "MailDaemon")
-$excludedCommands = @("New-PSFTeppCompletionResult")
+$excludedCommands = @("New-PSFTeppCompletionResult", 'prompt')
 
 foreach ($moduleName in $modules)
 {
