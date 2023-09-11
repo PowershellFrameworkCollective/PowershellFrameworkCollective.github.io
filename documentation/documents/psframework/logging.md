@@ -49,6 +49,7 @@ A quick refence list on how to log to the built-in Logging Providers:
 ## Basics
 
 - [Writing Messages](logging/basics/writing-messages.html)
+- [Troubleshooting](logging/basics/troubleshooting.html)
 - [Logging Providers](logging/basics/logging-providers.html)
 - [In-Memory debug log](logging/basics/inmemory-debuglog.html)
 - [Message Levels](logging/basics/message-levels.html)
