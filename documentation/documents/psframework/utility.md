@@ -2,6 +2,9 @@
 title: PSFramework: Utility
 ---
 # Utility
+
+[Back to PSFramework](https://psframework.org/documentation/documents/psframework.html)
+
 ## Synopsis
 
 Utility is the catch-all category for individual commands that do not fit into any more specific category or would be a category ontu themselves.
@@ -20,6 +23,15 @@ Utility is the catch-all category for individual commands that do not fit into a
 This helps with exporting as flat data, e.g. when exporting as csv.
 
  - [ConvertFrom-PSFArray](utility/convertfrom-psfarray.html)
+
+### Argument Transformation Attributes
+
+Sometimes we need to convert the input we receive into the format we want.
+[Parameter Classes](parameter-classes.html) are a way to go about that, but they require quite a bit of effort to implement, if the ones provided by the PSFramework are not enough.
+
+This is where Argument Transformation Attributes can shine:
+
++ [ScriptTransformation](utility/ScriptTransformation.html): Implement your own conversion logic in script.
 
 ## Notes
 

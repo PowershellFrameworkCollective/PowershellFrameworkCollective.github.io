@@ -2,6 +2,9 @@
 title: Utility: Select-PSFObject
 ---
 # Select-PSFObject
+
+[Back to utility](http://psframework.org/documentation/documents/psframework/utility.html)
+
 ## Synopsis
 
 `Select-PSFObject` completely replaces `Select-Object`, offering all of its functionality, but offering greater input comfort and more readable code by avoiding hashtables for simple operations. It also adds the ability to extend an object, rather than building a new object, fully replacing `Add-Member`.
