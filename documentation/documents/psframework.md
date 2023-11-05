@@ -10,22 +10,22 @@ Whether it is message handling, logging, configuration, parameter classes, custo
 
 The logging system provides powerful logging for little effort:
 
-- Log to file, eventlog, SQL, Graylog, Splunk or Azure Log Analytics out-of-the-box
-- Freely extensible for custom logging needs
-- Runspace-Safe
-- Asynchronous
-- Log to multiple locations at the same time
-- Logging can be defined in script, at the process level, by configuration per user or per computer. All without conflict.
++ Log to file, eventlog, SQL, Graylog, Splunk or Azure Log Analytics out-of-the-box
++ Freely extensible for custom logging needs
++ Runspace-Safe
++ Asynchronous
++ Log to multiple locations at the same time
++ Logging can be defined in script, at the process level, by configuration per user or per computer. All without conflict.
 
 For more details on the logging system, see the [dedicated component page](psframework/logging.html)
 
 ## Configuration
 The configuration system offers the means to ...
 
- - Implement options for modules, similar to an application's options menu
- - Implement configuration of CI/CD pipelines
- - Control modules and scripts by group policy or DSC
- - utilize a cache that persists across powershell sessions
++ Implement options for modules, similar to an application's options menu
++ Implement configuration of CI/CD pipelines
++ Control modules and scripts by group policy or DSC
++ utilize a cache that persists across powershell sessions
 
 ```powershell
 Get-PSFConfig
@@ -38,11 +38,21 @@ For more details on the configuration system, see the [dedicated component page]
 Custom Tab Completion allows both developers and users to easily deploy custom tab completion.
 Put an end to Mr. Typo and improve your everyday console experience!
 
- - Implement fast, reusable tab completion.
- - Add Tab Completion to own or existing commands.
- - Significantly improve tab completion.
++ Implement fast, reusable tab completion.
++ Add Tab Completion to own or existing commands.
++ Significantly improve tab completion.
 
 For more details on the tab completion system, see the [dedicated component page](psframework/tab-completion.html).
+
+## Runspace Workflows
+Runspace workflows allow architecting parallelized jobs that exchange data among each other.
+This allows you to focus on your business logic while fully leveraging runspaces to accelerate the overall result.
+
++ Easily design workflow
++ Exchange results between stages
++ None of the complex custom code - just bring the business logic
+
+For more details on the Runspace Workflow system, see the [dedicated component page](psframework/runspace-workflows.html).
 
 ## Flow-Control
 The Flow-Control component focuses on help govern how your code "flows".
