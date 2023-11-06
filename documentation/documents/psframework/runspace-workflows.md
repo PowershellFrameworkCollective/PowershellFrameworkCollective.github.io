@@ -34,11 +34,13 @@ The Workflow Object, the Worker and the Queue:
 While the details on the components may provide value, this system benefits most from some examples:
 
 + [A simple workflow](runspace-workflows/examples-simple.html)
++ [Begin & End](runspace-workflows/examples-begin-end.html)
 + [Including Variables, Functions and Modules](runspace-workflows/examples-resources.html)
 + [Different variable value per runspace](runspace-workflows/examples-perrunspacevariables.html)
 + [Automatically ending Workflows](runspace-workflows/examples-auto-close.html)
 + [When the first step generates the input](runspace-workflows/examples-first-step-data.html)
 + [Branching Flows - One step feeding multiple others](runspace-workflows/examples-multi-pronged-flows.html)
 + [Data outside of the Queues](runspace-workflows/examples-the-data-field.html)
++ [Rate limiting - throttling and workflows](runspace-workflows/examples-throttling.html)
 
 [Back to PSFramework](https://psframework.org/documentation/documents/psframework.html)
