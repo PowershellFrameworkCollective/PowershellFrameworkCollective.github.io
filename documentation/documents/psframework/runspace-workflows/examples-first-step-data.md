@@ -31,7 +31,7 @@ $begin = {
     Connect-ExchangeOnline -AppID $exAppID -Organization $exOrganization -Certificate $exCert
 }
 $process = {
-    Get-EXOMailbox | Write-PSFRunspaceQueue -Name Mailbox -Name '' -InputObject $null
+    Get-EXOMailbox | Write-PSFRunspaceQueue -Name Mailboxes -Name '' -InputObject $null
 }
 $end = {
     Disconnect-ExchangeOnline
@@ -51,7 +51,7 @@ $process2 = {
         ProxyAddresses = $value.ProxyAddresses -join ','
     }
 }
-$workflow | Add-PSFRunspaceWorker -Name ADUser -InQueue Mailboxes -OutQueue Results -ScriptBlock $process2 -Count 10 -Modules ActiveDirectory -CloseOutQueue
+$workflow | Add-PSFRunspaceWorker -Name ADUser -InQueue Mailboxes -OutQueue ADUser -ScriptBlock $process2 -Count 10 -Modules ActiveDirectory -CloseOutQueue
 
 # Third Worker: Write Results to CSV
 $variables3 = @{ Path = 'C:\temp\users.csv' }
