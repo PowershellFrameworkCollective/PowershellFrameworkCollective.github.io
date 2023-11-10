@@ -20,16 +20,14 @@ $begin = {
     $global:sqlInstance = Connect-DbaInstance -SqlInstance sql01.contoso.com\userdb
 }
 $process = {
-    param ($Value)
-    $Value | Write-DbaDataTable -SqlInstance $global:sqlInstance -Database userDB -Table Users
+    $_ | Write-DbaDataTable -SqlInstance $global:sqlInstance -Database userDB -Table Users
 }
 $end = {
     Disconnect-DbaInstance $global:sqlInstance
 }
 
 $workflow | Add-PSFRunspaceWorker -Name Users -InQueue UserList -OutQueue Users -Count 5 -ScriptBlock {
-    param ($Value)
-    Get-ADUser -Identity $Value
+    Get-ADUser -Identity $_
 } -CloseOutQueue
 $workflow | Add-PSFRunspaceWorker -Name WriteToDB -InQueue Users -OutQueue Done -Count 1 -Begin $begin -ScriptBlock $process -End $end -CloseOutQueue
 

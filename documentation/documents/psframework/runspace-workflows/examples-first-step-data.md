@@ -60,8 +60,7 @@ $begin3 = {
     $global:command.Begin($true)
 }
 $process3 = {
-    param ($Value)
-    $global:command.Process($Value)
+    $global:command.Process($_)
 }
 $end3 = {
     $global:command.End()
