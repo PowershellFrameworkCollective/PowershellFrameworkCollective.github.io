@@ -37,11 +37,9 @@ We take the input and generate an object that will end up showing the original i
 
 ```powershell
 $workflow | Add-PSFRunspaceWorker -Name Processing -InQueue Input -OutQueue Processed -Count 3 -ScriptBlock {
-    param ($Value)
-
     [PSCustomObject]@{
-        Input = $Value
-        Processed = $Value * 2
+        Input = $_
+        Processed = $_ * 2
         Result = $null
     }
 }
@@ -60,10 +58,8 @@ In the second step, we will take the object produced by the first worker and cal
 
 ```powershell
 $workflow | Add-PSFRunspaceWorker -Name Result -InQueue Processed -OutQueue Done -Count 2 -ScriptBlock {
-    param ($Value)
-
-    $Value.Result = $Value.Processed * 3
-    $Value
+    $_.Result = $_.Processed * 3
+    $_
 }
 ```
 
@@ -139,19 +135,15 @@ $workflow = New-PSFRunspaceWorkflow -Name 'ExampleWorkflow'
 
 # Add Workers
 $workflow | Add-PSFRunspaceWorker -Name Processing -InQueue Input -OutQueue Processed -Count 3 -ScriptBlock {
-    param ($Value)
-
     [PSCustomObject]@{
-        Input = $Value
-        Processed = $Value * 2
+        Input = $_
+        Processed = $_ * 2
         Result = $null
     }
 }
 $workflow | Add-PSFRunspaceWorker -Name Result -InQueue Processed -OutQueue Done -Count 2 -ScriptBlock {
-    param ($Value)
-
-    $Value.Result = $Value.Processed * 3
-    $Value
+    $_.Result = $_.Processed * 3
+    $_
 }
 
 # Add input
