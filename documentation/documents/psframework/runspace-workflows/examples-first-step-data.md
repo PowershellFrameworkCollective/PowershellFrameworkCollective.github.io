@@ -31,7 +31,7 @@ $begin = {
     Connect-ExchangeOnline -AppID $exAppID -Organization $exOrganization -Certificate $exCert
 }
 $process = {
-    Get-EXOMailbox | Write-PSFRunspaceQueue -Name Mailboxes -Name '' -InputObject $null
+    Get-EXOMailbox | Write-PSFRunspaceQueue -Name Mailboxes -WorkerName '' -InputObject $null
 }
 $end = {
     Disconnect-ExchangeOnline
