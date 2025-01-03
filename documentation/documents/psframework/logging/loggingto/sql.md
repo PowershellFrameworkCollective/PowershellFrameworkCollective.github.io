@@ -27,6 +27,7 @@ $paramSetPSFLoggingProvider = @{
     Database     = 'LoggingDB'
     Table        = 'Logs'
     Enabled      = $true
+    Wait         = $true
 }
 Set-PSFLoggingProvider @paramSetPSFLoggingProvider
 ```
@@ -47,6 +48,7 @@ $paramSetPSFLoggingProvider = @{
     Table        = 'Logs'
     Credential   = $cred
     Enabled      = $true
+    Wait         = $true
 }
 Set-PSFLoggingProvider @paramSetPSFLoggingProvider
 ```
@@ -64,6 +66,7 @@ $paramSetPSFLoggingProvider = @{
     Database     = 'LoggingDB'
     Table        = 'Logs'
     Enabled      = $true
+    Wait         = $true
 }
 Set-PSFLoggingProvider @paramSetPSFLoggingProvider
 ```

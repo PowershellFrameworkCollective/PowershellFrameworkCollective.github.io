@@ -13,6 +13,7 @@ $paramSetPSFLoggingProvider = @{
     WorkspaceId  = '<id>'
     SharedKey    = '<key>'
     Enabled      = $true
+    Wait         = $true
 }
 Set-PSFLoggingProvider @paramSetPSFLoggingProvider
 ```
@@ -30,6 +31,7 @@ $paramSetPSFLoggingProvider = @{
     SharedKey    = '<key>'
     LogType      = 'MyTask'
     Enabled      = $true
+    Wait         = $true
 }
 Set-PSFLoggingProvider @paramSetPSFLoggingProvider
 ```

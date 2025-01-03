@@ -115,6 +115,7 @@ $paramSetPSFLoggingProvider = @{
     InstanceName   = 'MyTask'
     Enabled        = $true
     NumericTagAsID = $true
+    Wait         = $true
 }
 Set-PSFLoggingProvider @paramSetPSFLoggingProvider
 ```
@@ -139,6 +140,7 @@ $paramSetPSFLoggingProvider = @{
         start = 1
         end = 2
     }
+    Wait         = $true
 }
 Set-PSFLoggingProvider @paramSetPSFLoggingProvider
 ```

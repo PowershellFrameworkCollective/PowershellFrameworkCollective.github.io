@@ -107,6 +107,7 @@ $paramSetPSFLoggingProvider = @{
     FilePath     = 'C:\Logs\TaskName-%Date%.csv'
     Headers      = $headers
     Enabled      = $true
+    Wait         = $true
 }
 Set-PSFLoggingProvider @paramSetPSFLoggingProvider
 ```
@@ -130,6 +131,7 @@ $paramSetPSFLoggingProvider = @{
     FileType     = 'Json'
     Headers      = 'ComputerName', 'File', 'FunctionName', 'Level', 'Line', 'Message', 'ModuleName', 'Runspace', 'Tags', 'TargetObject', 'Timestamp', 'Type', 'Username', 'Data'
     Enabled      = $true
+    Wait         = $true
 }
 Set-PSFLoggingProvider @paramSetPSFLoggingProvider
 ```
@@ -156,6 +158,7 @@ $paramSetPSFLoggingProvider = @{
     FilePath     = 'C:\Logs\TaskName-%Date%.csv'
     Headers      = $headers
     Enabled      = $true
+    Wait         = $true
 }
 Set-PSFLoggingProvider @paramSetPSFLoggingProvider
 ```
@@ -177,6 +180,7 @@ $paramSetPSFLoggingProvider = @{
     FilePath     = 'C:\Logs\TaskName-%Date%.csv'
     MutexName    = 'PowerShellLogMyTask'
     Enabled      = $true
+    Wait         = $true
 }
 Set-PSFLoggingProvider @paramSetPSFLoggingProvider
 ```

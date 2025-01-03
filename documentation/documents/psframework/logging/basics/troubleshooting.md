@@ -33,6 +33,7 @@ $paramSetPSFLoggingProvider = @{
     InstanceName = 'Contoso-VMDeplyoment'
     FilePath     = 'C:\Lgs\Contoso-VMDeployment-%Date%.csv'
     Enabled      = $true
+    Wait         = $true
 }
 Set-PSFLoggingProvider @paramSetPSFLoggingProvider
 ```

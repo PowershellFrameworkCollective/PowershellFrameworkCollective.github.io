@@ -11,6 +11,7 @@ $paramSetPSFLoggingProvider = @{
     Name         = 'eventlog'
     InstanceName = 'MyTask'
     Enabled      = $true
+    Wait         = $true
 }
 Set-PSFLoggingProvider @paramSetPSFLoggingProvider
 ```
@@ -30,6 +31,7 @@ $paramSetPSFLoggingProvider = @{
     LogName      = 'SriptLog'
     Source       = 'MyTask'
     Enabled      = $true
+    Wait         = $true
 }
 Set-PSFLoggingProvider @paramSetPSFLoggingProvider
 ```

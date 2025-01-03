@@ -26,6 +26,7 @@ $paramSetPSFLoggingProvider = @{
     GelfServer   = 'hostname'
     Port         = 443
     Enabled      = $true
+    Wait         = $true
 }
 Set-PSFLoggingProvider @paramSetPSFLoggingProvider
 ```

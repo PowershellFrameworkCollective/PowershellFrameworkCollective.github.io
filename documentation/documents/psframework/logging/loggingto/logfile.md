@@ -12,6 +12,7 @@ $paramSetPSFLoggingProvider = @{
     InstanceName = '<taskname>'
     FilePath     = 'C:\Logs\TaskName-%Date%.csv'
     Enabled      = $true
+    Wait         = $true
 }
 Set-PSFLoggingProvider @paramSetPSFLoggingProvider
 ```
@@ -30,6 +31,7 @@ $paramSetPSFLoggingProvider = @{
     FilePath     = 'C:\Logs\TaskName-%Date%.log'
     FileType     = 'CMTrace'
     Enabled      = $true
+    Wait         = $true
 }
 Set-PSFLoggingProvider @paramSetPSFLoggingProvider
 ```
@@ -44,6 +46,7 @@ $paramSetPSFLoggingProvider = @{
     InstanceName  = '<taskname>'
     FilePath      = 'C:\Logs\TaskName-%Date%.csv'
     Enabled       = $true
+    Wait         = $true
     LogRotatePath = 'C:\Logs\TaskName-*.csv'
 }
 Set-PSFLoggingProvider @paramSetPSFLoggingProvider

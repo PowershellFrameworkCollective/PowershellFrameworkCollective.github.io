@@ -12,7 +12,7 @@
 This command will configure the logging:
 
 ```powershell
-Set-PSFLoggingProvider -Name console -Enabled $true -Style '%Message%'
+Set-PSFLoggingProvider -Name console -Enabled $true -Style '%Message%' -Wait
 ```
 
 When now generating messages:

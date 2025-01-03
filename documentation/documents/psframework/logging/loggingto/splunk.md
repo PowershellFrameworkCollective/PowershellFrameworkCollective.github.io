@@ -15,6 +15,7 @@ $paramSetPSFLoggingProvider = @{
     Url          = 'https://servername:8088/services/collector'
     Token        = '<Token>'
     Enabled      = $true
+    Wait         = $true
 }
 Set-PSFLoggingProvider @paramSetPSFLoggingProvider
 ```
@@ -37,6 +38,7 @@ $paramSetPSFLoggingProvider = @{
     Token        = '<Token>'
     IgnoreCert   = $true
     Enabled      = $true
+    Wait         = $true
 }
 Set-PSFLoggingProvider @paramSetPSFLoggingProvider
 ```
