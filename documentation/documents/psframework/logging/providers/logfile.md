@@ -45,6 +45,10 @@ It also offers logrotate capabilities, to clean up after itself.
 |JsonCompress|$false|Will compress the json entries, condensing each entry into a single line.|
 |JsonString|$false|Will convert all enumerated properties to string values when converting to json. This causes the level property to be 'Debug','Host', ... rather than 8,2,...|
 |JsonNoComma|$false|Prevent adding commas between two json entries.|
+|JsonNoEmptyFirstLine|$false|Prevent the empty first line when commas have not been disabled.|
+|CMTraceOverrideComponent|$false|When Enabled, messages that include a "Data" hashtable with a "Component" entry will use that Entry for the log message Component element, rather than the auto-calculated one.|
+|MoveOnFinal|''|Path to a target folder to move logfiles to when shutting down the logging provider instance. This happens automatically when PSFramework ends or the provider instance is disabled again.|
+|CopyOnFinal|''|Path to a target folder to copy logfiles to when shutting down the logging provider instance. This happens automatically when PSFramework ends or the provider instance is disabled again.|
 
 ## Notes
 
