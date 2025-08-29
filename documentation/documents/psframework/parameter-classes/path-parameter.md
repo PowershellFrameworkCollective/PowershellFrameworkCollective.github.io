@@ -15,28 +15,28 @@ Example:
 
 ```powershell
 function Get-FileContent {
-	[CmdletBinding()]
-	param (
-		[string[]]
-		$Path
-	)
+    [CmdletBinding()]
+    param (
+        [string[]]
+        $Path
+    )
 
-	foreach ($entry in $Path) {
-		try { $resolvedPaths = Resolve-Path -Path $entry -ErrorAction Stop }
-		catch {
-			Write-Error $_
-			continue
-		}
+    foreach ($entry in $Path) {
+        try { $resolvedPaths = Resolve-Path -Path $entry -ErrorAction Stop }
+        catch {
+            Write-Error $_
+            continue
+        }
 
-		foreach ($resolvedPath in $resolvedPaths) {
-			if (-not (Test-Path -Path $resolvedPath -PathType Leaf)) {
-				Write-Warning "Not a file: $resolvedPath"
-				continue
-			}
+        foreach ($resolvedPath in $resolvedPaths) {
+            if (-not (Test-Path -Path $resolvedPath -PathType Leaf)) {
+                Write-Warning "Not a file: $resolvedPath"
+                continue
+            }
 
-			# Do Something
-		}
-	}
+            # Do Something
+        }
+    }
 }
 ```
 
@@ -45,15 +45,15 @@ with this parameter class, the same code however can be condensed to ...
 
 ```powershell
 function Get-FileContent {
-	[CmdletBinding()]
-	param (
-		[PsfFile]
-		$Path
-	)
+    [CmdletBinding()]
+    param (
+        [PsfFile]
+        $Path
+    )
 
-	foreach ($filePath in $Path) {
-		# Do Something
-	}
+    foreach ($filePath in $Path) {
+        # Do Something
+    }
 }
 ```
 
@@ -61,18 +61,18 @@ Adding support for `-LiteralPath` is no harder:
 
 ```powershell
 function Get-FileContent {
-	[CmdletBinding()]
-	param (
-		[PsfFile]
-		$Path,
+    [CmdletBinding()]
+    param (
+        [PsfFile]
+        $Path,
 
-		[PsfLiteralPath]
-		$LiteralPath
-	)
+        [PsfLiteralPath]
+        $LiteralPath
+    )
 
-	foreach ($filePath in $Path + $LiteralPath) {
-		# Do Something
-	}
+    foreach ($filePath in $Path + $LiteralPath) {
+        # Do Something
+    }
 }
 ```
 
@@ -82,21 +82,21 @@ Sometimes we need to provide a path to a file that does not yet exist - for exam
 In that case, the folder should already exist, but the file usually would not.
 In the previous example however, we require the file to already exist!
 
-For this scenario, there exists the `[PsfNewFile]` parameter class, which allows for a file to not yet exist, so long as the parent folder does:
+For this scenario, there exists the `[PsfNewFileSingle]` parameter class, which allows for a file to not yet exist, so long as the parent folder does:
 
 ```powershell
 function Export-SystemReport {
-	[CmdletBinding()]
-	param (
-		[Parameter(Mandatory = $true)]
-		[PsfNewFile]
-		$OutPath
-	)
+    [CmdletBinding()]
+    param (
+        [Parameter(Mandatory = $true)]
+        [PsfNewFileSingle]
+        $OutPath
+    )
 
-	# Do Something
-	# ...
+    # Do Something
+    # ...
 
-	$results | Export-PSFClixml -Path $OutPath
+    $results | Export-PSFClixml -Path $OutPath
 }
 ```
 
@@ -112,34 +112,41 @@ Instead, this variant will have a `FailedInput` property, listing all the input 
 
 ```powershell
 function Get-FileContent {
-	[CmdletBinding()]
-	param (
-		[PsfFileLax]
-		$Path
-	)
+    [CmdletBinding()]
+    param (
+        [PsfFileLax]
+        $Path
+    )
 
-	foreach ($entry in $Path.FailedInput) {
-		Write-Warning "Could not resolve as file: $entry"
-	}
+    foreach ($entry in $Path.FailedInput) {
+        Write-Warning "Could not resolve as file: $entry"
+    }
 
-	foreach ($filePath in $Path) {
-		# Do Something
-	}
+    foreach ($filePath in $Path) {
+        # Do Something
+    }
 }
 ```
 
 ## The different types
 
-There are 9 different parameter classes that fall under this category:
+There are 16 different parameter classes that fall under this category:
 
 + PsfPath: Path to folders or files
 + PsfPathLax: Path to folders or files, will not generate errors on bad input
++ PsfPathSingle: Path to a single folder or file
 + PsfNewFile: Path to a file where at least the folder exists
++ PsfNewFileSingle: Path to a single file where at least the folder exists
 + PsfFile: Path to files that exist
 + PsfFileLax: Path to files that exist, will not generate errors on bad input
++ PsfFileSingle: Path to a single file that exists
 + PsfDirectory: Path to folders that exist
 + PsfDirectoryLax: Path to folders that exist, will not generate errors on bad input
++ PsfDirectorySingle: Path to a single folder that exists
 + PsfLiteralpath: Path to folders or files, will not use wildcard interpretation.
 + PsfLiteralpathLax: Path to folders or files, will not use wildcard interpretation. Will not generate errors on bad input
++ PsfLiteralpathSingle: Path to a single folder or file, will not use wildcard interpretation.
++ PsfLiteralFileSingle: Path to a single file, will not use wildcard interpretation.
++ PsfLiteralDirectorySingle: Path to a single folder, will not use wildcard interpretation.
 
 [Back to Parameter Classes](https://psframework.org/documentation/documents/psframework/parameter-classes.html)
