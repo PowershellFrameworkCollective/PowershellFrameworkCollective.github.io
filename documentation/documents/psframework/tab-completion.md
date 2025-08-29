@@ -33,32 +33,29 @@ The PSFramework Tab Completion component removes most overhead, makes it easy to
 
 ## Quick Start Guides
 
- - [Getting Started with Tab Completion](https://psframework.org/documentation/quickstart/psframework/tabcompletion.html)
++ [Getting Started with Tab Completion](https://psframework.org/documentation/quickstart/psframework/tabcompletion.html)
 
 ## Documentation
 
- - [Basics](tab-completion/basics.html)
- - [Special Variables](tab-completion/special-variables.html)
- - [Working with the Word to Complete](tab-completion/typed-so-far.html)
- - [Accessing already bound parameters](tab-completion/previous-parameters.html)
- - [Accessing the parameter bound to](tab-completion/called-parameter.html)
- - [Accessing the called command](tab-completion/calling-command.html)
- - [Accessing the Ast](tab-completion/accessing-the-ast.html)
++ [Basics](tab-completion/basics.html)
++ [Special Variables](tab-completion/special-variables.html)
++ [Working with the Word to Complete](tab-completion/typed-so-far.html)
++ [Accessing already bound parameters](tab-completion/previous-parameters.html)
++ [Accessing the parameter bound to](tab-completion/called-parameter.html)
++ [Accessing the called command](tab-completion/calling-command.html)
++ [Accessing the Ast](tab-completion/accessing-the-ast.html)
++ [Training your Completion](tab-completion/training-completers.html)
 
 ## Tips & Tricks
 
- - [Cached Tab Completion with Asynchronous Refresh](tab-completion/asynchronous-refresh.html)
++ [Cached Tab Completion with Asynchronous Refresh](tab-completion/asynchronous-refresh.html)
 
 ## Predefined Completions
 
 The PSFramework may include finished tab completion scripts useful to the audience at large:
 
-- [Tab Completion: Input Object Properties](tab-completion/completion-inputobject.html)
++ [Tab Completion: Input Object Properties](tab-completion/completion-inputobject.html)
 
 ## Notes
 
 [Back to PSFramework](https://psframework.org/documentation/documents/psframework.html)
-
-| Version | 1.2 |
-| Written on: | 2018-06-18 |
-| Updated on: | 2019-01-13 |

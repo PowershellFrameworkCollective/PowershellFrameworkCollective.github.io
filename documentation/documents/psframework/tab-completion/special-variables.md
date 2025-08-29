@@ -2,6 +2,9 @@
 title: Tab Completion: Special Variables
 ---
 # Special Variables
+
+[Back to Tab Expansion](https://psframework.org/documentation/documents/psframework/tab-completion.html)
+
 ## Synopsis
 
 Describes the special variables available in PSFramework TabCompletion.
@@ -70,8 +73,5 @@ This would allow access to previous or upcoming commands.
 For example, this could be used to check the output type of the preceding command in order to customize tab completion based on what the command will likely receive.
 
 ## Notes
-[Back to Tab Expansion](https://psframework.org/documentation/documents/psframework/tab-completion.html)
 
-| Version | 1.0 |
-| Written on: | 2018-06-18 |
-| Updated on: | 2018-06-21 |
+[Back to Tab Expansion](https://psframework.org/documentation/documents/psframework/tab-completion.html)
