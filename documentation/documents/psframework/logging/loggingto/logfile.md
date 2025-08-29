@@ -54,6 +54,25 @@ Set-PSFLoggingProvider @paramSetPSFLoggingProvider
 
 This will delete all logs older than 30 days.
 
+> Plaintext Logs
+
+Want a classic plaintext log?
+Well, generally we do not recommend using those (as they are hard to process automatically, compared to structured data logs), but sometimes you just need something for a quick peek in notepad and a plain text logfile is just easy to read for the human eye.
+
+Worry not, we have you covered:
+
+```powershell
+$paramSetPSFLoggingProvider = @{
+    Name         = 'logfile'
+    InstanceName = '<taskname>'
+    FilePath     = 'C:\Logs\TaskName-%Date%.txt'
+    FileType     = 'TXT'
+    Enabled      = $true
+    Wait         = $true
+}
+Set-PSFLoggingProvider @paramSetPSFLoggingProvider
+```
+
 ## Generating Messages
 
 You can write messages using the `Write-PSFMessage` cmdlet, which functionally replaces Write-Verbose, Write-Host, Write-Warning, Write-Debug or Write-Log:

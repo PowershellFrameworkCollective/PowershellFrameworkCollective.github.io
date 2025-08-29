@@ -30,7 +30,7 @@ It also offers logrotate capabilities, to clean up after itself.
 |---|---|---|
 |CsvDelimiter|,|The delimiter to use when writing to csv.|
 |FilePath||The path to where the logfile is written. Supports some placeholders such as %Date% to allow for timestamp in the name.|
-|FileType|CSV|In what format to write the logfile. Supported styles: CSV, XML, Html, Json or CMTrace. Html, XML and Json will be written as fragments.|
+|FileType|CSV|In what format to write the logfile. Supported styles: CSV, XML, Html, Json, TXT or CMTrace. Html, XML and Json will be written as fragments.|
 |Headers|'ComputerName', 'File', 'FunctionName', 'Level', 'Line', 'Message', 'ModuleName', 'Runspace', 'Tags', 'TargetObject', 'Timestamp', 'Type', 'Username'|The properties to export, in the order to select them. For writing the data field or renaming properties, see below under "Notes".|
 |IncludeHeader|True|Whether a written csv file will include headers|
 |Logname||A special string you can use as a placeholder in the logfile path (by using '%logname%' as placeholder)|
@@ -47,6 +47,7 @@ It also offers logrotate capabilities, to clean up after itself.
 |JsonNoComma|$false|Prevent adding commas between two json entries.|
 |JsonNoEmptyFirstLine|$false|Prevent the empty first line when commas have not been disabled.|
 |CMTraceOverrideComponent|$false|When Enabled, messages that include a "Data" hashtable with a "Component" entry will use that Entry for the log message Component element, rather than the auto-calculated one.|
+|TXTPattern|'%Timestamp% [%Level%] %Message%'|The pattern of any given line in the TXT-based logfile. Use %PROPERTYNAME% as placeholder, e.g. "%Message%". Same properties as with the headers configuration - you need to specify both settings, if your pattern includes non-default properties such as "Data".|
 |MoveOnFinal|''|Path to a target folder to move logfiles to when shutting down the logging provider instance. This happens automatically when PSFramework ends or the provider instance is disabled again.|
 |CopyOnFinal|''|Path to a target folder to copy logfiles to when shutting down the logging provider instance. This happens automatically when PSFramework ends or the provider instance is disabled again.|
 
@@ -61,6 +62,7 @@ The default format is CSV, but there is more ...
 |---|---|
 |CSV|The default format. A common CSV and the only type that respects the CsvDelimiter setting. Easy to open in Excel, making it a popular format for admins. However, as it is a flat table, this format cannot support the Data field.|
 |Json|Writes entries as Json string. However, as each individual write cannot guarantee it being the last to write an entry to the file, all entries are written as _fragments_ . To turn the resulting file content into valid json, wrap it into square brackets.|
+|TXT|Writes a plaintext logfile. Generally not recommended, as logs in structured data formats are easier to automatically process, parse and monitor. Use the `TXTPattern` setting to define just how the log looks, all properties selected must also be included in the `Headers` setting.|
 |XML|Writes entries as XML string. However, as each individual write cannot guarantee it being the last to write an entry to the file, all entries are written as _fragments_ . To turn the resulting file content into valid XML, wrap it into a `<Messages>` XML element.|
 |Html|Writes entries as Html string. However, as each individual write cannot guarantee it being the last to write an entry to the file, all entries are written as _fragments_ . To turn the resulting file content into valid html, wrap it into a `<table>` html element.|
 |CMTrace|Writes log entries in a format that can easily be consumed by the CMTrace log reading utility part of SCCM. This type ignores the selected headers to write and cannot support the Data field.|

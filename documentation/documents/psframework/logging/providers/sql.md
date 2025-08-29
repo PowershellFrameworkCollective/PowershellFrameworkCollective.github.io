@@ -42,6 +42,8 @@ Or manually deploy the required module.
 |Table|LoggingTable|Name of the table in that database to write to. Will be created if needed and able.|
 |SqlServer||The SQL Server to connect to.|
 |Credential||The credentials to use for connecting to the SQL server.|
+|Schema|dbo|SQL Server schema.|
+|Headers|'Message', 'Timestamp', 'Level', 'Tags', 'Data', 'ComputerName', 'Runspace', 'UserName', 'ModuleName', 'FunctionName', 'File', 'Line', 'CallStack', 'TargetObject', 'ErrorRecord'|Columns to write to the table|
 
 ## Notes
 
